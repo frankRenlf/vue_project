@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Bind</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input type="text" v-bind:value="user2.name">
+        <br />
+        <input type="text" v-model:value="user2.name">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        const v = new Vue({
+            // el: '#root',
+            data() {
+                return {
+                    user2: {
+                        name: 'lily',
+                        age: 23
+                    },
+                    link: 'https://space.bilibili.com/397653559/fans/follow'
+                }
+            }
+        });
+        v.$mount('#root');
+    </script>
+</body>
+
+</html>
