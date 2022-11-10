@@ -11,7 +11,8 @@
 
 <body>
     <div id="root">
-        <h1>hi, {{name1}} ,{{age}},{{Date.now()}}</h1>
+        <h1>hi, {{name1.toUpperCase()}} ,{{age}},{{Date.now()}}</h1>
+        <a v-bind:href="link">btn</a>
     </div>
 
 
@@ -23,7 +24,8 @@
             el: '#root',
             data: {
                 name1: 'frank',
-                age: '22'
+                age: '22',
+                link: 'https://space.bilibili.com/397653559/fans/follow'
             }
         });
 
