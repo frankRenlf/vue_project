@@ -11,6 +11,17 @@
         * {
             margin-top: 20px;
         }
+
+        ul {
+            margin: 20px;
+            height: 100px;
+            background-color: blue;
+            overflow: auto;
+        }
+
+        li {
+            margin-top: 50px;
+        }
     </style>
 </head>
 
@@ -28,7 +39,12 @@
         <div @click.once="showInfo">
             <button @click.once="showInfo" value="">btn2</button>
         </div>
-
+        <ul @scroll="rolling">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
     </div>
 
     <script>
@@ -52,6 +68,9 @@
                     // console.log(a);
                     // console.log(this.val);
                 },
+                rolling() {
+                    console.log("@sc");
+                }
             },
         })
     </script>
