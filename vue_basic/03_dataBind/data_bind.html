@@ -28,20 +28,19 @@
     <script type="text/javascript">
         Vue.config.productionTip = false;
         let un = document.querySelector('#root');
+        let data = {
+            user2: {
+                name: 'frank',
+                age: 22,
+                date: new Date().toLocaleString()
+            },
+            texts: [
+                { name: 'jhon' },
+                { name: 'lily' },
+            ]
+        }
         const vm = new Vue({
-            data() {
-                return {
-                    user2: {
-                        name: 'frank',
-                        age: 22,
-                        date: new Date().toLocaleString()
-                    },
-                    texts: [
-                        { name: 'jhon' },
-                        { name: 'lily' },
-                    ]
-                }
-            }
+            data
         });
         vm.$mount('#root');
     </script>
