@@ -16,15 +16,15 @@
             sex: 'male'
         }
         Object.defineProperty(person, 'age', {
-            value: {
-                val: 18,
-                time: Date.now()
+            // value: number,
+            // enumerable: true,
+            // writable: true,
+            // configurable: true,
+            get() {
+                return number;
             },
-            enumerable: true,
-            writable: true,
-            configurable: true,
-            get: function () {
-
+            set(value) {
+                number = value;
             }
         });
         console.log(person);
