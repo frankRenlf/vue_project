@@ -10,6 +10,7 @@
 
 <body>
     <script type="text/javascript">
+        let number = 18;
         let person = {
             name: 'frank',
             sex: 'male'
@@ -18,10 +19,16 @@
             value: {
                 val: 18,
                 time: Date.now()
+            },
+            enumerable: true,
+            writable: true,
+            configurable: true,
+            get: function () {
+
             }
         });
         console.log(person);
-        console.log(Object.keys(person));
+        // console.log(Object.keys(person));
     </script>
 
 </body>
