@@ -13,7 +13,8 @@
 
     <div id="root">
         <h2>welcome to {{address}} </h2>
-        <button @click="showInfo">btn</button>
+        <input v-model:value="val">
+        <button @click="showInfo()" value="">btn</button>
     </div>
 
     <script>
@@ -24,12 +25,13 @@
             data() {
                 return {
                     address: 'value',
+                    val: ''
                 };
             },
             methods: {
-                showInfo(event) {
+                showInfo() {
                     // alert("mesage");
-                    console.log(event.target.innerText);
+                    console.log(this.val);
                 },
             },
         })
