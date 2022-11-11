@@ -39,7 +39,7 @@
         <div @click.once="showInfo">
             <button @click.once="showInfo" value="">btn2</button>
         </div>
-        <ul @scroll="rolling">
+        <ul @wheel.passive="rolling">
             <li>1</li>
             <li>2</li>
             <li>3</li>
@@ -69,7 +69,9 @@
                     // console.log(this.val);
                 },
                 rolling() {
-                    console.log("@sc");
+                    for (let i = 0; i < 100000; i++) {
+                        console.log('@');
+                    }
                 }
             },
         })
