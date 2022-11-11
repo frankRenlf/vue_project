@@ -10,8 +10,29 @@
 </head>
 
 <body>
-    <script>
 
+    <div id="root">
+        <h2>welcome to {{address}} </h2>
+        <button @click="showInfo">btn</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    address: 'value',
+                };
+            },
+            methods: {
+                showInfo(event) {
+                    // alert("mesage");
+                    console.log(event.target.innerText);
+                },
+            },
+        })
     </script>
 </body>
 
