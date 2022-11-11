@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>event</title>
     <script src="../js/vue.js"></script>
+    <style>
+        * {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +19,16 @@
     <div id="root">
         <h2>welcome to {{address}} </h2>
         <input v-model:value="val">
-        <button @click="showInfo()" value="">btn</button>
+
+        <button @click="showInfo(66,$event)" value="">btn</button>
+        <br />
+        <div>
+            <a v-bind:href="url" @click.prevent="showInfo">link</a>
+        </div>
+        <div @click.once="showInfo">
+            <button @click.once="showInfo" value="">btn2</button>
+        </div>
+
     </div>
 
     <script>
@@ -25,13 +39,18 @@
             data() {
                 return {
                     address: 'value',
-                    val: ''
+                    val: '',
+                    url: 'https://space.bilibili.com/397653559/fans/follow'
                 };
             },
             methods: {
                 showInfo() {
-                    // alert("mesage");
-                    console.log(this.val);
+                    // event.stopPropagation();
+                    event.preventDefault();
+                    alert("mesage");
+                    // console.log(val);
+                    // console.log(a);
+                    // console.log(this.val);
                 },
             },
         })
