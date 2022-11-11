@@ -14,7 +14,10 @@
         <input type="text" v-bind:value="user2.name">
         <br />
         <input type="text" v-model:value="user2.name">
-
+        <span v-bind:title="user2.date">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+        <h1>date: {{user2.date}}</h1>
     </div>
 
 
@@ -27,7 +30,8 @@
                 return {
                     user2: {
                         name: 'frank',
-                        age: 22
+                        age: 22,
+                        date: new Date().toLocaleString()
                     }
                 }
             }
