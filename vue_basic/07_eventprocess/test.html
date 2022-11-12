@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="upload">下载</button>
+    <input type="file" value="选择文件" id="file">
+    <img src="" id="img" alt="暂无" width="50" height="50">
+    <script>
+        let file = document.querySelector("#file");   //表单
+        let img = document.querySelector("#img");   //图片
+        let upload = document.querySelector("#upload");   //下载
+        let body = document.body;
+        let file1 = null;
+        file.onchange = function (e) {
+            console.log(e);
+            file1 = e.target.files[0]; //文件上传
+            img.src = URL.createObjectURL(e.target.files[0]); //图片上传
+        }
+
+        upload.onclick = function () {
+            let a = document.createElement("a");
+            a.setAttribute("href", URL.createObjectURL(file1));
+            a.setAttribute("download", file1.name);  //file1.name文件的名字
+            a.click();
+        }
+    </script>
+</body>
+
+</html>
