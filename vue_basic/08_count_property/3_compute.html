@@ -29,14 +29,15 @@
             computed: {
                 full: {
                     get() {
-                        console.log(this);
+                        // console.log(this);
                         let fullname = this.last + '.' + this.first;
                         return fullname;
                     },
-                    set() {
-                        this.last = this.full.slice('.');
-                        this.first = this.full.substring(this, full.);
-                        this.full
+                    set(value) {
+                        console.log(value);
+                        const arr = value.split('.');
+                        this.last = arr[0];
+                        this.first = arr[1];
                     }
                 }
             },
