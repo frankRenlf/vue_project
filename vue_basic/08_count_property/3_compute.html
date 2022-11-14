@@ -13,7 +13,7 @@
     <div id="root">
         Last Name:<input type="text" v-model="last"><br /><br />
         First Name:<input type="text" v-model="first"><br /><br />
-        Full Name: <span>{{}}</span>
+        Full Name: <span>{{full}}</span>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -25,7 +25,16 @@
                     first: 'frank',
                 };
             },
+            computed: {
+                full: {
+                    get() {
+                        // console.log(this);
+                        let fullname = this.last + '.' + this.first;
+                        return fullname;
+                    },
 
+                }
+            },
         })
     </script>
 </body>
