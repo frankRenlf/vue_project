@@ -27,19 +27,24 @@
 
             },
             computed: {
-                full: {
-                    get() {
-                        // console.log(this);
-                        let fullname = this.last + '.' + this.first;
-                        return fullname;
-                    },
-                    set(value) {
-                        console.log(value);
-                        const arr = value.split('.');
-                        this.last = arr[0];
-                        this.first = arr[1];
-                    }
-                }
+                // full: {
+                //     get() {
+                //         // console.log(this);
+                //         let fullname = this.last + '.' + this.first;
+                //         return fullname;
+                //     },
+                //     set(value) {
+                //         console.log(value);
+                //         const arr = value.split('.');
+                //         this.last = arr[0];
+                //         this.first = arr[1];
+                //     }
+                // }
+                full() {
+                    // console.log(this);
+                    let fullname = this.last + '.' + this.first;
+                    return fullname;
+                },
             },
         })
     </script>
