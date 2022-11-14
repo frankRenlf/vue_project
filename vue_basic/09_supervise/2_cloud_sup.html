@@ -36,7 +36,15 @@
                     }
                 }
 
-            }
+            },
+            watch: {
+                isHot: {
+                    handler(a, b) {
+                        console.log(a, b);
+                    },
+                    immediate: true,
+                }
+            },
         })
     </script>
 </body>
