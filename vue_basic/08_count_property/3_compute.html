@@ -13,7 +13,7 @@
     <div id="root">
         Last Name:<input type="text" v-model="last"><br /><br />
         First Name:<input type="text" v-model="first"><br /><br />
-        Full Name: <span>{{connectName()}}</span>
+        Full Name: <span>{{}}</span>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -25,12 +25,7 @@
                     first: 'frank',
                 };
             },
-            methods: {
-                connectName() {
-                    console.log(this);
-                    return this.last + '.' + this.first;
-                },
-            },
+
         })
     </script>
 </body>
