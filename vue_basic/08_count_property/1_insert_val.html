@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        Last Name:<input type="text" v-model="last"><br /><br />
+        First Name:<input type="text" v-model="first"><br /><br />
+        Full Name: <span>{{last}}.{{first}}</span>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    last: 'ren',
+                    first: 'frank',
+                };
+            },
+            methods: {
+                methodName() {
+
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
