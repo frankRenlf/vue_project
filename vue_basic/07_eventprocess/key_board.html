@@ -12,7 +12,7 @@
 <body>
     <div id="root">
         <div>{{name}} </div>
-        <input type="text" placeholder="enter" @keyup="showInfo">
+        <input type="text" placeholder="enter msg" @keydown.enter="showInfo">
     </div>
 
     <script type="text/javascript">
@@ -26,7 +26,7 @@
             },
             methods: {
                 showInfo(e) {
-                    if (e.keyCode != 13) return;
+                    // if (e.keyCode !== 13) return;
                     console.log(e.target.value);
                 },
             },
