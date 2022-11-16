@@ -15,6 +15,7 @@
         <button @click="changeWeather">switch</button>
         <button @click="isHot = !isHot">switch</button>
         <button @click="numbers.a++">{{numbers.a}}</button>
+        <div v-for="(n,index) in users" :key="index">{{index}}-{{n.name}}</div>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -26,7 +27,11 @@
                     numbers: {
                         a: 1,
                         b: 2,
-                    }
+                    },
+                    users: [
+                        { id: 1, name: 'frank' },
+                        { id: 2, name: 'lily' }
+                    ]
                 };
             },
             methods: {
