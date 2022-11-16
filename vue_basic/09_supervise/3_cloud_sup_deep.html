@@ -14,6 +14,7 @@
         <h2>weather is {{info}}</h2>
         <button @click="changeWeather">switch</button>
         <button @click="isHot = !isHot">switch</button>
+        <button @click="numbers.a++">{{numbers.a}}</button>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -48,9 +49,10 @@
                     },
                     // immediate: true,
                 },
-                'numbers.a': {
-                    handler(a, b) {
-                        console.log(a, b);
+                numbers: {
+                    deep: true,
+                    handler(n) {
+                        console.log(n.a, n.b);
                     },
                 }
 
