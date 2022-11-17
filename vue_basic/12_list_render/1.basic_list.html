@@ -12,7 +12,7 @@
 <body>
     <div id="root">
         <ul>
-            <li v-for="user in users">
+            <li v-for="user in users" :key="user.id">
                 {{user.id}}-{{user.name}}-{{user.age}}
             </li>
         </ul>
