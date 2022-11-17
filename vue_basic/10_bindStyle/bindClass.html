@@ -28,7 +28,6 @@
 
         .eke {
             border-radius: 20%;
-            background-color: bisque;
         }
     </style>
     <script src="../js/vue.js"></script>
@@ -39,6 +38,7 @@
     <div id="root">
         <div class="basic" :class="mood" @click="changeMood">text</div>
         <div class="basic" :class="classArr">text</div>
+        <div class="basic" :class="classMood">text</div>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -48,6 +48,12 @@
                 return {
                     mood: 'happy',
                     classArr: ['happy', 'sad', 'normal', 'eke'],
+                    classMood: {
+                        'happy': true,
+                        'sad': false,
+                        'normal': false,
+                        'eke': true
+                    },
                 }
             },
             methods: {
