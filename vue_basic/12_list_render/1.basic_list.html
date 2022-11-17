@@ -12,8 +12,8 @@
 <body>
     <div id="root">
         <ul>
-            <li v-for="user in users" :key="user.id">
-                {{user.id}}-{{user.name}}-{{user.age}}
+            <li v-for="(user,index) in users" :key="index">
+                {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
             </li>
         </ul>
     </div>
