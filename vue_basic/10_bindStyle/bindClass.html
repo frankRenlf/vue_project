@@ -45,12 +45,9 @@
             },
             methods: {
                 changeMood(e) {
-                    if (this.mood === 'happy') {
-                        this.mood = 'sad';
-                    } else {
-                        this.mood = 'happy';
-                    }
-
+                    const arr = ['happy', 'sad', 'normal'];
+                    let n = Math.floor(Math.random() * 3);
+                    this.mood = arr[n];
                 },
 
             },
