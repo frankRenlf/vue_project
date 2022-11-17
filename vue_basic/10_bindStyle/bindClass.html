@@ -6,43 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../js/vue.js"></script>
     <style>
         .basic {
             width: 400px;
-            height: 400px;
-            border: 1px, solid, black;
+            height: 100px;
+            border: 1px solid black;
         }
 
+        .normal {
+            background-color: grey;
+        }
+
+
         .happy {
-            color: aqua;
+            background-color: aqua;
         }
 
         .sad {
-            color: bisque;
+            background-color: bisque;
         }
     </style>
+    <script src="../js/vue.js"></script>
+
 </head>
 
 <body>
     <div id="root">
-        <div class="basic happy"></div>
-        <script>
-            Vue.config.productionTip = false;
-            const vm = new Vue({
-                el: '#root',
-                data() {
-                    return {
-
-                    }
+        <div class="basic" :class="a" @click="changeMood">text</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    a: 'happy',
+                }
+            },
+            methods: {
+                changeMood(e) {
+                    console.log(e);
                 },
-                methods: {
-                    changeMood() {
 
-                    }
-                },
-            })
-        </script>
+            },
+        })
+    </script>
 </body>
 
 </html>
