@@ -11,6 +11,8 @@
 
 <body>
     <div id="root">
+        <button @click="addFirst"></button>
+        <button @click="addLast"></button>
         <ul>
             <li v-for="(user,index) in users" :key="index">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
@@ -27,12 +29,16 @@
                         { id: 1, name: 'frank', age: 22 },
                         { id: 2, name: 'mike', age: 21 },
                         { id: 3, name: 'lily', age: 23 }
-                    ]
+                    ],
+                    user4: { id: 4, name: 'x', age: 11 }
                 };
             },
             methods: {
-                methodName() {
-
+                addFirst() {
+                    this.users.unshift(this.user4);
+                },
+                addLast() {
+                    this.users.push(this.user4);
                 },
             },
         })
