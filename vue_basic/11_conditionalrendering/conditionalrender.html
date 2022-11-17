@@ -12,6 +12,18 @@
 <body>
     <div id="root">
         <h2 v-show="true">welcome to {{name}} </h2>
+
+        <button @click="changeN">click</button>
+        <div v-if="n===1">a</div>
+        <div v-else-if="n===2">b</div>
+        <div v-else-if="n===3">c</div>
+        <div v-else="">d</div>
+
+        <template v-if="n===1">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+        </template>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -20,10 +32,13 @@
             data() {
                 return {
                     name: 'home',
+                    n: 0,
                 }
             },
             methods: {
-
+                changeN() {
+                    this.n = (this.n + 1) % 4;
+                }
 
             },
         })
