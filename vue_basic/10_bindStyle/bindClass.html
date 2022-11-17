@@ -45,7 +45,12 @@
             },
             methods: {
                 changeMood(e) {
-                    console.log(e);
+                    if (this.a === 'happy') {
+                        this.a = 'sad';
+                    } else {
+                        this.a = 'happy';
+                    }
+
                 },
 
             },
