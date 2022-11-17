@@ -25,6 +25,11 @@
         .sad {
             background-color: bisque;
         }
+
+        .eke {
+            border-radius: 20%;
+            background-color: bisque;
+        }
     </style>
     <script src="../js/vue.js"></script>
 
@@ -33,6 +38,7 @@
 <body>
     <div id="root">
         <div class="basic" :class="mood" @click="changeMood">text</div>
+        <div class="basic" :class="classArr" @click="changeMood">text</div>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -41,13 +47,13 @@
             data() {
                 return {
                     mood: 'happy',
+                    classArr: ['happy', 'sad', 'normal', 'eke'],
                 }
             },
             methods: {
                 changeMood(e) {
-                    const arr = ['happy', 'sad', 'normal'];
-                    let n = Math.floor(Math.random() * 3);
-                    this.mood = arr[n];
+                    let n = Math.floor(Math.random() * 4);
+                    this.mood = this.classArr[n];
                 },
 
             },
