@@ -32,7 +32,7 @@
 
 <body>
     <div id="root">
-        <div class="basic" :class="a" @click="changeMood">text</div>
+        <div class="basic" :class="mood" @click="changeMood">text</div>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -40,15 +40,15 @@
             el: '#root',
             data() {
                 return {
-                    a: 'happy',
+                    mood: 'happy',
                 }
             },
             methods: {
                 changeMood(e) {
-                    if (this.a === 'happy') {
-                        this.a = 'sad';
+                    if (this.mood === 'happy') {
+                        this.mood = 'sad';
                     } else {
-                        this.a = 'happy';
+                        this.mood = 'happy';
                     }
 
                 },
