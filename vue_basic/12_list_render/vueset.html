@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="(user,index) in tmp_users" :key="user.id">
+                {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    users: [
+                        { id: 1, name: 'frank', age: 22 },
+                        { id: 2, name: 'mike', age: 21 },
+                        { id: 3, name: 'lily', age: 23 },
+                        { id: 5, name: 'json', }
+                    ],
+                    user4: { id: 4, name: 'x', age: 11 },
+                    key_word: '',
+                    sortType: 0
+                };
+            },
+            methods: {
+                addFirst() {
+                    this.users.unshift(this.user4);
+                },
+                addLast() {
+                    this.users.push(this.user4);
+                },
+            },
+            computed: {
+                tmp_users: {
+                    get() {
+                        // console.log(this);
+                        const arr = this.users.filter((u) => {
+                            return u.name.indexOf(this.key_word) >= 0;
+                        });
+                        if (this.sortType) {
+                            arr.sort((u1, u2) => {
+                                return this.sortType === 2 ? u2.age - u1.age : u1.age - u2.age;
+                            })
+                        }
+                        return arr;
+                    },
+                    set(value) {
+
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
