@@ -23,42 +23,6 @@
         </ul>
     </div>
     <script>
-        // Vue.config.productionTip = false;
-        // const vm = new Vue({
-        //     el: '#root',
-        //     data() {
-        //         return {
-        //             users: [
-        //                 { id: 1, name: 'frank', age: 22 },
-        //                 { id: 2, name: 'mike', age: 21 },
-        //                 { id: 3, name: 'lily', age: 23 },
-        //                 { id: 5, name: 'json', age: 13 }
-        //             ],
-        //             tmp_users: [],
-        //             user4: { id: 4, name: 'x', age: 11 },
-        //             key_word: ''
-        //         };
-        //     },
-        //     methods: {
-        //         addFirst() {
-        //             this.users.unshift(this.user4);
-        //         },
-        //         addLast() {
-        //             this.users.push(this.user4);
-        //         },
-        //     },
-        //     watch: {
-        //         key_word: {
-        //             immediate: true,
-        //             handler(val) {
-        //                 console.log(val);
-        //                 this.tmp_users = this.users.filter((u) => {
-        //                     return u.name.indexOf(val) >= 0;
-        //                 })
-        //             },
-        //         }
-        //     },
-        // })
         const vm = new Vue({
             el: '#root',
             data() {
@@ -70,7 +34,7 @@
                         { id: 5, name: 'json', age: 13 }
                     ],
                     user4: { id: 4, name: 'x', age: 11 },
-                    key_word: ''
+                    key_word: '1'
                 };
             },
             methods: {
