@@ -69,9 +69,8 @@
                         { id: 3, name: 'lily', age: 23 },
                         { id: 5, name: 'json', age: 13 }
                     ],
-                    tmp_users: [],
                     user4: { id: 4, name: 'x', age: 11 },
-
+                    key_word: '1'
                 };
             },
             methods: {
@@ -83,10 +82,12 @@
                 },
             },
             computed: {
-                key_word: {
+                tmp_users: {
                     get() {
                         // console.log(this);
-
+                        return this.users.filter((u) => {
+                            return u.name.indexOf(this.key_word) >= 0;
+                        })
                     },
                     set(value) {
 
