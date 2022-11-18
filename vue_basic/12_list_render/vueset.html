@@ -13,7 +13,7 @@
     <div id="root">
         <ul>
             <li v-for="(user,index) in tmp_users" :key="user.id">
-                {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
+                {{index}}-{{user.id}}-{{user.name}}-{{user.age}}-{{user.sex}}
             </li>
         </ul>
     </div>
@@ -26,7 +26,7 @@
                         { id: 1, name: 'frank', age: 22 },
                         { id: 2, name: 'mike', age: 21 },
                         { id: 3, name: 'lily', age: 23 },
-                        { id: 5, name: 'json', }
+                        { id: 5, name: 'json', age: 12 }
                     ],
                     user4: { id: 4, name: 'x', age: 11 },
                     key_word: '',
