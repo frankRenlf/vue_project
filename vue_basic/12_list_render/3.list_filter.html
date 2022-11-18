@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <button @click="addFirst">addFirst</button>
+        <button @click="addLast">addLast</button>
+        <ul>
+            <li v-for="(user,index) in users" :key="user.id">
+                {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    users: [
+                        { id: 1, name: 'frank', age: 22 },
+                        { id: 2, name: 'mike', age: 21 },
+                        { id: 3, name: 'lily', age: 23 },
+                        { id: 5, name: 'json', age: 13 }
+                    ],
+                    user4: { id: 4, name: 'x', age: 11 }
+                };
+            },
+            methods: {
+                addFirst() {
+                    this.users.unshift(this.user4);
+                },
+                addLast() {
+                    this.users.push(this.user4);
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
