@@ -17,7 +17,7 @@
         </br>
         <input type="text" v-model="key_word">
         <ul>
-            <li v-for="(user,index) in users" :key="user.id">
+            <li v-for="(user,index) in tmp_users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
             </li>
         </ul>
@@ -34,6 +34,7 @@
                         { id: 3, name: 'lily', age: 23 },
                         { id: 5, name: 'json', age: 13 }
                     ],
+                    tmp_users: [],
                     user4: { id: 4, name: 'x', age: 11 },
                     key_word: ''
                 };
@@ -50,6 +51,9 @@
                 key_word: {
                     handler(val) {
                         console.log(val);
+                        this.tmp_users = this.users.filter((u) => {
+                            return u.name.indexOf(val) >= 0;
+                        })
                     }
                 }
             }
