@@ -58,7 +58,7 @@
                         });
                         if (this.sortType) {
                             arr.sort((u1, u2) => {
-                                return this.sortType === 1 ? u2.age - u1.age : u1.age - u2.age;
+                                return this.sortType === 2 ? u2.age - u1.age : u1.age - u2.age;
                             })
                         }
                         return arr;
