@@ -49,13 +49,13 @@
             },
             watch: {
                 key_word: {
+                    immediate: true,
                     handler(val) {
                         console.log(val);
                         this.tmp_users = this.users.filter((u) => {
                             return u.name.indexOf(val) >= 0;
                         })
                     },
-                    immediate: true,
                 }
             },
         })
