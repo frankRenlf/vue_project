@@ -54,7 +54,8 @@
                         this.tmp_users = this.users.filter((u) => {
                             return u.name.indexOf(val) >= 0;
                         })
-                    }
+                    },
+                    immediate: true,
                 }
             },
         })
