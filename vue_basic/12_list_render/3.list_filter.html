@@ -13,6 +13,9 @@
     <div id="root">
         <button @click="addFirst">addFirst</button>
         <button @click="addLast">addLast</button>
+        </br>
+        </br>
+        <input type="text" v-model="key_word">
         <ul>
             <li v-for="(user,index) in users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
@@ -31,7 +34,8 @@
                         { id: 3, name: 'lily', age: 23 },
                         { id: 5, name: 'json', age: 13 }
                     ],
-                    user4: { id: 4, name: 'x', age: 11 }
+                    user4: { id: 4, name: 'x', age: 11 },
+                    key_word: ''
                 };
             },
             methods: {
@@ -42,6 +46,13 @@
                     this.users.push(this.user4);
                 },
             },
+            watch: {
+                key_word: {
+                    handler(val) {
+                        console.log(val);
+                    }
+                }
+            }
         })
     </script>
 </body>
