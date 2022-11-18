@@ -16,6 +16,9 @@
         </br>
         </br>
         <input type="text" v-model="key_word">
+        <button @click="sortType=1">up</button>
+        <button @click="sortType=2">down</button>
+        <button @click="sortType=0">origin</button>
         <ul>
             <li v-for="(user,index) in tmp_users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}
@@ -34,7 +37,8 @@
                         { id: 5, name: 'json', age: 13 }
                     ],
                     user4: { id: 4, name: 'x', age: 11 },
-                    key_word: '1'
+                    key_word: '',
+                    sortType: 0
                 };
             },
             methods: {
@@ -49,9 +53,15 @@
                 tmp_users: {
                     get() {
                         // console.log(this);
-                        return this.users.filter((u) => {
+                        const arr = this.users.filter((u) => {
                             return u.name.indexOf(this.key_word) >= 0;
-                        })
+                        });
+                        if (this.sortType) {
+                            arr.sort((u1, u2) => {
+                                return this.sortType === 1 ? u2.age - u1.age : u1.age - u2.age;
+                            })
+                        }
+                        return arr;
                     },
                     set(value) {
 
