@@ -11,12 +11,12 @@
 
 <body>
     <div id="root">
-        <form @submit="demo">
+        <form @submit.prevent="demo">
             account: <input type="text" v-model="account"><br /><br />
             password:<input type="password" v-model="password"><br /><br />
-            male: <input type="radio" name="sex" value="male" v-model="sex">
-            female:<input type="radio" name="sex" value="female" v-model="sex">
-            no comment: <input type="radio" name="sex" value="" v-model="sex"><br /><br />
+            male<input type="radio" name="sex" value="male" v-model="sex">
+            female<input type="radio" name="sex" value="female" v-model="sex">
+            no comment<input type="radio" name="sex" value="" v-model="sex"><br /><br />
             hobby:
             learn<input type="checkbox" name="" v-model="hobby" value="learn">
             read<input type="checkbox" name="" v-model="hobby" value="read">
@@ -56,6 +56,9 @@
         },
         methods: {
             submit() {
+                console.log(this);
+            },
+            demo() {
                 console.log(this);
             }
         },
