@@ -12,18 +12,18 @@
 <body>
     <div id="root">
         <form @submit.prevent="demo">
-            account: <input type="text" v-model="account"><br /><br />
-            password:<input type="password" v-model="password"><br /><br />
-            male<input type="radio" name="sex" value="male" v-model="sex">
-            female<input type="radio" name="sex" value="female" v-model="sex">
-            no comment<input type="radio" name="sex" value="" v-model="sex"><br /><br />
+            account: <input type="text" v-model="user_info.account"><br /><br />
+            password:<input type="password" v-model="user_info.password"><br /><br />
+            male<input type="radio" name="sex" value="male" v-model="user_info.sex">
+            female<input type="radio" name="sex" value="female" v-model="user_info.sex">
+            no comment<input type="radio" name="sex" value="" v-model="user_info.sex"><br /><br />
             hobby:
-            learn<input type="checkbox" name="" v-model="hobby" value="learn">
-            read<input type="checkbox" name="" v-model="hobby" value="read">
-            write<input type="checkbox" name="" v-model="hobby" value="write">
+            learn<input type="checkbox" name="" v-model="user_info.hobby" value="learn">
+            read<input type="checkbox" name="" v-model="user_info.hobby" value="read">
+            write<input type="checkbox" name="" v-model="user_info.hobby" value="write">
             <br /><br />
             location:
-            <select v-model="city">
+            <select v-model="user_info.city">
                 <option value="">select address</option>
                 <option value="shang hai">shang hai</option>
                 <option value="hang zhou">hang zhou</option>
@@ -31,11 +31,11 @@
             </select>
             <br /><br />
             description:<br />
-            <textarea v-model="desc"></textarea>
+            <textarea v-model="user_info.desc"></textarea>
             <br /><br />
-            <input type="checkbox" v-model="agreement">accept
+            <input type="checkbox" v-model="user_info.agreement">accept
             <br /><br />
-            <button @click="submit">submit</button>
+            <button>submit</button>
         </form>
     </div>
 </body>
@@ -45,21 +45,23 @@
         el: '#root',
         data() {
             return {
-                account: '',
-                password: '',
-                sex: '',
-                hobby: [],
-                city: '',
-                desc: 'enter',
-                agreement: '',
+                user_info: {
+                    account: '',
+                    password: '',
+                    sex: '',
+                    hobby: [],
+                    city: '',
+                    desc: 'enter',
+                    agreement: '',
+                }
             }
         },
         methods: {
-            submit() {
-                console.log(this);
-            },
+            // submit() {
+            //     console.log(this);
+            // },
             demo() {
-                console.log(this);
+                console.log(JSON.stringify(this.user_info));
             }
         },
     })
