@@ -11,6 +11,7 @@
 
 <body>
     <div id="root">
+        <button @click="addFirst">add user</button>
         <ul>
             <li v-for="(user,index) in tmp_users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}-{{user.sex}}
