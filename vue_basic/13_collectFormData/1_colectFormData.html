@@ -35,7 +35,7 @@
             <br /><br />
             <input type="checkbox" v-model="agreement">accept
             <br /><br />
-            <button>submit</button>
+            <button @click="submit">submit</button>
         </form>
     </div>
 </body>
@@ -53,7 +53,12 @@
                 desc: 'enter',
                 agreement: '',
             }
-        }
+        },
+        methods: {
+            submit() {
+                console.log(this);
+            }
+        },
     })
 </script>
 
