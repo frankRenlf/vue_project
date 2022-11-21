@@ -12,7 +12,7 @@
 <body>
     <div id="root">
         <form @submit.prevent="demo">
-            account: <input type="text" v-model="user_info.account"><br /><br />
+            account: <input type="text" v-model.trim="user_info.account"><br /><br />
             password:<input type="password" v-model="user_info.password"><br /><br />
             male<input type="radio" name="sex" value="male" v-model="user_info.sex">
             female<input type="radio" name="sex" value="female" v-model="user_info.sex">
@@ -32,7 +32,7 @@
             </select>
             <br /><br />
             description:<br />
-            <textarea v-model="user_info.desc"></textarea>
+            <textarea v-model.lazy="user_info.desc"></textarea>
             <br /><br />
             <input type="checkbox" v-model="user_info.agreement">accept
             <br /><br />
