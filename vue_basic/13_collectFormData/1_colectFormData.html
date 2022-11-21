@@ -17,7 +17,7 @@
             male<input type="radio" name="sex" value="male" v-model="user_info.sex">
             female<input type="radio" name="sex" value="female" v-model="user_info.sex">
             no comment<input type="radio" name="sex" value="" v-model="user_info.sex"><br /><br />
-            age:<input type="text" v-model="user_info.age"><br /><br />
+            age:<input type="number" v-model.number="user_info.age"><br /><br />
             hobby:
             learn<input type="checkbox" name="" v-model="user_info.hobby" value="learn">
             read<input type="checkbox" name="" v-model="user_info.hobby" value="read">
