@@ -12,8 +12,8 @@
 <body>
     <div id="root">
         <form>
-            account: <input type="text"><br /><br />
-            password:<input type="password"><br /><br />
+            account: <input type="text" v-model="account"><br /><br />
+            password:<input type="password" v-model="password"><br /><br />
             male: <input type="radio" name="sex">
             female:<input type="radio" name="sex"><br /><br />
             hobby:
@@ -40,7 +40,17 @@
 </body>
 <script>
     Vue.config.productionTip = false;
+    vm = new Vue({
+        el: '#root',
+        data() {
+            return {
 
+                account: '',
+                password: '',
+
+            }
+        }
+    })
 </script>
 
 </html>
