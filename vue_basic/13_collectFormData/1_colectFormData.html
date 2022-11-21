@@ -33,7 +33,7 @@
             description:<br />
             <textarea v-model="desc"></textarea>
             <br /><br />
-            <input type="checkbox">accept
+            <input type="checkbox" v-model="agreement">accept
             <br /><br />
             <button>submit</button>
         </form>
@@ -50,7 +50,8 @@
                 sex: '',
                 hobby: [],
                 city: '',
-                desc: '',
+                desc: 'enter',
+                agreement: '',
             }
         }
     })
