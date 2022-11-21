@@ -11,9 +11,9 @@
 
 <body>
     <div id="root">
-        <button @click="addFirst">add user</button>
+        <button @click="addN">add user</button>
         <ul>
-            <li v-for="(user,index) in tmp_users" :key="user.id">
+            <li v-for="(user,index) in users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}-{{user.sex}}
             </li>
         </ul>
@@ -41,6 +41,10 @@
                 };
             },
             methods: {
+                addN() {
+                    // Vue.set(this.users, 4, this.user4);
+                    this.users.unshift(this.user4);
+                },
                 addFirst() {
                     this.users.unshift(this.user4);
                 },
