@@ -12,9 +12,16 @@
 <body>
     <div id="root">
         <button @click="addN">add user</button>
+        <button @click="addH">add hobby</button>
+        <button @click="mh">modify hobby</button>
         <ul>
             <li v-for="(user,index) in users" :key="user.id">
                 {{index}}-{{user.id}}-{{user.name}}-{{user.age}}-{{user.sex}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(hobby,index) in hobbies" :key="">
+                {{hobby}}
             </li>
         </ul>
     </div>
@@ -23,6 +30,7 @@
             el: '#root',
             data() {
                 return {
+                    hobbies: ['jump', 'drive', 'hike'],
                     users: [
                         { id: 1, name: 'frank', age: 22 },
                         { id: 2, name: 'mike', age: 21 },
@@ -41,6 +49,14 @@
                 };
             },
             methods: {
+                addH() {
+                    this.hobbies.push('sing');
+                },
+                mh() {
+
+                    // this.hobbies.splice(0, 1, 'camp');
+                    Vue.set(this.hobbies, 0, 'camp2')
+                },
                 addN() {
                     // Vue.set(this.users, 4, this.user4);
                     this.users.unshift(this.user4);
