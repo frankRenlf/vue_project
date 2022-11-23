@@ -33,10 +33,11 @@
             }
         },
         directives: {
-            big(element, b, c) {
+            big(element, binding, c) {
+                element.innerText = binding.value
                 console.log(element)
-                console.log(b)
-                console.log(c)
+                console.log(binding.value)
+                // console.log(c)
             }
         }
     })
