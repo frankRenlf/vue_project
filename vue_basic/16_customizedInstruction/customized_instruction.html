@@ -6,10 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/vue.js"></script>
 </head>
 
 <body>
-
+    <div id="root">
+        <button @click="change">n++</button>
+        <div><span v-text="n"></span></div>
+        <div><span v-big="n"></span></div>
+    </div>
 </body>
+<script>
+    Vue.config.productionTip = false;
+    vm = new Vue({
+        el: '#root',
+        data() {
+            return {
+                n: 0,
+                name: 'frank',
+                str: '<h3>h3</h3>'
+            }
+        },
+        methods: {
+            change() {
+                this.n++;
+            }
+        },
+        directives: {
+            big: {
+
+            }
+        }
+    })
+</script>
 
 </html>
