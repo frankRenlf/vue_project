@@ -36,7 +36,8 @@
         },
         filters: {
             timeFormater(val) {
-                console.log('@')
+                // console.log('@')
+                return dayjs(val).format('YYYY-MM-DD HH:mm:ss');
             }
         }
     })
