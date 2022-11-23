@@ -11,7 +11,9 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <h3>{{fmtTime}} </h3>
+    </div>
 </body>
 <script>
     Vue.config.productionTip = false;
@@ -19,7 +21,7 @@
         el: '#root',
         data() {
             return {
-
+                time: Date.now(),
             }
         },
         methods: {
@@ -27,7 +29,8 @@
         },
         computed: {
             fmtTime() {
-                return dayjs();
+                return dayjs(this.time)
+                    .format('YYYY-MM-DD HH:mm:ss');
             }
         }
     })
