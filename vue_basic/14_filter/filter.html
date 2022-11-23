@@ -15,6 +15,7 @@
         <h3>{{fmtTime}} </h3>
         <h3>{{time | timeFormater()}} </h3>
         <h3>{{time | timeFormater('YYYY_MM_DD')}} </h3>
+        <h3>{{time | timeFormater('YYYY_MM_DD') | mySlice()}} </h3>
     </div>
 </body>
 <script>
@@ -39,6 +40,10 @@
             timeFormater(val, fmt = 'YYYY-MM-DD HH:mm:ss') {
                 // console.log('@')
                 return dayjs(val).format(fmt);
+            },
+            mySlice(val) {
+                // console.log('@')
+                return val.slice(0, 4);
             }
         }
     })
