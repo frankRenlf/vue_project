@@ -14,7 +14,7 @@
     <div id="root" :a="n">
         <h2>{{n}} </h2>
         <button @click="n++">n+1</button>
-        <button @click="bye"></button>
+        <button @click="bye">bye</button>
     </div>
 </body>
 <script>
@@ -58,7 +58,9 @@
         updated() {
             console.log('updated');
         },
-
+        beforeDestroy() {
+            console.log('beforeDestroy');
+        },
     })
 </script>
 
