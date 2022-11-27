@@ -15,7 +15,7 @@
         <div><span v-text="n"></span></div>
         <div><span v-big="n"></span></div>
         <hr />
-        <input type="text" v-fbind:value="n" autofocus>
+        <input type="text" id="f" v-fbind="n">
     </div>
 </body>
 <script>
@@ -41,7 +41,9 @@
                 // console.log(binding)
             },
             fbind(element, binding) {
+                console.log(element);
                 element.value = binding.value;
+                element.focus();
             }
         }
     })
