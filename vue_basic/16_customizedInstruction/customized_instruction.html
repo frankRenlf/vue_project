@@ -15,7 +15,7 @@
         <div><span v-text="n"></span></div>
         <div><span v-big="n"></span></div>
         <hr />
-        <input type="text">
+        <input type="text" v-fbind:value="n" autofocus>
     </div>
 </body>
 <script>
@@ -36,12 +36,12 @@
         },
         directives: {
             big(element, binding, c) {
-                // element.innerText = binding.value
+                element.innerText = binding.value
                 // console.log(element)
                 // console.log(binding)
             },
             fbind(element, binding) {
-
+                element.value = binding.value;
             }
         }
     })
