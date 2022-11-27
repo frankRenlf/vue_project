@@ -61,6 +61,10 @@
         beforeDestroy() {
             console.log('beforeDestroy');
         },
+        destroyed() {
+            console.log('destroyed');
+            console.log(this)
+        },
     })
 </script>
 
