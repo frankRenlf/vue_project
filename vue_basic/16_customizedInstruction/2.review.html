@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <button @click="change">n++</button>
+        <div><span v-text="n"></span></div>
+        <div><span v-big="n"></span></div>
+        <hr />
+        <input type="text" id="f" v-fbind="n">
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    vm = new Vue({
+        el: '#root',
+        data() {
+            return {
+                n: 0,
+                name: 'frank',
+                str: '<h3>h3</h3>'
+            }
+        },
+        methods: {
+            change() {
+                this.n++;
+            }
+        },
+        directives: {
+            big(element, binding, c) {
+                element.innerText = binding.value
+                // console.log(element)
+                // console.log(binding)
+            },
+            fbind: {
+                //绑定时
+                bind(element, binding) {
+                    element.value = binding.value;
+                },
+                //元素被插入页面时
+                inserted(element, binding) {
+                    element.focus();
+                },
+                //模板重新解析时
+                update(element, binding) {
+                    element.value = binding.value;
+                    element.focus();
+                }
+            }
+            // fbind(element, binding) {
+            //     console.log(element);
+            //     element.value = binding.value;
+            //     element.focus();
+            // }
+        }
+    })
+</script>
+
+</html>
