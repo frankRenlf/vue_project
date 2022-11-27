@@ -13,6 +13,7 @@
 <body>
     <div id="root" :a="n">
         <h2>{{n}} </h2>
+        <button @click="n++">n+1</button>
     </div>
 </body>
 <script>
@@ -49,7 +50,9 @@
             console.log('mounted');
             // debugger;
         },
-
+        beforeUpdate() {
+            console.log('beforeUpdate');
+        },
 
     })
 </script>
