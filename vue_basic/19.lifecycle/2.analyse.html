@@ -14,6 +14,7 @@
     <div id="root" :a="n">
         <h2>{{n}} </h2>
         <button @click="n++">n+1</button>
+        <button @click="bye"></button>
     </div>
 </body>
 <script>
@@ -27,8 +28,8 @@
             }
         },
         methods: {
-            smooth() {
-
+            bye() {
+                this.$destroy();
             }
         },
         beforeCreate() {
