@@ -29,20 +29,26 @@
 
             }
         },
-        mounted() {
-            console.log('mounted');
-            debugger;
-        },
         beforeCreate() {
             console.log(this);
             console.log('beforeCreate');
-            debugger;
+            // debugger;
         },
         created() {
             console.log(this);
             console.log('created');
+            // debugger;
+        },
+        beforeMount() {
+            console.log(this);
+            console.log('beforeMount');
+            // debugger;
+        },
+        mounted() {
+            console.log('mounted');
             debugger;
         },
+
 
     })
 </script>
