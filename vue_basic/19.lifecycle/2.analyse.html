@@ -13,7 +13,7 @@
 <body>
     <div id="root" :a="n">
         <h2>{{n}} </h2>
-        <button @click="n++">n+1</button>
+        <button @click="add">n+1</button>
         <button @click="bye">bye</button>
     </div>
 </body>
@@ -28,6 +28,10 @@
             }
         },
         methods: {
+            add() {
+                console.log('add')
+                this.n++
+            },
             bye() {
                 this.$destroy();
             }
@@ -53,7 +57,7 @@
         },
         beforeUpdate() {
             console.log('beforeUpdate');
-            debugger
+            // debugger
         },
         updated() {
             console.log('updated');
@@ -63,7 +67,7 @@
         },
         destroyed() {
             console.log('destroyed');
-            console.log(this)
+            // console.log(this)
         },
     })
 </script>
