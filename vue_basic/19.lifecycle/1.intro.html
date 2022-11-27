@@ -21,17 +21,20 @@
         el: '#root',
         data() {
             return {
-                opacity_val: 0.5,
+                opacity_val: 1,
             }
         },
         methods: {
             smooth() {
-                setInterval(() => {
-                    this.opacity_val -= 0.01
-                    if (this.opacity_val <= 0) this.opacity_val = 1
-                }, 16)
+
             }
         },
+        mounted() {
+            // setInterval(() => {
+            //     this.opacity_val -= 0.01
+            //     if (this.opacity_val <= 0) this.opacity_val = 1
+            // }, 16)
+        }
 
     })
 </script>
