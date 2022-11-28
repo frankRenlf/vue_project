@@ -74,11 +74,14 @@
         //     console.log('updated');
         // },
         beforeDestroy() {
+            clearInterval(this.timer);
             console.log('beforeDestroy');
+
         },
         destroyed() {
+            // debugger;
             console.log('destroyed');
-            // console.log(this)
+            // console.log(this.n)
         },
     })
 </script>
