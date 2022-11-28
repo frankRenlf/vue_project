@@ -15,6 +15,7 @@
         <h2>{{n}} </h2>
         <button @click="add">n+1</button>
         <button @click="bye">bye</button>
+        <button @click="stop">stop</button>
         <h2 :style="{opacity}">welcome</h2>
     </div>
 </body>
@@ -35,6 +36,9 @@
                 this.n++
             },
             bye() {
+                this.$destroy();
+            },
+            stop() {
                 this.$destroy();
             }
         },
