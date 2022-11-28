@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/dayjs.min.js"></script>
+</head>
+
+<body>
+    <div id="root" :a="n">
+        <h2>{{n}} </h2>
+        <button @click="add">n+1</button>
+        <button @click="bye">bye</button>
+        <h2 :style="{opacity}">welcome</h2>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        el: '#root',
+        // template:,
+        data() {
+            return {
+                n: 1,
+                opacity: 1,
+            }
+        },
+        methods: {
+            add() {
+                console.log('add')
+                this.n++
+            },
+            bye() {
+                this.$destroy();
+            }
+        },
+        beforeCreate() {
+            // console.log(this);
+            console.log('beforeCreate');
+            // debugger;
+        },
+        created() {
+            // console.log(this);
+            console.log('created');
+            // debugger;
+        },
+        beforeMount() {
+            // console.log(this);
+            console.log('beforeMount');
+            // debugger;
+        },
+        mounted() {
+            console.log('mounted');
+            // debugger;
+            setInterval(() => {
+                this.opacity -= 0.01;
+                if (this.opacity <= 0) this.opacity = 1
+            }, 16)
+        },
+        // beforeUpdate() {
+        //     console.log('beforeUpdate');
+        //     // debugger
+        // },
+        // updated() {
+        //     console.log('updated');
+        // },
+        beforeDestroy() {
+            console.log('beforeDestroy');
+        },
+        destroyed() {
+            console.log('destroyed');
+            // console.log(this)
+        },
+    })
+</script>
+
+</html>
