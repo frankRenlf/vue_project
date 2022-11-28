@@ -28,6 +28,7 @@
             return {
                 n: 1,
                 opacity: 1,
+                timer: 0,
             }
         },
         methods: {
@@ -39,7 +40,7 @@
                 this.$destroy();
             },
             stop() {
-                clearInterval()
+                clearInterval(this.timer)
             }
         },
         beforeCreate() {
@@ -60,7 +61,7 @@
         mounted() {
             console.log('mounted');
             // debugger;
-            setInterval(() => {
+            this.timer = setInterval(() => {
                 this.opacity -= 0.01;
                 if (this.opacity <= 0) this.opacity = 1
             }, 16)
