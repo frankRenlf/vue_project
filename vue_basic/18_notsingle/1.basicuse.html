@@ -11,11 +11,17 @@
 
 <body>
     <div id="root">
-        <h2>{{school.name}}</h2>
+
     </div>
 </body>
 <script>
     const student = Vue.extend({
+        template: `
+        <div>
+            <h2>{{name}}</h2>
+            <h2>{{age}}</h2>
+        </div>
+        `,
         data() {
             return {
                 name: 'frank',
@@ -24,6 +30,12 @@
         }
     })
     const school = Vue.extend({
+        template: `
+        <div>
+            <h2>{{name}}</h2>
+            <h2>{{address}}</h2>
+        </div>
+        `,
         data() {
             return {
                 name: 'swjtu',
