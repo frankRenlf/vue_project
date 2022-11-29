@@ -11,7 +11,7 @@
 
 <body>
     <div id="root">
-        <School></School>
+        <school></school>
         <hr />
         <student-one></student-one>
         <hr />
@@ -69,12 +69,12 @@
             }
         }
     })
-    // Vue.component('student2', student2)
+    Vue.component('student2', student2)
 
     const vm = new Vue({
         el: '#root',
         components: {
-            'School': school,
+            'school': school,
             'student-one': student1,
         }
     })
