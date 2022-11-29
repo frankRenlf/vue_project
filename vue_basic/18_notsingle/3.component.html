@@ -12,8 +12,8 @@
 <body>
     <div id="root">
         <school></school>
-        <hr />
-        <student-one></student-one>
+
+
         <hr />
         <student2></student2>
     </div>
@@ -39,6 +39,8 @@
             <h2>{{name}}</h2>
             <h2>{{address}}</h2>
             <button @click="pop">click</button>
+            <hr />
+            <student-one></student-one>
         </div>
         `,
         data() {
@@ -46,6 +48,9 @@
                 name: 'swjtu',
                 address: 'cd',
             }
+        },
+        components: {
+            'student-one': student1,
         },
         methods: {
             pop() {
@@ -75,7 +80,6 @@
         el: '#root',
         components: {
             'school': school,
-            'student-one': student1,
         }
     })
 
