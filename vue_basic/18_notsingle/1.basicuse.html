@@ -11,7 +11,9 @@
 
 <body>
     <div id="root">
-
+        <student></student>
+        <hr />
+        <school></school>
     </div>
 </body>
 <script>
@@ -34,6 +36,7 @@
         <div>
             <h2>{{name}}</h2>
             <h2>{{address}}</h2>
+            <button @click="pop">click</button>
         </div>
         `,
         data() {
@@ -41,7 +44,12 @@
                 name: 'swjtu',
                 address: 'cd',
             }
-        }
+        },
+        methods: {
+            pop() {
+                alert(this.name)
+            }
+        },
     })
     Vue.config.productionTip = false
     const vm = new Vue({
