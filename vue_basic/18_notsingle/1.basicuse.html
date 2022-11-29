@@ -15,14 +15,28 @@
     </div>
 </body>
 <script>
+    const student = Vue.extend({
+        data() {
+            return {
+                name: 'frank',
+                age: 22,
+            }
+        }
+    })
+    const school = Vue.extend({
+        data() {
+            return {
+                name: 'swjtu',
+                address: 'cd',
+            }
+        }
+    })
     Vue.config.productionTip = false
     const vm = new Vue({
         el: '#root',
-        data() {
-            return {
+        components: {
 
-            }
-        },
+        }
     })
 </script>
 
