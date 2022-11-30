@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  name: "school",
+  name: "student",
   data() {
     return {
-      name: "swjtu",
-      age: 122,
-      address: "cd",
+      name: "frank",
+      age: 22,
+      address: "hz",
     };
   },
   methods: {
