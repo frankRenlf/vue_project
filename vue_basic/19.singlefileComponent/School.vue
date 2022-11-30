@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "school",
+  name: "School",
   data() {
     return {
       name: "swjtu",
