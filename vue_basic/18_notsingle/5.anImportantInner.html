@@ -74,7 +74,7 @@
     })
     Vue.config.productionTip = false
 
-    console.log('school', school)
+    // console.log('school', school)
     // Vue.component('student2', student2)
     const app = {
         template: `
@@ -98,6 +98,15 @@
             'app': app,
         }
     })
+
+    function demo() {
+        this.a = 2
+        this.c = 3
+    }
+    const d = new demo()
+    console.log(demo.prototype)
+    console.log(d.__proto__)
+
 
 </script>
 
