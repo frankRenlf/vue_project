@@ -1,14 +1,16 @@
 <template>
-  <div class="demo">
+  <div>
     <h2>{{ name }}</h2>
     <h2>{{ age }}</h2>
     <button @click="showAddress">click</button>
+    <hr />
+    <img src="../assets/logo.png" alt="" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "Student",
+  name: "StudentOne",
   data() {
     return {
       name: "frank",
@@ -27,7 +29,7 @@ export default {
 
 
 <style>
-.demo {
+/* .demo {
   background-color: orange;
-}
+} */
 </style>

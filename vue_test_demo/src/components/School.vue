@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div>
     <h2>{{ name }}</h2>
     <h2>{{ age }}</h2>
     <button @click="showAddress">click</button>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "School",
+  name: "MySchool",
   data() {
     return {
       name: "swjtu",
@@ -27,7 +27,7 @@ export default {
 
 
 <style>
-.demo {
+/* .demo {
   background-color: orange;
-}
+} */
 </style>
