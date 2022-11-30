@@ -76,6 +76,7 @@
 
     // console.log('school', school)
     // Vue.component('student2', student2)
+
     const app = {
         template: `
         <div>
@@ -106,7 +107,7 @@
     const d = new demo()
     console.log(demo.prototype)
     console.log(d.__proto__)
-
+    console.log(school.prototype.__proto__ === vm.__proto__)
 
 </script>
 
