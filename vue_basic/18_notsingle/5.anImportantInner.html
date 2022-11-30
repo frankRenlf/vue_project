@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <app></app>
+        <hr />
+    </div>
+</body>
+<script>
+    const student1 = Vue.extend({
+        template: `
+        <div>
+            <h2>{{name}}</h2>
+            <h2>{{age}}</h2>
+        </div>
+        `,
+        data() {
+            return {
+                name: 'frank',
+                age: 22,
+            }
+        }
+    })
+    const student2 = Vue.extend({
+        template: `
+        <div>
+            <h2>{{name}}</h2>
+            <h2>{{age}}</h2>
+        </div>
+        `,
+        data() {
+            return {
+                name: 'lily',
+                age: 21,
+            }
+        }
+    })
+    const school = Vue.extend({
+        template: `
+        <div>
+            <h2>{{name}}</h2>
+            <h2>{{address}}</h2>
+            <button @click="pop">click</button>
+            <hr />
+            <student-one></student-one>
+            <student-two></student-two>
+        </div>
+        `,
+        data() {
+            return {
+                name: 'swjtu',
+                address: 'cd',
+            }
+        },
+        components: {
+            'student-one': student1,
+            'student-two': student2,
+        },
+        methods: {
+            pop() {
+                alert(this.name)
+                console.log(this)
+            }
+        },
+    })
+    Vue.config.productionTip = false
+
+    console.log('school', school)
+    // Vue.component('student2', student2)
+    const app = {
+        template: `
+        <div>
+            <school></school>
+        </div>
+        `,
+        data() {
+            return {
+
+            }
+        },
+        components: {
+            'school': school,
+        }
+    }
+    const vm = new Vue({
+        el: '#root',
+
+        components: {
+            'app': app,
+        }
+    })
+
+</script>
+
+</html>
