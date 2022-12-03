@@ -11,9 +11,10 @@ export default {
   name: "StudentInfo",
   data() {
     return {
-      name: "frank",
-      gender: "male",
-      address: "hz",
+      identify: "student",
+      // name: "frank",
+      // gender: "male",
+      // address: "hz",
     };
   },
 };
