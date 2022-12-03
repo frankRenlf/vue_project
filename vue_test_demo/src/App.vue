@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     showDOM() {
-      console.log(document.querySelector("#info"));
+      console.log();
     },
   },
 };
