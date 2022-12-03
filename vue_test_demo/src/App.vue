@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 v-text="msg" id="info"></h2>
+    <h2 v-text="msg" ref="info"></h2>
     <button @click="showDOM">click</button>
     <ElementOne />
     <!-- <ElementOne /> -->
