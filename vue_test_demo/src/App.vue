@@ -11,6 +11,9 @@
 import ElementOne from "./components/ElementOne.vue";
 export default {
   name: "App",
+  components: {
+    ElementOne,
+  },
   data() {
     return {
       msg: "welcome to learn vue",
@@ -18,9 +21,6 @@ export default {
   },
   methods: {
     showDOM() {},
-  },
-  components: {
-    ElementOne,
   },
 };
 </script>
