@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 v-text="msg"></h2>
+    <h2 v-text="msg" id="info"></h2>
     <button @click="showDOM">click</button>
     <ElementOne />
     <!-- <ElementOne /> -->
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     showDOM() {
-      console.log();
+      console.log(document.querySelector("#info"));
     },
   },
 };
