@@ -20,8 +20,17 @@ export default {
     };
   },
   // props: ["name", "gender", "address", "age"],
+  // props: {
+  //   name: String,
+  //   gender: String,
+  //   address: String,
+  //   age: Number,
+  // },
   props: {
-    name: String,
+    name: {
+      type: String,
+      required: true,
+    },
     gender: String,
     address: String,
     age: Number,
