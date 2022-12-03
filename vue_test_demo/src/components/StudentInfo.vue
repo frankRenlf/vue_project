@@ -5,6 +5,11 @@
     <h2>{{ address }}</h2>
     <h2>{{ cur_age }}</h2>
     <button @click="cur_age++">age++</button>
+    <ul>
+      <li v-for="(user, a) in users" :key="user.id">
+        {{ user.id }}-{{ user.name }}-{{ a }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -19,6 +24,11 @@ export default {
       // gender: "male",
       // address: "hz",
       cur_age: this.age,
+      users: [
+        { id: 1, name: "a" },
+        { id: 2, name: "b" },
+        { id: 3, name: "c" },
+      ],
     };
   },
   // props: ["name", "gender", "address", "age"],
