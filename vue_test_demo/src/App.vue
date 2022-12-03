@@ -2,7 +2,7 @@
   <div>
     <h2 v-text="msg" ref="info"></h2>
     <button @click="showDOM">click</button>
-    <ElementOne />
+    <ElementOne ref="eo" />
     <!-- <ElementOne /> -->
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     showDOM() {
-      console.log();
+      console.log(this.$refs.eo);
     },
   },
 };
