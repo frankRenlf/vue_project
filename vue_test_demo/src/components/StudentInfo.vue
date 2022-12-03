@@ -3,7 +3,8 @@
     <h2>{{ name }}</h2>
     <h2>{{ gender }}</h2>
     <h2>{{ address }}</h2>
-    <h2>{{ age }}</h2>
+    <h2>{{ cur_age }}</h2>
+    <button @click="cur_age++">age++</button>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ export default {
       // name: "frank",
       // gender: "male",
       // address: "hz",
+      cur_age: this.age,
     };
   },
   // props: ["name", "gender", "address", "age"],
