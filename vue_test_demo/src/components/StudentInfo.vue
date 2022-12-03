@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>{{ name }}</h2>
+    <h2>{{ gender }}</h2>
     <h2>{{ address }}</h2>
   </div>
 </template>
@@ -11,6 +12,7 @@ export default {
   data() {
     return {
       name: "frank",
+      gender: "male",
       address: "hz",
     };
   },
