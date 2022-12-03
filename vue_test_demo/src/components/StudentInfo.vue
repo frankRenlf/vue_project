@@ -3,6 +3,7 @@
     <h2>{{ name }}</h2>
     <h2>{{ gender }}</h2>
     <h2>{{ address }}</h2>
+    <h2>{{ age }}</h2>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
       // address: "hz",
     };
   },
-  props: ["name", "gender", "address"],
+  props: ["name", "gender", "address", "age"],
 };
 </script>
 
