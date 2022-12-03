@@ -1,8 +1,8 @@
 <template>
   <div>
+    <h2 v-text="msg"></h2>
     <ElementOne />
     <!-- <ElementOne /> -->
-    <h2></h2>
   </div>
 </template>
 
@@ -10,6 +10,11 @@
 import ElementOne from "./components/ElementOne.vue";
 export default {
   name: "App",
+  data() {
+    return {
+      msg: "welcome to learn vue",
+    };
+  },
   components: {
     ElementOne,
   },
