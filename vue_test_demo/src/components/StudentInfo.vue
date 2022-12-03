@@ -10,6 +10,7 @@
 export default {
   name: "StudentInfo",
   data() {
+    console.log(this);
     return {
       identify: "student",
       // name: "frank",
