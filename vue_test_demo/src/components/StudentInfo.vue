@@ -11,7 +11,7 @@
 export default {
   name: "StudentInfo",
   data() {
-    console.log(this);
+    // console.log(this);
     return {
       identify: "student",
       // name: "frank",
@@ -19,7 +19,13 @@ export default {
       // address: "hz",
     };
   },
-  props: ["name", "gender", "address", "age"],
+  // props: ["name", "gender", "address", "age"],
+  props: {
+    name: String,
+    gender: String,
+    address: String,
+    age: Number,
+  },
 };
 </script>
 
