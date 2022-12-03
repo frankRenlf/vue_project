@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 v-text="msg"></h2>
-    <button @click="show">click</button>
+    <button @click="showDOM">click</button>
     <ElementOne />
     <!-- <ElementOne /> -->
   </div>
@@ -15,6 +15,9 @@ export default {
     return {
       msg: "welcome to learn vue",
     };
+  },
+  methods: {
+    showDOM() {},
   },
   components: {
     ElementOne,
