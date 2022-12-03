@@ -17,6 +17,7 @@ export default {
       // address: "hz",
     };
   },
+  props: ["name", "gender", "address"],
 };
 </script>
 

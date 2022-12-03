@@ -2,7 +2,7 @@
   <div>
     <h2 v-text="msg" ref="info"></h2>
     <button @click="showDOM">click</button>
-    <StudentInfo ref="eo" />
+    <StudentInfo name="frank" gender="male" address="hz" ref="eo" />
     <!-- <ElementOne /> -->
   </div>
 </template>
