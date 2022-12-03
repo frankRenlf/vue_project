@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2 v-text="msg"></h2>
+    <button @click="show">click</button>
     <ElementOne />
     <!-- <ElementOne /> -->
   </div>
