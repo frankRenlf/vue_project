@@ -20,7 +20,9 @@ export default {
     };
   },
   methods: {
-    showDOM() {},
+    showDOM() {
+      console.log();
+    },
   },
 };
 </script>
