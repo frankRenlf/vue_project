@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>{{ cur_name }}</h2>
-    <h2>{{ cur_gender }}</h2>
-    <h2>{{ cur_address }}</h2>
+    <h2>{{ name }}</h2>
+    <h2>{{ gender }}</h2>
+    <h2>{{ address }}</h2>
     <h2>{{ cur_age }}</h2>
     <button @click="cur_age++">age++</button>
     <ul>
@@ -20,9 +20,9 @@ export default {
     // console.log(this);
     return {
       identify: "student",
-      cur_name: this.name,
-      cur_gender: this.gender,
-      cur_address: this.address,
+      // name: "frank",
+      // gender: "male",
+      // address: "hz",
       cur_age: this.age,
       users: [
         { id: 1, name: "a" },
