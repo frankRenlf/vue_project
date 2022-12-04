@@ -1,7 +1,6 @@
 <template>
   <div>
     <h2 v-text="msg" ref="info"></h2>
-    <h2>{{ msg | mySlice }}</h2>
     <button @click="showDOM">click</button>
     <hr />
     <SchoolInfo />

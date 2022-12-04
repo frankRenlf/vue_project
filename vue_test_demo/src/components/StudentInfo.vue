@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo">
     <h2>{{ name }}</h2>
     <h2>{{ age }}</h2>
     <button @click="add">age++</button>
@@ -23,5 +23,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.demo {
+  background-color: orange;
+}
 </style>
