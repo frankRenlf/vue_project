@@ -30,6 +30,8 @@ li label {
   cursor: pointer;
 }
 
+
+
 li label li input {
   vertical-align: middle;
   margin-right: 6px;

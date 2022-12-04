@@ -21,7 +21,7 @@ export default {
   margin-left: 0;
   border: 1px solid #ddd;
   border-radius: 2px;
-  padding: 0px;
+  padding: 2px;
 }
 
 .todo-empty {
