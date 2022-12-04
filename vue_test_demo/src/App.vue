@@ -1,34 +1,20 @@
 <template>
-  <div id="root">
-    <div class="todo-container">
-      <div class="todo-wrap">
-        <HeaderElement :addTodo="addTodo"/>
-        <ListElement
-            :todos="todos"
-            :checkTodo="checkTodo"
-            :deleteTodo="deleteTodo"
-        />
-        <FooterElement
-            :todos="todos"
-            :checkAllTodo="checkAllTodo"
-            :clearAllDoneTodo="clearAllDoneTodo"
-        />
-      </div>
-    </div>
-  </div>
+<div>
+  {{msg}}
+</div>
 </template>
 
 <script>
-import HeaderElement from "@/components/HeaderElement.Vue";
-import ListElement from "@/components/ListElement.Vue";
-import FooterElement from "@/components/FooterElement.Vue";
+// import HeaderElement from "@/components/HeaderElement.Vue";
+// import ListElement from "@/components/ListElement.Vue";
+// import FooterElement from "@/components/FooterElement.Vue";
 
 export default {
   name: "App",
   components: {
-    HeaderElement,
-    ListElement,
-    FooterElement,
+    // HeaderElement,
+    // ListElement,
+    // FooterElement,
   },
   data() {
     return {
