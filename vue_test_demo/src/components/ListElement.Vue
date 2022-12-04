@@ -1,9 +1,17 @@
 <template>
-  <div></div>
+  <ul class="todo-main">
+    <ItemElement
+        v-for="todoObj in todos"
+        :key="todoObj.id"
+        :todo="todoObj"
+        :checkTodo="checkTodo"
+        :deleteTodo="deleteTodo"
+    />
+  </ul>
 </template>
 
 <script>
-import ItemElement from "./ItemElement.Vue";
+import ItemElement from "@/components/ItemElement.Vue";
 
 export default {
   name: "ListElement",
