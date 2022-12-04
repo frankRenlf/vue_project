@@ -5,9 +5,18 @@
 </template>
 
 <script>
+import HeaderElement from "./components/HeaderElement.Vue";
+import ListElement from "./components/ListElement.Vue";
+import ItemElement from "./components/ItemElement.Vue";
+import FooterElement from "./components/FooterElement.Vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    HeaderElement,
+    ListElement,
+    ItemElement,
+    FooterElement,
+  },
   data() {
     return {
       msg: "welcome to todolist vue",
