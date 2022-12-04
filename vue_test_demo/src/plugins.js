@@ -5,6 +5,16 @@ export default {
         Vue.filter('mySlice',(val)=>{
             return val.slice(0,4)
         })
+
+        Vue.mixin({
+            data() {
+                return {
+                    user:{
+                        id:1
+                    }
+                }
+            },
+        })
         
         Vue.directive('fbind-number', {
             //绑定时
