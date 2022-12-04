@@ -1,8 +1,10 @@
 <template>
   <div>
+    <h2>id: {{ user.id }}</h2>
     <h2>{{ name }}</h2>
     <h2>{{ age }}</h2>
     <button @click="add">age++</button>
+    <input type="text" v-fbind-number:value="age" />
   </div>
 </template>
 
