@@ -5,16 +5,14 @@
 </template>
 
 <script>
-import HeaderElement from "./components/HeaderElement.Vue";
-import ListElement from "./components/ListElement.Vue";
-import ItemElement from "./components/ItemElement.Vue";
-import FooterElement from "./components/FooterElement.Vue";
+import HeaderElement from "@/components/HeaderElement.Vue";
+import ListElement from "@/components/ListElement.Vue";
+import FooterElement from "@/components/FooterElement.Vue";
 export default {
   name: "App",
   components: {
     HeaderElement,
     ListElement,
-    ItemElement,
     FooterElement,
   },
   data() {
