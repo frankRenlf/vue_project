@@ -1,7 +1,38 @@
 <template>
-<div>
-  {{msg}}
-</div>
+  <div id="root">
+    <div class="todo-container">
+      <div class="to-wrap">
+        <div class="todo-header">
+          <input type="text" placeholder="enter your task">
+        </div>
+        <ul class="todo-main">
+          <li>
+            <label>
+              <input type="checkbox">
+              <span>1</span>
+            </label>
+            <button class="btn btn-danger" style="display: none">delete</button>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox">
+              <span>2</span>
+            </label>
+            <button class="btn btn-danger" style="display: none">delete</button>
+          </li>
+        </ul>
+        <div class="todo-footer">
+          <label>
+            <input type="checkbox">
+          </label>
+          <span>
+          <span>have done 0</span>
+          </span>
+          <button class="btn btn-danger">clear completed task</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
