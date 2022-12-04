@@ -1,28 +1,16 @@
 <template>
   <div>
-    <h2 v-text="msg" ref="info"></h2>
-    <button @click="showDOM">click</button>
-    <hr />
-    <SchoolInfo />
-    <hr />
-    <StudentInfo />
-
-    <!-- <ElementOne /> -->
+    <h3>{{ msg }}</h3>
   </div>
 </template>
 
 <script>
-import StudentInfo from "./components/StudentInfo.vue";
-import SchoolInfo from "./components/SchoolInfo.vue";
 export default {
   name: "App",
-  components: {
-    StudentInfo,
-    SchoolInfo,
-  },
+  components: {},
   data() {
     return {
-      msg: "welcome to learn vue",
+      msg: "welcome to todolist vue",
     };
   },
   methods: {
