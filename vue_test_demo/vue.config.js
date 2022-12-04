@@ -20,5 +20,5 @@ module.exports = {
     // 输出文件名会被推导为 `subpage.html`。
     // subpage: 'src/subpage/main.js'
   },
-  lintOnSave:false
+  lintOnSave: false
 }
