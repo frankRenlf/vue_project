@@ -1,5 +1,13 @@
 <template>
-<div></div>
+  <div class="todo-footer">
+    <label>
+      <input type="checkbox">
+    </label>
+    <span>
+          <span>have done 0</span>
+          </span>
+    <button class="btn btn-danger">clear completed task</button>
+  </div>
 </template>
 
 <script>

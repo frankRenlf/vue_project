@@ -1,9 +1,11 @@
 <template>
-<div></div>
+  <ul class="todo-main">
+    <ItemElement></ItemElement>
+  </ul>
 </template>
 
 <script>
-import ItemElement from "@/components/ItemElement.Vue";
+import ItemElement from "@/components/ItemElement.vue";
 
 export default {
   name: "ListElement",

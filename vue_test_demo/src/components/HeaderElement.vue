@@ -1,5 +1,7 @@
 <template>
-<div></div>
+  <div class="todo-header">
+    <input type="text" placeholder="enter your task">
+  </div>
 </template>
 
 <script>

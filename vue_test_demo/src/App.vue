@@ -1,51 +1,26 @@
 <template>
   <div id="root">
     <div class="todo-container">
-      <div class="to-wrap">
-        <div class="todo-header">
-          <input type="text" placeholder="enter your task">
-        </div>
-        <ul class="todo-main">
-          <li>
-            <label>
-              <input type="checkbox">
-              <span>1</span>
-            </label>
-            <button class="btn btn-danger" style="display: none">delete</button>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox">
-              <span>2</span>
-            </label>
-            <button class="btn btn-danger" style="display: none">delete</button>
-          </li>
-        </ul>
-        <div class="todo-footer">
-          <label>
-            <input type="checkbox">
-          </label>
-          <span>
-          <span>have done 0</span>
-          </span>
-          <button class="btn btn-danger">clear completed task</button>
-        </div>
+      <div class="todo-wrap">
+        <HeaderElement></HeaderElement>
+        <ListElement></ListElement>
+        <footer-element></footer-element>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import HeaderElement from "@/components/HeaderElement.Vue";
-// import ListElement from "@/components/ListElement.Vue";
-// import FooterElement from "@/components/FooterElement.Vue";
+import HeaderElement from "@/components/HeaderElement.vue";
+import ListElement from "@/components/ListElement.vue";
+import FooterElement from "@/components/FooterElement.vue";
 
 export default {
   name: "App",
   components: {
-    // HeaderElement,
-    // ListElement,
-    // FooterElement,
+    HeaderElement,
+    ListElement,
+    FooterElement,
   },
   data() {
     return {
@@ -105,28 +80,12 @@ body {
   border-radius: 5px;
 }
 
-/*header*/
-.todo-header input {
-  width: 560px;
-  height: 28px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 7px;
-}
-
-.todo-header input:focus {
-  outline: none;
-  border-color: rgba(82, 168, 236, 0.8);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-
 /*main*/
 .todo-main {
   margin-left: 0;
   border: 1px solid #ddd;
   border-radius: 2px;
-  padding: 0px;
+  padding: 2px;
 }
 
 .todo-empty {

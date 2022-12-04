@@ -1,5 +1,11 @@
 <template>
-<div></div>
+  <li>
+    <label>
+      <input type="checkbox">
+      <span>1</span>
+    </label>
+    <button class="btn btn-danger" style="display: none">delete</button>
+  </li>
 </template>
 
 <script>
