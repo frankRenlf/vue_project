@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     showDOM() {
-      console.log(this.$refs.info);
+      console.log(this.$refs.eo);
     },
   },
 };
