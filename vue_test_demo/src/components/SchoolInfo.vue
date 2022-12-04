@@ -1,8 +1,9 @@
 <template>
-  <h2>{{ name }}</h2>
+  <h2 @click="showInfo">{{ name }}</h2>
 </template>
 
 <script>
+import { mixin1 } from "../mixin";
 export default {
   name: "SchoolInfo",
   data() {
@@ -10,6 +11,7 @@ export default {
       name: "leeds",
     };
   },
+  mixins: [mixin1],
 };
 </script>
 
