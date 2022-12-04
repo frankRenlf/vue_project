@@ -8,7 +8,7 @@ export default {
 
         Vue.mixin({
             data() {
-                return {
+                return { 
                     user:{
                         id:1
                     }
