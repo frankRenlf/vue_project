@@ -1,7 +1,7 @@
 <template>
   <li>
     <label>
-      <input type="checkbox" :checked="todoItem.completed">
+      <input type="checkbox" v-model="todoItem.completed">
       <span>{{ todoItem.content}} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
