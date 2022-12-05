@@ -1,8 +1,8 @@
 <template>
   <li>
     <label>
-      <input type="checkbox" v-model="todoItem.completed">
-      <span>{{ todoItem.content}} </span>
+      <input type="checkbox" :checked="todoItem.completed" @click="handleCheck(todoItem.id)">
+      <span>{{ todoItem.content }} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
   </li>
@@ -20,6 +20,11 @@ export default {
   data() {
     return {
       todoItem: this.todo,
+    }
+  },
+  methods: {
+    handleCheck(id){
+      console.log(id)
     }
   },
   mounted() {

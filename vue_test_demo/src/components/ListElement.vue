@@ -19,6 +19,9 @@ export default {
       type:Array
     }
   },
+  methods:{
+
+  }
 };
 </script>
 
