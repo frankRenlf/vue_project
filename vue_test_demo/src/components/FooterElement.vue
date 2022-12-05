@@ -5,7 +5,8 @@
     </label>
     <span>
           <span>have completed {{ completedTask }} / total {{ todoList.length }}</span>
-          </span>
+<!--          <span> Completion rate{{ (completedTask / todoList.length) }}</span>-->
+    </span>
     <button class="btn btn-danger">clear completed task</button>
   </div>
 </template>
@@ -16,11 +17,9 @@ export default {
   props: ['todoList'],
   computed: {
     completedTask() {
-      let cnt = 0
-      this.todoList.forEach((todo) => {
-        if (todo.completed) cnt++
-      })
-      return cnt
+      return this.todoList.reduce((pre, cur) => {
+        return pre + cur.completed
+      }, 0)
     }
   }
 };
