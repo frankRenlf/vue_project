@@ -5,15 +5,18 @@
 </template>
 
 <script>
+import {nanoid} from 'nanoid'
+
 export default {
   name: "HeaderElement",
-  methods:{
-    add(e){
+  methods: {
+    add(e) {
       const todo = {
-        id:'',
-        content:e.target.value,
-        completed:false,
+        id: nanoid(),
+        content: e.target.value,
+        completed: false,
       }
+      console.log(todo)
     }
 
   }
