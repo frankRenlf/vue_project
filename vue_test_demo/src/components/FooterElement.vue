@@ -4,7 +4,7 @@
       <input type="checkbox">
     </label>
     <span>
-          <span>have completed 0</span>
+          <span>have completed {{ completedTask }} / total {{ todoList.length }}</span>
           </span>
     <button class="btn btn-danger">clear completed task</button>
   </div>
@@ -13,6 +13,16 @@
 <script>
 export default {
   name: "FooterElement",
+  props: ['todoList'],
+  computed: {
+    completedTask() {
+      let cnt = 0
+      this.todoList.forEach((todo) => {
+        if (todo.completed) cnt++
+      })
+      return cnt
+    }
+  }
 };
 </script>
 

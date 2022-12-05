@@ -6,7 +6,7 @@
         <ListElement :todoList="todoList"
                      :checkTodo="checkTodo"
                      :deleteTodo="deleteTodo"></ListElement>
-        <footer-element></footer-element>
+        <footer-element :todoList="todoList"></footer-element>
       </div>
     </div>
   </div>
@@ -47,7 +47,6 @@ export default {
       this.todoList = this.todoList.filter((todo) => {
         return todo.id !== id
       })
-
     }
   },
 };
