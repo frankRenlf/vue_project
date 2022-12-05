@@ -9,7 +9,11 @@ import {nanoid} from 'nanoid'
 
 export default {
   name: "HeaderElement",
-  props: ['receive'],
+  props: {
+    receive: {
+      type: Function
+    }
+  },
   methods: {
     add(e) {
       const todo = {

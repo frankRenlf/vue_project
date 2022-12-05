@@ -2,7 +2,7 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <HeaderElement :reveive="receive"></HeaderElement>
+        <HeaderElement :receive="receive"></HeaderElement>
         <ListElement :todoList="todoList"></ListElement>
         <footer-element></footer-element>
       </div>
@@ -37,7 +37,7 @@ export default {
       console.log(this.$refs.info);
     },
     receive(x) {
-      console.log(x)
+      this.todoList.unshift(x)
     }
   },
 };
