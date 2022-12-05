@@ -14,15 +14,11 @@ export default {
   components: {
     ItemElement,
   },
-  data() {
-    return {
-      todoList: [
-        {id: '001', content: 'drink', completed: true},
-        {id: '002', content: 'run', completed: false},
-        {id: '003', content: 'sleep', completed: true},
-      ]
+  props:{
+    todoList:{
+      type:Array
     }
-  }
+  },
 };
 </script>
 

@@ -3,7 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <HeaderElement></HeaderElement>
-        <ListElement></ListElement>
+        <ListElement :todoList="todoList"></ListElement>
         <footer-element></footer-element>
       </div>
     </div>
@@ -25,6 +25,11 @@ export default {
   data() {
     return {
       msg: "welcome to todolist vue",
+      todoList: [
+        {id: '001', content: 'drink', completed: true},
+        {id: '002', content: 'run', completed: false},
+        {id: '003', content: 'sleep', completed: true},
+      ]
     };
   },
   methods: {
