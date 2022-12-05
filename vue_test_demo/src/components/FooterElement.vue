@@ -4,7 +4,7 @@
       <input type="checkbox">
     </label>
     <span>
-          <span>have done 0</span>
+          <span>have completed 0</span>
           </span>
     <button class="btn btn-danger">clear completed task</button>
   </div>

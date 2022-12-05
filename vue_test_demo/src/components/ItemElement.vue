@@ -13,13 +13,13 @@ export default {
   name: "ItemElement",
   //声明接收todo
   props: {
-    todoData: {
+    todo: {
       type: Object,
     }
   },
   data() {
     return {
-      todoItem: this.todoData,
+      todoItem: this.todo,
     }
   }
 }
