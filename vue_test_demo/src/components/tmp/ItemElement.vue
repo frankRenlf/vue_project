@@ -2,7 +2,8 @@
   <li>
     <label>
       <input type="checkbox"
-             v-model="todoItem.completed">
+             :checked="todoItem.completed"
+             @change="handleCheck(todoItem.id)">
       <span>{{ todoItem.content }} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
@@ -13,7 +14,14 @@
 export default {
   name: "ItemElement",
   //声明接收todo
-  props: ['todo', 'checkTodo'],
+  props: {
+    todo: {
+      type: Object,
+    },
+    checkTodo: {
+      type: Function
+    }
+  },
   data() {
     return {
       todoItem: this.todo,
