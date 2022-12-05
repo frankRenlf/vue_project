@@ -1,8 +1,8 @@
 <template>
   <li>
     <label>
-      <input type="checkbox">
-      <span>{{ todoItem}} </span>
+      <input type="checkbox" :checked="todoItem.completed">
+      <span>{{ todoItem.content}} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
   </li>
@@ -21,6 +21,9 @@ export default {
     return {
       todoItem: this.todo,
     }
+  },
+  mounted() {
+    console.log(this.todo)
   }
 }
 </script>
