@@ -3,7 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <HeaderElement :receive="receive"></HeaderElement>
-        <ListElement :todoList="todoList"></ListElement>
+        <ListElement :todoList="todoList" :checkTodo="checkTodo"></ListElement>
         <footer-element></footer-element>
       </div>
     </div>
