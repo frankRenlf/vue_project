@@ -1,6 +1,6 @@
 <template>
   <div class="todo-header">
-    <input type="text" placeholder="enter your task" @keyup.enter="add">
+    <input type="text" placeholder="enter your task" v-model="content" @keyup.enter="add">
   </div>
 </template>
 
@@ -14,14 +14,21 @@ export default {
       type: Function
     }
   },
+  data() {
+    return {
+      content: ''
+    }
+  },
   methods: {
-    add(e) {
+    add() {
+      if (!this.content) return
       const todo = {
         id: nanoid(),
-        content: e.target.value,
+        content: this.content,
         completed: false,
       }
       this.receive(todo)
+      this.content = ''
     }
 
   }
