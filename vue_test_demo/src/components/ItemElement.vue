@@ -5,7 +5,7 @@
              v-model="todoItem.completed">
       <span>{{ todoItem.content }} </span>
     </label>
-    <button class="btn btn-danger" style="display: none">delete</button>
+    <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
   </li>
 </template>
 
@@ -24,6 +24,9 @@ export default {
       console.log(id)
       this.checkTodo(id)
 
+    },
+    handleDelete(id){
+      console.log(id)
     }
   },
   mounted() {
