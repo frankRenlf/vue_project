@@ -9,7 +9,11 @@ export default {
   name: "HeaderElement",
   methods:{
     add(e){
-      console.log(e.target.value)
+      const todo = {
+        id:'',
+        content:e.target.value,
+        completed:false,
+      }
     }
 
   }
