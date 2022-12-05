@@ -1,6 +1,9 @@
 <template>
   <ul class="todo-main">
-    <ItemElement v-for="todo in todoList" :key="todo.id" :todo="todo">
+    <ItemElement v-for="todo in todoList"
+                 :key="todo.id"
+                 :todo="todo"
+                 :checkTodo="checkTodo">
       {{ todo }}
     </ItemElement>
   </ul>
@@ -14,14 +17,15 @@ export default {
   components: {
     ItemElement,
   },
-  props:{
-    todoList:{
-      type:Array
+  props: {
+    todoList: {
+      type: Array
+    },
+    checkTodo: {
+      type: Function
     }
   },
-  methods:{
-
-  }
+  methods: {}
 };
 </script>
 
