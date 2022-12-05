@@ -9,6 +9,7 @@ import {nanoid} from 'nanoid'
 
 export default {
   name: "HeaderElement",
+  props: ['receive'],
   methods: {
     add(e) {
       const todo = {
@@ -16,7 +17,7 @@ export default {
         content: e.target.value,
         completed: false,
       }
-      console.log(todo)
+      this.receive(todo)
     }
 
   }

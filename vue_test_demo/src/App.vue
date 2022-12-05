@@ -2,7 +2,7 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <HeaderElement></HeaderElement>
+        <HeaderElement :reveive="receive"></HeaderElement>
         <ListElement :todoList="todoList"></ListElement>
         <footer-element></footer-element>
       </div>
@@ -36,6 +36,9 @@ export default {
     showDOM() {
       console.log(this.$refs.info);
     },
+    receive(x) {
+      console.log(x)
+    }
   },
 };
 </script>
