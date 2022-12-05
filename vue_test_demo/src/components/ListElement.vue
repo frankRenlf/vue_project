@@ -1,6 +1,6 @@
 <template>
   <ul class="todo-main">
-    <ItemElement v-for="todo in todoList" :key="todo.id">
+    <ItemElement v-for="todo in todoList" :key="todo.id" :todoData="todo">
       {{ todo }}
     </ItemElement>
   </ul>

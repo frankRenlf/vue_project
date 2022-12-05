@@ -2,7 +2,7 @@
   <li>
     <label>
       <input type="checkbox">
-      <span>1</span>
+      <span>{{ todoItem}} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
   </li>
@@ -12,6 +12,16 @@
 export default {
   name: "ItemElement",
   //声明接收todo
+  props: {
+    todoData: {
+      type: Object,
+    }
+  },
+  data() {
+    return {
+      todoItem: this.todoData,
+    }
+  }
 }
 </script>
 
@@ -29,7 +39,6 @@ li label {
   float: left;
   cursor: pointer;
 }
-
 
 
 li label li input {
