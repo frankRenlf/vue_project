@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     add() {
-      if (!this.content) return
+      if (!this.content) return alert("null input")
       const todo = {
         id: nanoid(),
         content: this.content.trim(),
