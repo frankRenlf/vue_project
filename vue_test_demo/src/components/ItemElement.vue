@@ -1,7 +1,9 @@
 <template>
   <li>
     <label>
-      <input type="checkbox" :checked="todoItem.completed" @change="handleCheck(todoItem.id)">
+      <input type="checkbox"
+             :checked="todoItem.completed"
+             @change="handleCheck(todoItem.id)">
       <span>{{ todoItem.content }} </span>
     </label>
     <button class="btn btn-danger" style="display: none">delete</button>
@@ -15,6 +17,9 @@ export default {
   props: {
     todo: {
       type: Object,
+    },
+    checkTodo: {
+      type: Function
     }
   },
   data() {
@@ -23,8 +28,10 @@ export default {
     }
   },
   methods: {
-    handleCheck(id){
+    handleCheck(id) {
       console.log(id)
+      this.checkTodo(id)
+
     }
   },
   mounted() {

@@ -38,7 +38,7 @@ export default {
     },
     checkTodo(id) {
       this.todoList.forEach((todo) => {
-        if (todo.id === id) todo.done = !todo.done
+        if (todo.id === id) todo.completed = !todo.completed
       })
     }
   },
