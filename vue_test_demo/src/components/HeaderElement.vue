@@ -24,7 +24,7 @@ export default {
       if (!this.content) return
       const todo = {
         id: nanoid(),
-        content: this.content,
+        content: this.content.trim(),
         completed: false,
       }
       this.receive(todo)
