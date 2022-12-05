@@ -33,11 +33,13 @@ export default {
     };
   },
   methods: {
-    showDOM() {
-      console.log(this.$refs.info);
-    },
     receive(x) {
       this.todoList.unshift(x)
+    },
+    checkTodo(id) {
+      this.todoList.forEach((todo) => {
+        if (todo.id === id) todo.done = !todo.done
+      })
     }
   },
 };
