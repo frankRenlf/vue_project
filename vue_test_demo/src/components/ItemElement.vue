@@ -13,7 +13,7 @@
 export default {
   name: "ItemElement",
   //声明接收todo
-  props: ['todo', 'checkTodo'],
+  props: ['todo', 'checkTodo', 'deleteTodo'],
   data() {
     return {
       todoItem: this.todo,
@@ -25,8 +25,11 @@ export default {
       this.checkTodo(id)
 
     },
-    handleDelete(id){
-      console.log(id)
+    handleDelete(id) {
+      if (confirm('Confirm Delete')) {
+        this.deleteTodo(id)
+      }
+
     }
   },
   mounted() {

@@ -2,8 +2,10 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <HeaderElement :receive="receive"></HeaderElement>
-        <ListElement :todoList="todoList" :checkTodo="checkTodo"></ListElement>
+        <HeaderElement :addTodo="addTodo"></HeaderElement>
+        <ListElement :todoList="todoList"
+                     :checkTodo="checkTodo"
+                     :deleteTodo="deleteTodo"></ListElement>
         <footer-element></footer-element>
       </div>
     </div>
@@ -33,13 +35,19 @@ export default {
     };
   },
   methods: {
-    receive(x) {
+    addTodo(x) {
       this.todoList.unshift(x)
     },
     checkTodo(id) {
       this.todoList.forEach((todo) => {
         if (todo.id === id) todo.completed = !todo.completed
       })
+    },
+    deleteTodo(id) {
+      this.todoList = this.todoList.filter((todo) => {
+        return todo.id !== id
+      })
+
     }
   },
 };

@@ -3,7 +3,8 @@
     <ItemElement v-for="todo in todoList"
                  :key="todo.id"
                  :todo="todo"
-                 :checkTodo="checkTodo">
+                 :checkTodo="checkTodo"
+                 :deleteTodo="deleteTodo">
       {{ todo }}
     </ItemElement>
   </ul>
@@ -22,6 +23,9 @@ export default {
       type: Array
     },
     checkTodo: {
+      type: Function
+    },
+    deleteTodo: {
       type: Function
     }
   },

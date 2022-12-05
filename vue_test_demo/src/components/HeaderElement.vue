@@ -10,7 +10,7 @@ import {nanoid} from 'nanoid'
 export default {
   name: "HeaderElement",
   props: {
-    receive: {
+    addTodo: {
       type: Function
     }
   },
@@ -27,7 +27,7 @@ export default {
         content: this.content.trim(),
         completed: false,
       }
-      this.receive(todo)
+      this.addTodo(todo)
       this.content = ''
     }
 
