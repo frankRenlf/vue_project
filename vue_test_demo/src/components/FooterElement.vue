@@ -8,17 +8,20 @@
           <span>have completed {{ completedTask }} / total {{ total }}</span>
       <!--          <span> Completion rate{{ (completedTask / todoList.length) }}</span>-->
     </span>
-    <button class="btn btn-danger">clear completed task</button>
+    <button class="btn btn-danger" @click="clearAll">clear completed task</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "FooterElement",
-  props: ['todoList', 'checkAllTodo'],
+  props: ['todoList', 'checkAllTodo', 'clearAllTodo'],
   methods: {
     checkAll(e) {
       this.checkAllTodo(e.target.checked)
+    },
+    clearAll() {
+      this.clearAllTodo()
     }
   },
   computed: {
