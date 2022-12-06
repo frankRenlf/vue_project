@@ -25,7 +25,7 @@ export default {
       return this.todoList.length
     },
     isAll() {
-      return this.completedTask === this.total
+      return this.completedTask === this.total && this.total !== 0
     }
   }
 };
