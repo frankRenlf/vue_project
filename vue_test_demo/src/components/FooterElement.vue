@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-footer">
+  <div class="todo-footer" v-show="total!==0">
     <label>
       <input type="checkbox" :checked="isAll">
     </label>
