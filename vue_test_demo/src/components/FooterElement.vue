@@ -1,7 +1,7 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox" checked="">
+      <input type="checkbox" :checked="isAll">
     </label>
     <span>
           <span>have completed {{ completedTask }} / total {{ total }}</span>
@@ -23,6 +23,9 @@ export default {
     },
     total() {
       return this.todoList.length
+    },
+    isAll() {
+      return this.completedTask === this.total
     }
   }
 };
