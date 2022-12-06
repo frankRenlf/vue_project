@@ -1,7 +1,7 @@
 <template>
   <div class="todo-footer" v-show="total!==0">
     <label>
-      <input type="checkbox" :checked="isAll">
+      <input type="checkbox" :checked="isAll" @change="checkAll">
     </label>
     <span>
           <span>have completed {{ completedTask }} / total {{ total }}</span>
@@ -15,6 +15,11 @@
 export default {
   name: "FooterElement",
   props: ['todoList'],
+  methods:{
+    checkAll(){
+      
+    }
+  },
   computed: {
     completedTask() {
       return this.todoList.reduce((pre, cur) => {
