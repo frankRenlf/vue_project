@@ -14,10 +14,10 @@
 <script>
 export default {
   name: "FooterElement",
-  props: ['todoList'],
-  methods:{
-    checkAll(){
-      
+  props: ['todoList', 'checkAllTodo'],
+  methods: {
+    checkAll(e) {
+      return this.checkAllTodo(e)
     }
   },
   computed: {

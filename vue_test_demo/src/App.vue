@@ -5,8 +5,11 @@
         <HeaderElement :addTodo="addTodo"></HeaderElement>
         <ListElement :todoList="todoList"
                      :checkTodo="checkTodo"
-                     :deleteTodo="deleteTodo"></ListElement>
-        <footer-element :todoList="todoList"></footer-element>
+                     :deleteTodo="deleteTodo">
+        </ListElement>
+        <footer-element :todoList="todoList"
+                        :checkAllTodo="checkAllTodo">
+        </footer-element>
       </div>
     </div>
   </div>
@@ -47,7 +50,13 @@ export default {
       this.todoList = this.todoList.filter((todo) => {
         return todo.id !== id
       })
+    },
+    checkAllTodo(e) {
+      this.todoList.forEach((todo) => {
+        todo.completed = e.target.checked
+      })
     }
+
   },
 };
 </script>
