@@ -1,11 +1,11 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox">
+      <input type="checkbox" checked="">
     </label>
     <span>
-          <span>have completed {{ completedTask }} / total {{ todoList.length }}</span>
-<!--          <span> Completion rate{{ (completedTask / todoList.length) }}</span>-->
+          <span>have completed {{ completedTask }} / total {{ total }}</span>
+      <!--          <span> Completion rate{{ (completedTask / todoList.length) }}</span>-->
     </span>
     <button class="btn btn-danger">clear completed task</button>
   </div>
@@ -20,6 +20,9 @@ export default {
       return this.todoList.reduce((pre, cur) => {
         return pre + cur.completed
       }, 0)
+    },
+    total() {
+      return this.todoList.length
     }
   }
 };
