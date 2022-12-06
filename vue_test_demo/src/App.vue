@@ -51,9 +51,9 @@ export default {
         return todo.id !== id
       })
     },
-    checkAllTodo(e) {
+    checkAllTodo(checked) {
       this.todoList.forEach((todo) => {
-        todo.completed = e.target.checked
+        todo.completed = checked
       })
     }
 
