@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="school">
     <h2>{{ name }}</h2>
     <h2>{{ address }}</h2>
   </div>
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.demo {
+.school {
   background-color: skyblue;
 }
 </style>

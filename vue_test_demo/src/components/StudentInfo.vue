@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="student">
     <h2>{{ name }}</h2>
     <h2 class="test">{{ age }}</h2>
     <button @click="add">age++</button>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.demo {
+.student {
   background-color: orange;
   .test {
     font-size: 40px;
