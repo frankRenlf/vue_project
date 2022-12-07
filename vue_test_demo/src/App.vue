@@ -6,7 +6,8 @@
     <SchoolInfo :passByProps="passByProps"/>
     <hr/>
     <StudentInfo @denote="receiveData"/>
-
+    <hr/>
+    <StudentInfo ref="student"/>
     <!-- <ElementOne /> -->
   </div>
 </template>
@@ -33,10 +34,13 @@ export default {
     receiveData(val) {
       console.log(val)
     },
-    passByProps(val){
+    passByProps(val) {
       console.log(val)
     }
   },
+  mounted() {
+    this.$refs.student.$on('student2', this.passByProps)
+  }
 };
 </script>
 
