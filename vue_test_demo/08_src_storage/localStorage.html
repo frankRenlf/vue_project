@@ -7,8 +7,22 @@
 <body>
 <h2>localStorage</h2>
 <button onclick="saveData()">click</button>
+<button onclick="readData()">click</button>
+<button onclick="deleteData()">click</button>
+
 <script>
     function saveData() {
+        let p = {
+            'name': 'frank',
+            'age': 22,
+        }
+        localStorage.setItem('user', JSON.stringify(p))
+    }
+
+    function readData() {
+        console.log(localStorage.getItem('user'))
+    }
+    function deleteData() {
         let p = {
             'name': 'frank',
             'age': 22,
