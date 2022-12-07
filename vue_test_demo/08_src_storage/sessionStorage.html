@@ -17,21 +17,21 @@
             'name': 'frank',
             'age': 22,
         }
-        localStorage.setItem('user', JSON.stringify(p))
-        localStorage.setItem('1', 2)
-        localStorage.setItem('2', 3)
+        sessionStorage.setItem('user', JSON.stringify(p))
+        sessionStorage.setItem('1', 2)
+        sessionStorage.setItem('2', 3)
     }
 
     function readData() {
-        console.log(localStorage.getItem('user'))
+        console.log(sessionStorage.getItem('user'))
     }
 
     function deleteData() {
-        localStorage.removeItem('user')
+        sessionStorage.removeItem('user')
     }
 
     function clearData() {
-        localStorage.clear()
+        sessionStorage.clear()
     }
 </script>
 </body>
