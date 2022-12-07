@@ -3,7 +3,7 @@
     <h2 v-text="msg" ref="info"></h2>
     <button @click="showDOM">click</button>
     <hr/>
-    <SchoolInfo/>
+    <SchoolInfo :passByProps="passByProps"/>
     <hr/>
     <StudentInfo @denote="receiveData"/>
 
@@ -31,6 +31,9 @@ export default {
       console.log(this.$refs.info);
     },
     receiveData(val) {
+      console.log(val)
+    },
+    passByProps(val){
       console.log(val)
     }
   },
