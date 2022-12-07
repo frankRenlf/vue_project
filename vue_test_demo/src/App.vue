@@ -31,11 +31,7 @@ export default {
   data() {
     return {
       msg: "welcome to todolist vue",
-      todoList: [
-        {id: '001', content: 'drink', completed: true},
-        {id: '002', content: 'run', completed: false},
-        {id: '003', content: 'sleep', completed: true},
-      ]
+      todoList: [JSON.parse(localStorage.getItem('todoList'))]
     };
   },
   methods: {
@@ -62,9 +58,14 @@ export default {
         return !todo.completed
       })
     }
-
-
   },
+  watch: {
+    todoList(value) {
+      localStorage.setItem('todoList', JSON.stringify(value))
+    }
+
+  }
+
 };
 </script>
 
