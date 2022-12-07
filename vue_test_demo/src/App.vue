@@ -5,7 +5,7 @@
     <hr />
     <SchoolInfo />
     <hr />
-    <StudentInfo />
+    <StudentInfo @denote="msg"/>
 
     <!-- <ElementOne /> -->
   </div>
