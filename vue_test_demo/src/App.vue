@@ -2,10 +2,10 @@
   <div>
     <h2 v-text="msg" ref="info"></h2>
     <button @click="showDOM">click</button>
-    <hr />
-    <SchoolInfo />
-    <hr />
-    <StudentInfo @denote="msg"/>
+    <hr/>
+    <SchoolInfo/>
+    <hr/>
+    <StudentInfo @denote="receiveData"/>
 
     <!-- <ElementOne /> -->
   </div>
@@ -14,6 +14,7 @@
 <script>
 import StudentInfo from "./components/StudentInfo.vue";
 import SchoolInfo from "./components/SchoolInfo.vue";
+
 export default {
   name: "App",
   components: {
@@ -29,6 +30,9 @@ export default {
     showDOM() {
       console.log(this.$refs.info);
     },
+    receiveData(val) {
+      console.log(val)
+    }
   },
 };
 </script>
