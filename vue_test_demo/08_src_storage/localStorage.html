@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>localStorage</h2>
+<button onclick="saveData()">click</button>
+<script>
+    function saveData() {
+        let p = {
+            'name': 'frank',
+            'age': 22,
+        }
+        localStorage.setItem('user', JSON.stringify(p))
+    }
+</script>
+</body>
+</html>
