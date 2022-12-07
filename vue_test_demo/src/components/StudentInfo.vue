@@ -21,7 +21,7 @@ export default {
       this.age++;
     },
     sendData(){
-      this.$emit('denote',this.name)
+      this.$emit('denote',this.age)
     }
   },
 };

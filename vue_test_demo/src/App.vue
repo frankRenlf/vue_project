@@ -39,7 +39,7 @@ export default {
     }
   },
   mounted() {
-    this.$refs.student.$on('student2', this.passByProps)
+    this.$refs.student.$on('denote', this.passByProps)
   }
 };
 </script>
