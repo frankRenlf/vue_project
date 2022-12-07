@@ -9,6 +9,7 @@
 <button onclick="saveData()">click</button>
 <button onclick="readData()">click</button>
 <button onclick="deleteData()">click</button>
+<button onclick="clearData()">click</button>
 
 <script>
     function saveData() {
@@ -17,17 +18,20 @@
             'age': 22,
         }
         localStorage.setItem('user', JSON.stringify(p))
+        localStorage.setItem('1', 2)
+        localStorage.setItem('2', 3)
     }
 
     function readData() {
         console.log(localStorage.getItem('user'))
     }
+
     function deleteData() {
-        let p = {
-            'name': 'frank',
-            'age': 22,
-        }
-        localStorage.setItem('user', JSON.stringify(p))
+        localStorage.removeItem('user')
+    }
+
+    function clearData() {
+        localStorage.clear()
     }
 </script>
 </body>
