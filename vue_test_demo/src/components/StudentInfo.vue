@@ -4,6 +4,7 @@
     <h2 class="test">{{ age }}</h2>
     <button @click="add">age++</button>
     <button @click="sendData">send</button>
+    <button @click="rem">off</button>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
     },
     sendData(){
       this.$emit('denote',this.age)
+    },
+    rem(){
+      this.$off(['denote'])
     }
   },
 };
