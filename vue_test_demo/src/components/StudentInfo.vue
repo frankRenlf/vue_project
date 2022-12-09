@@ -13,9 +13,9 @@ export default {
       age: 2,
     };
   },
-  mounted() {
-    console.log(this.x)
-  }
+  // mounted() {
+  //   console.log(this.x)
+  // }
 
 };
 </script>
