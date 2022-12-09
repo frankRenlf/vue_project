@@ -45,7 +45,6 @@ export default {
   },
   mounted() {
     this.$refs.student.$on('denote', (val) => {
-      console.log(val)
       console.log(this)
       this.stu = val
     })
