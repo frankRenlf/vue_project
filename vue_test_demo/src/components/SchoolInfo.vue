@@ -15,9 +15,10 @@ export default {
     };
   },
   mounted() {
-    this.x.$on('send', (data) => {
+    this.$bus.$on('send', (data) => {
       console.log('receive: ', data)
     })
+    console.log(this.$bus, this.$root, this.$bus === this.$root)
   }
 
 };

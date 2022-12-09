@@ -3,6 +3,8 @@
     <h2>{{ name }}</h2>
     <h2 class="test">{{ age }}</h2>
     <button @click="sendStudentName">sendStudentName</button>
+<!--    <button @click="sendStudentName">off send</button>-->
+
   </div>
 </template>
 <script>
@@ -16,8 +18,12 @@ export default {
   },
   methods: {
     sendStudentName() {
-      this.x.$emit('send', this.name)
+      // this.$bus.$emit('send', this.age)
+      this.$root.$emit('send', this.age)
     }
+  },
+  beforeDestroy() {
+    this.$bus.$off('send')
   }
   // mounted() {
   //   console.log(this.x)
