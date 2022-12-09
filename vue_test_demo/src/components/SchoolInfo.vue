@@ -14,6 +14,11 @@ export default {
       address: "british",
     };
   },
+  mounted() {
+    this.x.$on('send', (data) => {
+      console.log('receive: ', data)
+    })
+  }
 
 };
 </script>
