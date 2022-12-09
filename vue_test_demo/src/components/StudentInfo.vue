@@ -7,7 +7,6 @@
     <button @click="rem">off</button>
   </div>
 </template>
-
 <script>
 export default {
   name: "StudentInfo",
