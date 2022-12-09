@@ -9,11 +9,11 @@ import {nanoid} from 'nanoid'
 
 export default {
   name: "HeaderElement",
-  props: {
-    addTodo: {
-      type: Function
-    }
-  },
+  // props: {
+  //   addTodo: {
+  //     type: Function
+  //   }
+  // },
   data() {
     return {
       content: ''
@@ -27,7 +27,7 @@ export default {
         content: this.content.trim(),
         completed: false,
       }
-      this.addTodo(todo)
+      this.$emit('addTodo', todo)
       this.content = ''
     }
 

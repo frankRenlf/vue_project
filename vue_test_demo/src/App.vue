@@ -2,7 +2,7 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <HeaderElement :addTodo="addTodo"></HeaderElement>
+        <HeaderElement @addTodo="addTodo"></HeaderElement>
         <ListElement :todoList="todoList"
                      :checkTodo="checkTodo"
                      :deleteTodo="deleteTodo">
