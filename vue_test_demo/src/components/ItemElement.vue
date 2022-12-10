@@ -9,7 +9,7 @@
     </label>
 
     <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
-    <button class="btn btn-edit" @click="handleEdit(todoItem)">edit</button>
+    <button class="btn btn-edit" @click="handleEdit">edit</button>
   </li>
 </template>
 
@@ -34,12 +34,12 @@ export default {
         this.$root.$emit('deleteTodo', id)
       }
     },
-    handleEdit(todoItem) {
-      this.$set(todoItem, 'isEdit', true)
+    handleEdit() {
+      this.todoItem.isEdit = true
     },
     handleComplete() {
       this.todoItem.isEdit = false
-      this.todoItem.content = 
+      // this.todoItem.content
     }
   },
   mounted() {

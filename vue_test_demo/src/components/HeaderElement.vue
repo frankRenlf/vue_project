@@ -27,6 +27,7 @@ export default {
       const todo = {
         id: nanoid(),
         content: this.content.trim(),
+        isEdit: false,
         completed: false,
       }
       this.$emit('addTodo', todo)
