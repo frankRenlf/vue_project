@@ -3,11 +3,13 @@
     <h2>{{ name }}</h2>
     <h2 class="test">{{ age }}</h2>
     <button @click="sendStudentName">sendStudentName</button>
-<!--    <button @click="sendStudentName">off send</button>-->
+    <!--    <button @click="sendStudentName">off send</button>-->
 
   </div>
 </template>
 <script>
+import pubsub from 'pubsub-js'
+
 export default {
   name: "StudentInfo",
   data() {
@@ -19,11 +21,11 @@ export default {
   methods: {
     sendStudentName() {
       // this.$bus.$emit('send', this.age)
-      this.$root.$emit('send', this.age)
+      pubsub.publish('hello', 123)
     }
   },
   beforeDestroy() {
-    this.$bus.$off('send')
+
   }
   // mounted() {
   //   console.log(this.x)

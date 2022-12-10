@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js'
+
 export default {
   name: "SchoolInfo",
   data() {
@@ -15,10 +17,9 @@ export default {
     };
   },
   mounted() {
-    this.$bus.$on('send', (data) => {
-      console.log('receive: ', data)
+    pubsub.subscribe('hello', function (msgName, data) {
+      console.log('receive', data)
     })
-    console.log(this.$bus, this.$root, this.$bus === this.$root)
   }
 
 };
