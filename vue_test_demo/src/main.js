@@ -2,13 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 
 
-Vue.config.productionTip = false
-
-
+Vue.config.productionTip=false
 new Vue({
-    el: '#app',
+    el:'#app',
     data() {
-        return {}
+        return {
+            
+        }
     },
-    render: h => h(App),
+    render:h=>h(App)
 })
