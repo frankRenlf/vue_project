@@ -1,23 +1,88 @@
 <template>
   <div id="root">
-
-    <TestElement></TestElement>
-    <TestElement2></TestElement2>
-    <TestElement3></TestElement3>
+    <div class="todo-container">
+      <div class="todo-wrap">
+        <HeaderElement @addTodo="addTodo"></HeaderElement>
+        <ListElement :todoList="todoList">
+        </ListElement>
+        <footer-element :todoList="todoList"
+                        @checkAllTodo="checkAllTodo"
+                        @clearAllTodo="clearAllTodo">
+        </footer-element>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import TestElement from "@/components/TestElement.vue";
-import TestElement2 from "@/components/TestElement2.vue";
-import TestElement3 from "@/components/TestElement3.vue";
+import HeaderElement from "@/components/HeaderElement.vue";
+import ListElement from "@/components/ListElement.vue";
+import FooterElement from "@/components/FooterElement.vue";
 
 export default {
   name: "App",
   components: {
-    TestElement,
-    TestElement2,
-    TestElement3
+    HeaderElement,
+    ListElement,
+    FooterElement,
+  },
+  data() {
+    return {
+      msg: "welcome to todolist vue",
+      todoList: JSON.parse(localStorage.getItem('todoList')) || []
+    };
+  },
+  methods: {
+    addTodo(x) {
+      this.todoList.unshift(x)
+    },
+    checkTodo(id) {
+      this.todoList.forEach((todo) => {
+        if (todo.id === id) todo.completed = !todo.completed
+      })
+    },
+    deleteTodo(id) {
+      this.todoList = this.todoList.filter((todo) => {
+        return todo.id !== id
+      })
+    },
+    checkAllTodo(checked) {
+      this.todoList.forEach((todo) => {
+        todo.completed = checked
+      })
+    },
+    clearAllTodo() {
+      this.todoList = this.todoList.filter((todo) => {
+        return !todo.completed
+      })
+    },
+    updateTodo(id, isEdit, content) {
+      this.todoList.forEach((todo) => {
+        if (todo.id === id) {
+          todo.isEdit = isEdit === null ? todo.isEdit : isEdit
+          todo.content = content === null ? todo.content : content
+        }
+      })
+    }
+  },
+  watch: {
+    todoList: {
+      deep: true,
+      handler(value) {
+        localStorage.setItem('todoList', JSON.stringify(value))
+      }
+    }
+
+  },
+  mounted() {
+    this.$root.$on('checkTodo', this.checkTodo)
+    this.$root.$on('deleteTodo', this.deleteTodo)
+    this.$root.$on('updateTodo', this.updateTodo)
+  },
+  beforeDestroy() {
+    this.$root.$off('checkTodo')
+    this.$root.$off('deleteTodo')
+    this.$root.$off('updateTodo')
   }
 
 };
