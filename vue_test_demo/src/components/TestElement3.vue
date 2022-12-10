@@ -1,7 +1,10 @@
 <template>
   <div>
     <button @click="isShow=!isShow">Show/Hide</button>
-    <transition :appear="true" name="">
+    <transition :appear="true"
+                name="animate__animated animate__bounce"
+                enter-active-class="animate__swing"
+                leave-active-class="animate__backOutUp">
       <h1 v-show="isShow">hello</h1>
     </transition>
   </div>
