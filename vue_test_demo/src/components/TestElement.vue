@@ -1,7 +1,9 @@
 <template>
   <div>
     <button @click="isShow=!isShow">Show/Hide</button>
-    <h1 v-show="isShow" class="come">hello</h1>
+    <transition>
+      <h1 v-show="isShow">hello</h1>
+    </transition>
   </div>
 </template>
 
@@ -18,11 +20,11 @@ export default {
 
 <style scoped>
 
-.come {
+.v-enter-active {
   animation: appear 1s;
 }
 
-.go {
+.v-leave-active {
   animation: appear 1s reverse;
 }
 
