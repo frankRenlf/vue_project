@@ -2,9 +2,7 @@
   <ul class="todo-main">
     <ItemElement v-for="todo in todoList"
                  :key="todo.id"
-                 :todo="todo"
-                 :checkTodo="checkTodo"
-                 :deleteTodo="deleteTodo">
+                 :todo="todo">
       {{ todo }}
     </ItemElement>
   </ul>
@@ -22,12 +20,6 @@ export default {
     todoList: {
       type: Array
     },
-    checkTodo: {
-      type: Function
-    },
-    deleteTodo: {
-      type: Function
-    }
   },
   methods: {}
 };
