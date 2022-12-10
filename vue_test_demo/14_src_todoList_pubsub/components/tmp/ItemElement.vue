@@ -6,7 +6,7 @@
              @change="handleCheck(todoItem.id)">
       <span>{{ todoItem.content }} </span>
     </label>
-    <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
+    <button class="btn btn-danger" style="display: none">delete</button>
   </li>
 </template>
 
@@ -14,7 +14,14 @@
 export default {
   name: "ItemElement",
   //声明接收todo
-  props: ['todo'],
+  props: {
+    todo: {
+      type: Object,
+    },
+    checkTodo: {
+      type: Function
+    }
+  },
   data() {
     return {
       todoItem: this.todo,
@@ -22,14 +29,8 @@ export default {
   },
   methods: {
     handleCheck(id) {
-      // this.checkTodo(id)
-      this.$root.$emit('checkTodo', id)
-    },
-    handleDelete(id) {
-      if (confirm('Confirm Delete')) {
-        // this.deleteTodo(id)
-        this.$root.$emit('deleteTodo', id)
-      }
+      console.log(id)
+      this.checkTodo(id)
 
     }
   },

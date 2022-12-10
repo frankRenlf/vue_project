@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js'
+
 import HeaderElement from "@/components/HeaderElement.vue";
 import ListElement from "@/components/ListElement.vue";
 import FooterElement from "@/components/FooterElement.vue";
@@ -41,7 +43,7 @@ export default {
         if (todo.id === id) todo.completed = !todo.completed
       })
     },
-    deleteTodo(id) {
+    deleteTodo(messageName, id) {
       this.todoList = this.todoList.filter((todo) => {
         return todo.id !== id
       })
@@ -69,10 +71,12 @@ export default {
   mounted() {
     this.$root.$on('checkTodo', this.checkTodo)
     this.$root.$on('deleteTodo', this.deleteTodo)
+    this.pubId = pubsub.subscribe('deleteTodo', this.deleteTodo)
   },
   beforeDestroy() {
     this.$root.$off('checkTodo')
     this.$root.$off('deleteTodo')
+    pubsub.unsubscribe(this.pubId)
   }
 
 };

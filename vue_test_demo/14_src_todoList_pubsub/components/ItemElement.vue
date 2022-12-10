@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js'
+
 export default {
   name: "ItemElement",
   //声明接收todo
@@ -28,7 +30,8 @@ export default {
     handleDelete(id) {
       if (confirm('Confirm Delete')) {
         // this.deleteTodo(id)
-        this.$root.$emit('deleteTodo', id)
+        // this.$root.$emit('deleteTodo', id)
+        pubsub.publish('deleteTodo', id)
       }
 
     }
