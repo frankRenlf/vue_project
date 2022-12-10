@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="isShow=!isShow">Show/Hide</button>
-    <transition name="test">
+    <transition :appear="true" name="test">
       <h1 v-show="isShow">hello</h1>
     </transition>
   </div>
