@@ -71,11 +71,12 @@ export default {
   mounted() {
     this.$root.$on('checkTodo', this.checkTodo)
     this.$root.$on('deleteTodo', this.deleteTodo)
-    pubsub.subscribe('deleteTodo', this.deleteTodo)
+    this.pubId = pubsub.subscribe('deleteTodo', this.deleteTodo)
   },
   beforeDestroy() {
     this.$root.$off('checkTodo')
     this.$root.$off('deleteTodo')
+    pubsub.unsubscribe(this.pubId)
   }
 
 };
