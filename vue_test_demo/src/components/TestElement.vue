@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="isShow=!isShow">Show/Hide</button>
-    <transition>
+    <transition name="test">
       <h1 v-show="isShow">hello</h1>
     </transition>
   </div>
@@ -20,12 +20,12 @@ export default {
 
 <style scoped>
 
-.v-enter-active {
-  animation: appear 1s;
+.test-enter-active {
+  animation: appear 1s linear;
 }
 
-.v-leave-active {
-  animation: appear 1s reverse;
+.test-leave-active {
+  animation: appear 1s linear reverse;
 }
 
 @keyframes appear {
