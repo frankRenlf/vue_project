@@ -7,13 +7,13 @@
       <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
       <input type="text" v-show="todoItem.isEdit"
              :value="todoItem.content"
-             @keydown.enter="handleComplete(todoItem.id,$event)"
-             @blur="handleComplete(todoItem.id,$event)"
+             @keydown.enter="handleComplete(todoItem.id,todoItem.isEdit,$event)"
              ref="input">
+      <!--             @blur="handleComplete(todoItem.id,$event)"-->
     </label>
 
     <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
-    <button class="btn btn-edit" @click="handleEdit">edit</button>
+    <button class="btn btn-edit" @click="handleEdit(todoItem.id,todoItem.isEdit)">edit</button>
   </li>
 </template>
 
@@ -38,18 +38,19 @@ export default {
         this.$root.$emit('deleteTodo', id)
       }
     },
-    handleEdit() {
-      this.todoItem.isEdit = !this.todoItem.isEdit
+    handleEdit(id, isEdit) {
+      // this.todoItem.isEdit = !this.todoItem.isEdit
+      this.$root.$emit('updateTodo', id, !isEdit, null)
       this.$nextTick(() => {
         this.$refs.input.focus()
       })
     },
-    handleComplete(id, e) {
-      this.todoItem.isEdit = false
+    handleComplete(id, isEdit, e) {
       if (!e.target.value.trim()) {
         return alert('null input')
       }
-      this.$root.$emit('updateTodo', id, e.target.value)
+      // this.todoItem.isEdit = !this.todoItem.isEdit
+      this.$root.$emit('updateTodo', id, !isEdit, e.target.value)
 
     }
   },

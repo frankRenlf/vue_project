@@ -56,10 +56,11 @@ export default {
         return !todo.completed
       })
     },
-    updateTodo(id, content) {
+    updateTodo(id, isEdit, content) {
       this.todoList.forEach((todo) => {
         if (todo.id === id) {
-          todo.content = content
+          todo.isEdit = isEdit === null ? todo.isEdit : isEdit
+          todo.content = content === null ? todo.content : content
         }
       })
     }
