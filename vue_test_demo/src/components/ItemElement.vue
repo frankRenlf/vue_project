@@ -1,30 +1,25 @@
 <template>
-  <transition :appear="true"
-              name="animate__animated animate__bounce"
-              enter-active-class="animate__fadeInDown"
-              leave-active-class="animate__fadeOutUp">
-    <li>
-      <label>
-        <input type="checkbox"
-               :checked="todoItem.completed"
-               @change="handleCheck(todoItem.id)">
-        <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
-        <input type="text" v-show="todoItem.isEdit"
-               :value="todoItem.content"
-               @keydown.enter="handleComplete(todoItem.id,todoItem.isEdit,$event)"
+  <li>
+    <label>
+      <input type="checkbox"
+             :checked="todoItem.completed"
+             @change="handleCheck(todoItem.id)">
+      <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
+      <input type="text" v-show="todoItem.isEdit"
+             :value="todoItem.content"
+             @keydown.enter="handleComplete(todoItem.id,todoItem.isEdit,$event)"
 
-               ref="input">
-        <!--      @blur="handleComplete(todoItem.id,todoItem.isEdit,$event)"-->
+             ref="input">
+      <!--      @blur="handleComplete(todoItem.id,todoItem.isEdit,$event)"-->
 
-      </label>
-      <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
-      <button class="btn btn-edit" @click="handleEdit(todoItem.id,todoItem.isEdit)">edit</button>
-    </li>
-  </transition>
+    </label>
+    <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
+    <button class="btn btn-edit" @click="handleEdit(todoItem.id,todoItem.isEdit)">edit</button>
+  </li>
 </template>
 
 <script>
-import 'animate.css'
+
 
 export default {
   name: "ItemElement",
