@@ -8,6 +8,7 @@
       <input type="text" v-show="todoItem.isEdit"
              :value="todoItem.content"
              @keydown.enter="handleComplete(todoItem.id,$event)"
+             @blur="handleComplete(todoItem.id,$event)"
              ref="input">
     </label>
 
@@ -44,8 +45,12 @@ export default {
       })
     },
     handleComplete(id, e) {
-      this.$root.$emit('updateTodo', id, e.target.value)
       this.todoItem.isEdit = false
+      if (!e.target.value.trim()) {
+        return alert('null input')
+      }
+      this.$root.$emit('updateTodo', id, e.target.value)
+
     }
   },
   mounted() {
