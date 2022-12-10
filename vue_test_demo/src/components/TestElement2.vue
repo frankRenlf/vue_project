@@ -3,7 +3,7 @@
     <button @click="isShow=!isShow">Show/Hide</button>
     <transition-group :appear="true" name="test">
       <h1 v-show="isShow" key="1">hello</h1>
-      <h1 v-show="isShow" key="2">hello</h1>
+      <h1 v-show="!isShow" key="2">hello</h1>
     </transition-group>
   </div>
 </template>
