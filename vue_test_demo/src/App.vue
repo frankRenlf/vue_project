@@ -1,10 +1,8 @@
 <template>
   <div id="root">
-    <div class="todo-container">
-      <div class="todo-wrap">
-        <TestElement></TestElement>
-      </div>
-    </div>
+
+    <TestElement></TestElement>
+
   </div>
 </template>
 
