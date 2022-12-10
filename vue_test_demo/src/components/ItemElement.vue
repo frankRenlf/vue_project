@@ -1,7 +1,8 @@
 <template>
-  <transition name="animate__animated animate__bounce"
-              enter-active-class="animate__bounceInDown"
-              leave-active-class="animate__backOutUp">
+  <transition :appear="true"
+              name="animate__animated animate__bounce"
+              enter-active-class="animate__fadeInDown"
+              leave-active-class="animate__fadeOutUp">
     <li>
       <label>
         <input type="checkbox"
