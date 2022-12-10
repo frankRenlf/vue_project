@@ -8,10 +8,11 @@
       <input type="text" v-show="todoItem.isEdit"
              :value="todoItem.content"
              @keydown.enter="handleComplete(todoItem.id,todoItem.isEdit,$event)"
-             @blur="handleComplete(todoItem.id,$event)"
-             ref="input">
-    </label>
 
+             ref="input">
+<!--      @blur="handleComplete(todoItem.id,todoItem.isEdit,$event)"-->
+      
+    </label>
     <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
     <button class="btn btn-edit" @click="handleEdit(todoItem.id,todoItem.isEdit)">edit</button>
   </li>
