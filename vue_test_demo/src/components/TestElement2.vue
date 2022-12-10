@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "TestElement",
+  name: "TestElement2",
   data() {
     return {
       isShow: true

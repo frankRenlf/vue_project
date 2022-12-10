@@ -2,16 +2,20 @@
   <div id="root">
 
     <TestElement></TestElement>
-
+    <TestElement2></TestElement2>
   </div>
 </template>
 
 <script>
 import TestElement from "@/components/TestElement.vue";
+import TestElement2 from "@/components/TestElement2.vue";
 
 export default {
   name: "App",
-  components: {TestElement}
+  components: {
+    TestElement,
+    TestElement2
+  }
 
 };
 </script>
