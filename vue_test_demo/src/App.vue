@@ -3,18 +3,21 @@
 
     <TestElement></TestElement>
     <TestElement2></TestElement2>
+    <TestElement3></TestElement3>
   </div>
 </template>
 
 <script>
 import TestElement from "@/components/TestElement.vue";
 import TestElement2 from "@/components/TestElement2.vue";
+import TestElement3 from "@/components/TestElement3.vue";
 
 export default {
   name: "App",
   components: {
     TestElement,
-    TestElement2
+    TestElement2,
+    TestElement3
   }
 
 };
