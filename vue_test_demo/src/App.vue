@@ -3,9 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <HeaderElement @addTodo="addTodo"></HeaderElement>
-        <ListElement :todoList="todoList"
-                     :checkTodo="checkTodo"
-                     :deleteTodo="deleteTodo">
+        <ListElement :todoList="todoList">
         </ListElement>
         <footer-element :todoList="todoList"
                         @checkAllTodo="checkAllTodo"
@@ -67,6 +65,14 @@ export default {
       }
     }
 
+  },
+  mounted() {
+    this.$root.$on('checkTodo', this.checkTodo)
+    this.$root.$on('deleteTodo', this.deleteTodo)
+  },
+  beforeDestroy() {
+    this.$root.$off('checkTodo')
+    this.$root.$off('deleteTodo')
   }
 
 };
