@@ -55,6 +55,13 @@ export default {
       this.todoList = this.todoList.filter((todo) => {
         return !todo.completed
       })
+    },
+    updateTodo(id, content) {
+      this.todoList.forEach((todo) => {
+        if (todo.id === id) {
+          todo.content = content
+        }
+      })
     }
   },
   watch: {
@@ -69,10 +76,12 @@ export default {
   mounted() {
     this.$root.$on('checkTodo', this.checkTodo)
     this.$root.$on('deleteTodo', this.deleteTodo)
+    this.$root.$on('updateTodo', this.updateTodo)
   },
   beforeDestroy() {
     this.$root.$off('checkTodo')
     this.$root.$off('deleteTodo')
+    this.$root.$off('updateTodo')
   }
 
 };

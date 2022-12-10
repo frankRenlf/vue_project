@@ -5,7 +5,10 @@
              :checked="todoItem.completed"
              @change="handleCheck(todoItem.id)">
       <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
-      <input type="text" v-show="todoItem.isEdit" :value="todoItem.content" @keydown.enter="handleComplete">
+      <input type="text" v-show="todoItem.isEdit"
+             :value="todoItem.content"
+             @keydown.enter="handleComplete(todoItem.id,$event)"
+             ref="input">
     </label>
 
     <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
@@ -35,11 +38,14 @@ export default {
       }
     },
     handleEdit() {
-      this.todoItem.isEdit = true
+      this.todoItem.isEdit = !this.todoItem.isEdit
+      this.$nextTick(() => {
+        this.$refs.input.focus()
+      })
     },
-    handleComplete() {
+    handleComplete(id, e) {
+      this.$root.$emit('updateTodo', id, e.target.value)
       this.todoItem.isEdit = false
-      // this.todoItem.content
     }
   },
   mounted() {
