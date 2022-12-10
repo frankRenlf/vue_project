@@ -103,6 +103,13 @@ body {
   border: 1px solid #bd362f;
 }
 
+.btn-edit {
+  color: #fff;
+  background-color: #5ac1b8;
+  border: 1px solid #3b856e;
+  margin-right: 5px;
+}
+
 .btn-danger:hover {
   color: #fff;
   background-color: #bd362f;

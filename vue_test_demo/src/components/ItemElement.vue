@@ -4,9 +4,12 @@
       <input type="checkbox"
              :checked="todoItem.completed"
              @change="handleCheck(todoItem.id)">
-      <span>{{ todoItem.content }} </span>
+      <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
+      <input type="text" v-show="todoItem.isEdit" :value="todoItem.content" @keydown.enter="handleComplete">
     </label>
+
     <button class="btn btn-danger" @click="handleDelete(todoItem.id)">delete</button>
+    <button class="btn btn-edit" @click="handleEdit(todoItem)">edit</button>
   </li>
 </template>
 
@@ -30,7 +33,13 @@ export default {
         // this.deleteTodo(id)
         this.$root.$emit('deleteTodo', id)
       }
-
+    },
+    handleEdit(todoItem) {
+      this.$set(todoItem, 'isEdit', true)
+    },
+    handleComplete() {
+      this.todoItem.isEdit = false
+      this.todoItem.content = 
     }
   },
   mounted() {
