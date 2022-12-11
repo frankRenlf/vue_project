@@ -1,6 +1,8 @@
 <template>
   <div id="root">
     <button @click="listStudent">obtain student info</button>
+    <hr/>
+    <button @click="listCar">obtain car info</button>
   </div>
 </template>
 
@@ -13,6 +15,16 @@ export default {
   methods: {
     listStudent() {
       axios.get('http://localhost:8080/api/student/list').then(
+          response => {
+            console.log('request success', response.data)
+          },
+          error => {
+            console.log('request fail', error.message)
+          }
+      )
+    },
+    listCar() {
+      axios.get('http://localhost:8080/demo/car/list').then(
           response => {
             console.log('request success', response.data)
           },

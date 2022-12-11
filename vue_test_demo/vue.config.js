@@ -32,9 +32,12 @@ module.exports = {
                 ws: true,
                 changeOrigin: true
             },
-            // '/foo': {
-            //     target: '<other_url>'
-            // }
+            '/demo': {
+                target: 'http://localhost:8082',
+                pathRewrite: {'^/demo': ''},
+                ws: true,
+                changeOrigin: true
+            },
         }
     }
 }
