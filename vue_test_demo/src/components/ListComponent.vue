@@ -23,13 +23,18 @@ export default {
   name: "ListComponent",
   data() {
     return {
-      users: []
+      info: {
+        users: [],
+        isFirst: true,
+        isLoading: true,
+        errMsg: ''
+      }
     }
   },
   methods: {},
   mounted() {
     this.$root.$on('listUsers', (users) => {
-      this.users
+      this.info.users = users.items
     })
   }
 
