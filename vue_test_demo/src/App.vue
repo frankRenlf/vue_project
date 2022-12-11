@@ -1,17 +1,21 @@
 <template>
-  <div id="root">
-    <button @click="listStudent">obtain student info</button>
-    <hr/>
-    <button @click="listCar">obtain car info</button>
+  <div class="container">
+    <SearchComponent/>
+    <ListComponent/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-
+import SearchComponent from "@/components/SearchComponent.vue";
+import ListComponent from "@/components/ListComponent.vue";
 
 export default {
   name: "App",
+  components: {
+    SearchComponent,
+    ListComponent,
+  },
   methods: {
     listStudent() {
       axios.get('/api/student/list').then(
