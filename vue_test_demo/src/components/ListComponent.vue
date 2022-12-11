@@ -27,6 +27,11 @@ export default {
     }
   },
   methods: {},
+  mounted() {
+    this.$root.$on('listUsers', (users) => {
+      this.users
+    })
+  }
 
 }
 </script>

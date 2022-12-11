@@ -24,7 +24,8 @@ export default {
     searchUsers() {
       axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
           response => {
-            console.log(response.data)
+            // console.log(response.data)
+            this.$root.$emit('listUsers', response.data)
           },
           error => {
             console.log(error.message)
