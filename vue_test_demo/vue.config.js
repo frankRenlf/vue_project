@@ -29,7 +29,7 @@ module.exports = {
             '/api': {
                 target: 'http://localhost:8082',
                 pathRewrite: {'^/api': ''},
-                // ws: true,
+                ws: true,
                 // changeOrigin: true
             },
             // '/foo': {
