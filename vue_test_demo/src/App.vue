@@ -14,7 +14,7 @@ export default {
   name: "App",
   methods: {
     listStudent() {
-      axios.get('http://localhost:8080/api/student/list').then(
+      axios.get('/api/student/list').then(
           response => {
             console.log('request success', response.data)
           },
@@ -24,7 +24,7 @@ export default {
       )
     },
     listCar() {
-      axios.get('http://localhost:8080/demo/car/list').then(
+      axios.get('/demo/car/list').then(
           response => {
             console.log('request success', response.data)
           },
