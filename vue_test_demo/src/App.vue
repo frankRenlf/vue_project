@@ -12,7 +12,7 @@ export default {
   name: "App",
   methods: {
     listStudent() {
-      axios.get('http://localhost:8081/student/list').then(
+      axios.get('http://localhost:8080/student/list').then(
           response => {
             console.log('request success', response.data)
           },
