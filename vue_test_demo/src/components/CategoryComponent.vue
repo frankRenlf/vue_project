@@ -9,21 +9,23 @@
 <script>
 export default {
   name: "CategoryComponent",
-  props:[ 'listData', 'title' ]
+  props: ['listData', 'title']
 }
 </script>
 
 <style scoped>
-.category{
+.category {
   background: skyblue;
   width: 200px;
   height: 300px;
 }
-h3{
+
+h3 {
   text-align: center;
   background: orange;
 }
-img{
+
+img {
   width: 100%;
 }
 </style>
