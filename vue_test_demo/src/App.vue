@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 import SearchComponent from "@/components/SearchComponent.vue";
 import ListComponent from "@/components/ListComponent.vue";
 
@@ -17,26 +17,7 @@ export default {
     ListComponent,
   },
   methods: {
-    listStudent() {
-      axios.get('/api/student/list').then(
-          response => {
-            console.log('request success', response.data)
-          },
-          error => {
-            console.log('request fail', error.message)
-          }
-      )
-    },
-    listCar() {
-      axios.get('/demo/car/list').then(
-          response => {
-            console.log('request success', response.data)
-          },
-          error => {
-            console.log('request fail', error.message)
-          }
-      )
-    }
+
   }
 
 };

@@ -17,8 +17,17 @@
 </template>
 
 <script>
+
+
 export default {
-  name: "ListComponent"
+  name: "ListComponent",
+  data() {
+    return {
+      users: []
+    }
+  },
+  methods: {},
+
 }
 </script>
 
