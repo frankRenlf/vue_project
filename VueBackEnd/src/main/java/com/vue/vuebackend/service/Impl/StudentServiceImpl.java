@@ -1,9 +1,9 @@
 package com.vue.vuebackend.service.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.ademo.domain.User;
-import com.example.ademo.mapper.UserMapper;
-import com.example.ademo.service.IUserService;
+import com.vue.vuebackend.domain.Student;
+import com.vue.vuebackend.mapper.StudentMapper;
+import com.vue.vuebackend.service.IStudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,16 +24,8 @@ import java.util.List;
  */
 @Service
 @Slf4j
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> implements IStudentService {
     @Autowired
-    private UserMapper userMapper;
-    @Override
-    public User mySelectById(Integer id) {
-        return userMapper.mySelectById(id);
-    }
+    private StudentMapper studentMapper;
 
-    @Override
-    public List<User> myList() {
-        return userMapper.myList();
-    }
 }

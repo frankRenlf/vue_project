@@ -1,8 +1,11 @@
 package com.vue.vuebackend.controller;
 
-import com.example.ademo.controller.utils.Result;
-import com.example.ademo.service.IUserService;
+
+import com.vue.vuebackend.controller.utils.Result;
+import com.vue.vuebackend.service.IStudentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +26,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/student")
 public class StudentController {
 
+    @Autowired
+    private IStudentService iStudentService;
 
-
-
+    @GetMapping("/list")
+    public Result getList() {
+        return new Result(true, iStudentService.list());
+    }
 
 }

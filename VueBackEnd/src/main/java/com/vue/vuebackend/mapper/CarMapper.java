@@ -1,7 +1,7 @@
 package com.vue.vuebackend.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.ademo.domain.Article;
+import com.vue.vuebackend.domain.Car;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,22 +19,8 @@ import java.util.List;
  * @Description :
  */
 @Mapper
-public interface ArticleMapper extends BaseMapper<Article> {
+public interface CarMapper extends BaseMapper<Car> {
 
-    Article mySelectById(Integer id);
 
-    List<Article> myList(String order);
-
-    Integer myInsert(Article article);
-
-    Integer myRemoveById(Integer id);
-
-    Integer myUpdate(Article article);
-
-    List<Article> myFindByTitle(String sub);
-
-    Article mySelectByIdUser(Integer id);
-
-    List<Article> mySelectByParams(Article article);
 
 }

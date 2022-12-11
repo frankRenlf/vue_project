@@ -1,9 +1,8 @@
 package com.vue.vuebackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.ademo.domain.Article;
-import com.example.ademo.domain.User;
-import org.springframework.stereotype.Service;
+
+import com.vue.vuebackend.domain.Student;
 
 import java.util.List;
 
@@ -19,10 +18,7 @@ import java.util.List;
  * @github : https://github.com/frankRenlf
  * @Description :
  */
-public interface IUserService extends IService<User> {
+public interface IStudentService extends IService<Student> {
 
-    User mySelectById(Integer id);
-    List<User> myList();
-//    Integer myUpdate(Article article);
 
 }

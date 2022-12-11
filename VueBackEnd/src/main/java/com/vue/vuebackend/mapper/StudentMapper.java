@@ -1,7 +1,7 @@
 package com.vue.vuebackend.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.ademo.domain.User;
+import com.vue.vuebackend.domain.Student;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,15 +19,8 @@ import java.util.List;
  * @Description :
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface StudentMapper extends BaseMapper<Student> {
 
-    User mySelectById(Integer id);
-
-    List<User> myList();
-
-    User verify(User user);
-
-    User mySelectByIdArticles(Integer id);
 
 
 }

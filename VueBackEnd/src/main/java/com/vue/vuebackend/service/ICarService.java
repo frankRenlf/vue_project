@@ -1,10 +1,7 @@
 package com.vue.vuebackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.ademo.domain.Article;
-import com.example.ademo.domain.User;
-
-import java.util.List;
+import com.vue.vuebackend.domain.Car;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,10 +15,6 @@ import java.util.List;
  * @github : https://github.com/frankRenlf
  * @Description :
  */
-public interface IArticleService extends IService<Article> {
-    Article mySelectById(Integer id);
-    List<Article> myList(String order);
-    Integer myInsert(Article article);
-    Integer myRemoveById(Integer id);
-    Integer myUpdate(Article article);
+public interface ICarService extends IService<Car> {
+
 }

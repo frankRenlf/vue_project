@@ -1,9 +1,8 @@
 package com.vue.vuebackend.controller;
 
-import com.example.ademo.controller.utils.Result;
-import com.example.ademo.domain.Article;
-import com.example.ademo.service.IArticleService;
-import com.example.ademo.service.IUserService;
+
+import com.vue.vuebackend.controller.utils.Result;
+import com.vue.vuebackend.service.ICarService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +24,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/car")
 public class CarController {
     @Autowired
-    private IArticleService iArticleService;
+    private ICarService iCarService;
+
+    @GetMapping("/list")
+    public Result getList() {
+        return new Result(true, iCarService.list());
+    }
 
 
 }
