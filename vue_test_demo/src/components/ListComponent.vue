@@ -33,8 +33,9 @@ export default {
   },
   methods: {},
   mounted() {
-    this.$root.$on('listUsers', (users) => {
-      this.info.users = users.items
+    this.$root.$on('listData', (data) => {
+      // this.info.users = data.items
+      this.info = {...this.info, ...data};
     })
   }
 

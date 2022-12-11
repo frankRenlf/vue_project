@@ -22,13 +22,27 @@ export default {
   },
   methods: {
     searchUsers() {
+      this.$root.$emit('listData', {
+        isFirst: false,
+        isLoading: true,
+        errMsg: '',
+        users: []
+      })
       axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
           response => {
             // console.log(response.data)
-            this.$root.$emit('listUsers', response.data)
+            this.$root.$emit('listData', {
+              isLoading: false,
+              errMsg: '',
+              users: response.data.items
+            })
           },
           error => {
-            console.log(error.message)
+            this.$root.$emit("listData", {
+              isLoading: false,
+              errMsg: error.message,
+              users: []
+            });
           }
       )
     }
