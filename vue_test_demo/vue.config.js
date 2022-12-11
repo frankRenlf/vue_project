@@ -21,7 +21,19 @@ module.exports = {
         // subpage: 'src/subpage/main.js'
     },
     lintOnSave: false,
+    // devServer: {
+    //     proxy: 'http://localhost:8082'
+    // }
     devServer: {
-        proxy: 'http://localhost:8082'
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8082',
+                // ws: true,
+                // changeOrigin: true
+            },
+            // '/foo': {
+            //     target: '<other_url>'
+            // }
+        }
     }
 }
