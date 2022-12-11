@@ -36,6 +36,8 @@ export default {
     this.$root.$on('listData', (data) => {
       // this.info.users = data.items
       this.info = {...this.info, ...data};
+      // this.info = data
+      console.log(this.info)
     })
   }
 
