@@ -26,8 +26,9 @@ module.exports = {
     // }
     devServer: {
         proxy: {
-            '/student': {
+            '/api': {
                 target: 'http://localhost:8082',
+                pathRewrite: {'^/api': ''},
                 // ws: true,
                 // changeOrigin: true
             },
