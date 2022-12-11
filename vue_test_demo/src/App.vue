@@ -1,78 +1,56 @@
 <template>
-  <div class="container">
-    <SearchComponent/>
-    <ListComponent/>
+  <div class="category">
+    <div class="container">
+      <CategoryComponent title="美食">
+        <img src="https://avatars.githubusercontent.com/u/89248496?s=400&u=fca6dcbb2917ad143245a2c2fb53df98fa72fabc&v=4"
+             alt="delicious food"/>
+      </CategoryComponent>
+
+      <CategoryComponent title="游戏" :listData="games">
+        <ul>
+          <li v-for="(g , index) in games" :key="index">{{ g }}</li>
+        </ul>
+      </CategoryComponent>
+
+      <CategoryComponent title="电影">
+        <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" controls></video>
+      </CategoryComponent>
+    </div>
   </div>
 </template>
 
 <script>
 
-import SearchComponent from "@/components/SearchComponent.vue";
-import ListComponent from "@/components/ListComponent.vue";
+import CategoryComponent from "@/components/CategoryComponent.vue";
 
 export default {
   name: "App",
   components: {
-    SearchComponent,
-    ListComponent,
+    CategoryComponent
   },
-  methods: {
-
-  }
+  data() {
+    return {
+      foods: ['火锅', '烧烤', '小龙虾', '牛排'],
+      games: ['红色警戒', '穿越火线', '劲舞团', '超级玛丽'],
+      films: ['《教父》', '《拆弹专家》', '《你好，李焕英》', '《尚硅谷》']
+    }
+  },
+  methods: {}
 
 };
 </script>
 
-<style>
-/*base*/
-body {
-  background: #fff;
+<style scoped>
+.container {
+  display: flex;
+  justify-content: space-around;
 }
 
-.btn {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+video {
+  width: 100%;
 }
 
-.btn-danger {
-  color: #fff;
-  background-color: #da4f49;
-  border: 1px solid #bd362f;
+img {
+  width: 100%;
 }
-
-.btn-edit {
-  color: #fff;
-  background-color: #5ac1b8;
-  border: 1px solid #3b856e;
-  margin-right: 5px;
-}
-
-.btn-danger:hover {
-  color: #fff;
-  background-color: #bd362f;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.todo-container {
-  width: 600px;
-  margin: 0 auto;
-}
-
-.todo-container .todo-wrap {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
 </style>
