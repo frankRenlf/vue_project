@@ -26,7 +26,7 @@ module.exports = {
     // }
     devServer: {
         proxy: {
-            '/api': {
+            '/student': {
                 target: 'http://localhost:8082',
                 // ws: true,
                 // changeOrigin: true
