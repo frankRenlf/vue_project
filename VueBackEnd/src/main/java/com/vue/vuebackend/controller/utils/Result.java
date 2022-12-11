@@ -33,6 +33,7 @@ public class Result {
     public Result(Boolean status, Object data) {
         this.status = status;
         this.data = data;
+        this.message = "Successful request";
     }
 
     public Result(Boolean status, String msg) {
