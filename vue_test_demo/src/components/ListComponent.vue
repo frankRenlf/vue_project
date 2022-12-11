@@ -26,7 +26,7 @@ export default {
       info: {
         users: [],
         isFirst: true,
-        isLoading: true,
+        isLoading: false,
         errMsg: ''
       }
     }
