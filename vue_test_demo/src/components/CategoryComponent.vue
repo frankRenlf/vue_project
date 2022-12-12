@@ -2,7 +2,7 @@
   <div class="category">
     <h3>{{ title }}</h3>
     <!--插槽,等着组件的使用者进行填充-->
-    <slot>我是默认值</slot>
+    <slot>slot area</slot>
   </div>
 </template>
 
