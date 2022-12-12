@@ -4,6 +4,7 @@
       <CategoryComponent title="美食">
         <img src="https://avatars.githubusercontent.com/u/89248496?s=400&u=fca6dcbb2917ad143245a2c2fb53df98fa72fabc&v=4"
              alt="delicious food"/>
+        <a href="https://baidu.com">baidu</a>
       </CategoryComponent>
 
       <CategoryComponent title="游戏" :listData="games">
