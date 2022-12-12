@@ -13,11 +13,12 @@
 
       </CategoryComponent>
 
-      <CategoryComponent title="游戏" :listData="games">
-        <template v-slot:main>
+      <CategoryComponent title="游戏">
+        <template v-slot:main="data">
           <ul>
-            <li v-for="(g , index) in games" :key="index">{{ g }}</li>
+            <li v-for="(g , index) in data.games" :key="index">{{ g }}</li>
           </ul>
+          <h4>{{ data.msg }}</h4>
         </template>
         <template v-slot:footer>
           <a href="https://baidu.com">baidu</a>
@@ -50,11 +51,7 @@ export default {
     CategoryComponent
   },
   data() {
-    return {
-      foods: ['火锅', '烧烤', '小龙虾', '牛排'],
-      games: ['红色警戒', '穿越火线', '劲舞团', '超级玛丽'],
-      films: ['《教父》', '《拆弹专家》', '《你好，李焕英》', '《尚硅谷》']
-    }
+    return {}
   },
   methods: {}
 
