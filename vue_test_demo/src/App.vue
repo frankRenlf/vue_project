@@ -2,19 +2,39 @@
   <div class="category">
     <div class="container">
       <CategoryComponent title="美食">
-        <img src="https://avatars.githubusercontent.com/u/89248496?s=400&u=fca6dcbb2917ad143245a2c2fb53df98fa72fabc&v=4"
-             alt="delicious food"/>
-        <a href="https://baidu.com">baidu</a>
+        <template v-slot:main>
+          <img
+              src="https://avatars.githubusercontent.com/u/89248496?s=400&u=fca6dcbb2917ad143245a2c2fb53df98fa72fabc&v=4"
+              alt="delicious food"/>
+        </template>
+        <template v-slot:footer>
+          <a href="https://baidu.com">baidu</a>
+        </template>
+
       </CategoryComponent>
 
       <CategoryComponent title="游戏" :listData="games">
-        <ul>
-          <li v-for="(g , index) in games" :key="index">{{ g }}</li>
-        </ul>
+        <template v-slot:main>
+          <ul>
+            <li v-for="(g , index) in games" :key="index">{{ g }}</li>
+          </ul>
+        </template>
+        <template v-slot:footer>
+          <a href="https://baidu.com">baidu</a>
+          <a href="https://baidu.com">baidu</a>
+        </template>
       </CategoryComponent>
 
       <CategoryComponent title="电影">
-        <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" controls></video>
+        <template v-slot:main>
+          <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" controls></video>
+        </template>
+        <template v-slot:footer>
+          <a href="https://baidu.com">baidu</a>
+          <a href="https://baidu.com">baidu</a>
+          <a href="https://baidu.com">baidu</a>
+        </template>
+
       </CategoryComponent>
     </div>
   </div>
