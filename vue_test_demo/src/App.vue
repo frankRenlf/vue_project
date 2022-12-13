@@ -1,6 +1,7 @@
 <template>
-
-
+  <div>
+    <CountComponent></CountComponent>
+  </div>
 </template>
 
 <script>
