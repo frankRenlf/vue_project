@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>sum: {{ sum }}</h1>
-    <select name="" id="" v-model="n">
-      <option :value="1">1</option>
-      <option :value="2">2</option>
-      <option :value="3">3</option>
+    <select name="" id="" v-model.number="n">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
     </select>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
