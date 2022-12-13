@@ -10,9 +10,8 @@ const actions = {
     }
 }
 const mutations = {
-    ADD(a, b) {
-        console.log(a, b)
-
+    ADD(state, value) {
+        state.sum += value
     }
 }
 const state = {

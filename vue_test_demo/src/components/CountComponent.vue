@@ -40,6 +40,9 @@ export default {
       //   this.sum = this.sum + this.n
       // }, 200)
     }
+  },
+  mounted() {
+    
   }
 }
 </script>
