@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>sum: {{ sum }}</h1>
+    <h1>sum: ???</h1>
     <select name="" id="" v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -19,26 +19,25 @@ export default {
   name: "CountComponent",
   data() {
     return {
-      sum: 0,
       n: 1,
     }
   },
   methods: {
     increment() {
-      this.sum = this.sum + this.n
+      // this.sum = this.sum + this.n
     },
     decrement() {
-      this.sum = this.sum - this.n
+      // this.sum = this.sum - this.n
     },
     incrementOdd() {
-      if (this.sum % 2 !== 0) {
-        this.sum = this.sum + this.n
-      }
+      // if (this.sum % 2 !== 0) {
+      //   this.sum = this.sum + this.n
+      // }
     },
     incrementWait() {
-      setTimeout(() => {
-        this.sum = this.sum + this.n
-      }, 200)
+      // setTimeout(() => {
+      //   this.sum = this.sum + this.n
+      // }, 200)
     }
   }
 }
