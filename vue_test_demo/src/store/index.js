@@ -12,6 +12,7 @@ const actions = {
 const mutations = {
     ADD(a, b) {
         console.log(a, b)
+
     }
 }
 const state = {
