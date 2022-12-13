@@ -6,9 +6,14 @@ Vue.use(vuex)
 const actions = {
     add(context, value) {
         console.log(context, value)
+        context.commit('ADD', value)
     }
 }
-const mutations = {}
+const mutations = {
+    ADD(a, b) {
+        console.log(a, b)
+    }
+}
 const state = {
     sum: 0,
 }
