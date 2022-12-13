@@ -37,6 +37,7 @@ const getters = {
         return state.sum * 10
     }
 }
+
 export default new vuex.Store({
     actions: actions,
     mutations: mutations,
