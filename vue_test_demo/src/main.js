@@ -1,16 +1,20 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from "@/App.vue";
 import axios from "axios";
 import vuex from 'vuex'
+import store from "@/store";
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
-Vue.use(vuex)
+// Vue.use(vuex)
 new Vue({
     el: '#app',
     data() {
         return {}
     },
     render: h => h(App),
-    store
+    store: store,
+    beforeCreate() {
+        Vue.use(vuex)
+    }
 })
