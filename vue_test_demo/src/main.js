@@ -14,4 +14,7 @@ new Vue({
     },
     render: h => h(App),
     store: store,
+    mounted() {
+        console.log('ori',this)
+    }
 })
