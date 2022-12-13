@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
+import axios from "axios";
 
-
-Vue.config.productionTip=false
+Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 new Vue({
-    el:'#app',
+    el: '#app',
     data() {
-        return {
-            
-        }
+        return {}
     },
-    render:h=>h(App)
+    render: h => h(App)
 })
