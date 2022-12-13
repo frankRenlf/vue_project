@@ -25,11 +25,11 @@ export default {
   methods: {
     increment() {
       // this.sum = this.sum + this.n
-      this.$store.dispatch('add', this.n)
+      this.$store.commit('ADD', this.n)
     },
     decrement() {
       // this.sum = this.sum - this.n
-      this.$store.dispatch('delete', this.n)
+      this.$store.commit('DELETE', this.n)
     },
     incrementOdd() {
       if (this.$store.state.sum % 2 !== 0) {

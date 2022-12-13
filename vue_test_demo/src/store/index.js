@@ -4,12 +4,12 @@ import Vue from 'vue'
 Vue.use(vuex)
 
 const actions = {
-    add(context, value) {
-        context.commit('ADD', value)
-    },
-    delete(context, value) {
-        context.commit('DELETE', value)
-    },
+    // add(context, value) {
+    //     context.commit('ADD', value)
+    // },
+    // delete(context, value) {
+    //     context.commit('DELETE', value)
+    // },
     addOdd(context, value) {
         if (state.sum % 2 !== 0) {
             context.commit('ADD', value)
