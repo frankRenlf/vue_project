@@ -32,10 +32,15 @@ const mutations = {
 const state = {
     sum: 0,
 }
-
+const getters = {
+    countSum(state) {
+        return state.sum * 10
+    }
+}
 export default new vuex.Store({
     actions: actions,
     mutations: mutations,
     state: state,
+    getters: getters
 })
 
