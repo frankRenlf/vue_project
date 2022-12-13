@@ -6,6 +6,7 @@
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
+    
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
     <button @click="incrementOdd">if is odd +</button>
