@@ -15,6 +15,6 @@ new Vue({
     render: h => h(App),
     store: store,
     beforeCreate() {
-        Vue.use(vuex)
+        // import()
     }
 })
