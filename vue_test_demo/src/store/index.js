@@ -3,7 +3,11 @@ import Vue from 'vue'
 
 Vue.use(vuex)
 
-const actions = {}
+const actions = {
+    add(a, value) {
+        console.log(a, value)
+    }
+}
 const mutations = {}
 const state = {
     sum: 0,

@@ -25,6 +25,7 @@ export default {
   methods: {
     increment() {
       // this.sum = this.sum + this.n
+      this.$store.dispatch('add', this.n)
     },
     decrement() {
       // this.sum = this.sum - this.n
