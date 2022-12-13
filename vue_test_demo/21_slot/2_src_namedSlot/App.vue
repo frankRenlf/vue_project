@@ -42,7 +42,7 @@
 
 <script>
 
-import CategoryComponent from "@/components/CategoryComponent.vue";
+import CategoryComponent from "@/components/CountComponent.vue";
 
 export default {
   name: "App",

@@ -8,7 +8,7 @@
 <script>
 
 import SearchComponent from "@/components/SearchComponent.vue";
-import ListComponent from "@/components/CategoryComponent.vue";
+import ListComponent from "@/components/CountComponent.vue";
 
 export default {
   name: "App",
