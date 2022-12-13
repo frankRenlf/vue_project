@@ -4,8 +4,8 @@ import Vue from 'vue'
 Vue.use(vuex)
 
 const actions = {
-    add(a, value) {
-        console.log(a, value)
+    add(context, value) {
+        console.log(context, value)
     }
 }
 const mutations = {}
