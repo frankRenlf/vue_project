@@ -32,16 +32,15 @@ export default {
       this.$store.dispatch('delete', this.n)
     },
     incrementOdd() {
-      // if (this.sum % 2 !== 0) {
-      //   this.sum = this.sum + this.n
-      // }
-      this.$store.dispatch('addOdd', this.n)
+      if (this.$store.state.sum % 2 !== 0) {
+        this.$store.dispatch('addOdd', this.n)
+      }
     },
     incrementWait() {
-      // setTimeout(() => {
-      //   this.sum = this.sum + this.n
-      // }, 200)
-      this.$store.dispatch('addWait', this.n)
+      setTimeout(() => {
+        this.$store.dispatch('addWait', this.n)
+      }, 200)
+
     }
   },
   mounted() {
