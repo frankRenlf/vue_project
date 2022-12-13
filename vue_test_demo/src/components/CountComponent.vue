@@ -32,14 +32,11 @@ export default {
       this.$store.commit('DELETE', this.n)
     },
     incrementOdd() {
-      if (this.$store.state.sum % 2 !== 0) {
-        this.$store.dispatch('addOdd', this.n)
-      }
+      this.$store.dispatch('addOdd', this.n)
+
     },
     incrementWait() {
-      setTimeout(() => {
-        this.$store.dispatch('addWait', this.n)
-      }, 200)
+      this.$store.dispatch('addWait', this.n)
 
     }
   },
