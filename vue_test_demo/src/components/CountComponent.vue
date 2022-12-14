@@ -9,7 +9,7 @@
       <option value="3">3</option>
     </select>
 
-    <button @click="increment">+</button>
+    <button @click="increment(n,$event)">+</button>
     <button @click="decrement">-</button>
     <button @click="incrementOdd">if is odd +</button>
     <button @click="incrementWait">wait to +</button>
