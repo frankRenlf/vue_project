@@ -9,15 +9,15 @@
       <option value="3">3</option>
     </select>
 
-    <button @click="increment({n,$event})">+</button>
-    <button @click="decrement">-</button>
-    <button @click="incrementOdd">if is odd +</button>
-    <button @click="incrementWait">wait to +</button>
+    <button @click="increment(n)">+</button>
+    <button @click="decrement(n)">-</button>
+    <button @click="incrementOdd({n,$event})">if is odd +</button>
+    <button @click="incrementWait(n)">wait to +</button>
   </div>
 </template>
 
 <script>
-import {mapState, mapGetters, mapMutations} from 'vuex'
+import {mapState, mapGetters, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: "CountComponent",
@@ -48,12 +48,16 @@ export default {
     //   this.$store.commit('DELETE', this.n)
     // },
     ...mapMutations({increment: 'ADD', decrement: 'DELETE'}),
-    incrementOdd() {
-      this.$store.dispatch('addOdd', this.n)
-    },
-    incrementWait() {
-      this.$store.dispatch('addWait', this.n)
-    }
+    // incrementOdd() {
+    //   this.$store.dispatch('addOdd', this.n)
+    // },
+    // incrementWait() {
+    //   this.$store.dispatch('addWait', this.n)
+    // }
+    ...mapActions({
+      incrementOdd: 'addOdd',
+      incrementWait: 'addWait'
+    })
   },
   mounted() {
   }

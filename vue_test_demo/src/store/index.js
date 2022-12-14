@@ -11,11 +11,13 @@ const actions = {
         context.commit('DELETE', value)
     },
     addOdd(context, value) {
+        console.log('odd', value)
         if (state.sum % 2 !== 0) {
-            context.commit('ADD', value)
+            context.commit('ADD', value.n)
         }
     },
     addWait(context, value) {
+        console.log('wait', value)
         setTimeout(() => {
             context.commit('ADD', value)
         }, 500)
@@ -23,8 +25,8 @@ const actions = {
 }
 const mutations = {
     ADD(state, value) {
-        console.log('value', value)
-        state.sum += value.n
+        // console.log('value', value)
+        state.sum += value
     },
     DELETE(state, value) {
         state.sum -= value
