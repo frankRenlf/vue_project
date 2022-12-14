@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
   name: "CountComponent",
   data() {
@@ -24,9 +26,7 @@ export default {
       n: 1,
     }
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     increment() {
       // this.sum = this.sum + this.n
