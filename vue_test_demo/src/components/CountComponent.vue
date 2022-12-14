@@ -38,15 +38,16 @@ export default {
     },
     incrementOdd() {
       this.$store.dispatch('addOdd', this.n)
-
     },
     incrementWait() {
       this.$store.dispatch('addWait', this.n)
-
     }
   },
   mounted() {
-
+    const x = mapState({
+      sum: 'sum'
+    })
+    console.log(x)
   }
 }
 </script>
