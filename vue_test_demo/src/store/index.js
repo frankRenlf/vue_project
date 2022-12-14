@@ -38,7 +38,11 @@ const countOptions = {
         school: 'swjtu',
         subject: 'math',
     },
-    getters: {}
+    getters: {
+        countSum(state) {
+            return state.sum * 10
+        },
+    }
 }
 const personOptions = {
     actions: {},
@@ -56,11 +60,7 @@ const personOptions = {
 const actions = {}
 const mutations = {}
 const state = {}
-const getters = {
-    countSum(state) {
-        return state.sum * 10
-    }
-}
+const getters = {}
 
 export default new vuex.Store({
     actions: actions,
