@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>sum: {{ sum }}</h1>
+    <h1>sum: {{ countOptions.sum }}</h1>
     <h3>sum*10: {{ countSum }}</h3>
-    <h3>{{ school }} -> {{ subject }}</h3>
+    <h3>{{ countOptions.school }} -> {{ countOptions.subject }}</h3>
     <select name="" id="" v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -14,7 +14,7 @@
     <button @click="incrementOdd({n,$event})">if is odd +</button>
     <button @click="incrementWait(n)">wait to +</button>
 
-    <h2 style="color: skyblue">person number : {{personList.length}}</h2>
+    <h2 style="color: skyblue">person number : {{ personOptions.personList.length}}</h2>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     //   school: 'school',
     //   subject: 'subject',
     // }),
-    ...mapState(['sum', 'school', 'subject','personList']),
+    ...mapState(['countOptions','personOptions']),
     // ...mapGetters({
     //   countSum: 'countSum'
     // })

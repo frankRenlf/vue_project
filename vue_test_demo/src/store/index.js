@@ -13,7 +13,7 @@ const countOptions = {
         },
         addOdd(context, value) {
             console.log('odd', value)
-            if (state.sum % 2 !== 0) {
+            if (context.state.sum % 2 !== 0) {
                 context.commit('ADD', value.n)
             }
         },
@@ -57,15 +57,10 @@ const personOptions = {
     getters: {}
 }
 
-const actions = {}
-const mutations = {}
-const state = {}
-const getters = {}
-
 export default new vuex.Store({
-    actions: actions,
-    mutations: mutations,
-    state: state,
-    getters: getters
+    modules: {
+        countOptions,
+        personOptions
+    }
 })
 
