@@ -47,7 +47,13 @@ const countOptions = {
 }
 const personOptions = {
     namespaced: true,
-    actions: {},
+    actions: {
+        addPersonFrank(context, value) {
+            if (value.split(' ')[0] === 'frank') {
+                context.commit('ADD_PERSON', value)
+            }
+        }
+    },
     mutations: {
         ADD_PERSON(state, value) {
             state.personList.push(value)
@@ -56,7 +62,11 @@ const personOptions = {
     state: {
         personList: [],
     },
-    getters: {}
+    getters: {
+        getPersonFirst(state) {
+            return state.personList[0].name
+        }
+    }
 }
 
 export default new vuex.Store({

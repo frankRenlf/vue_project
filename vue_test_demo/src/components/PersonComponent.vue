@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2 style="color: blue">above sum is:{{ sum }}</h2>
+    <h3>first one is {{ first_name }}</h3>
     <input type="text" placeholder="enter name"
            v-model="name"
            @keydown.enter="addPerson(name)">
@@ -15,7 +16,7 @@
 
 <script>
 import {nanoid} from 'nanoid'
-import {mapState} from "vuex";
+import {mapMutations, mapState} from "vuex";
 
 export default {
   name: "PersonComponent",
@@ -25,17 +26,16 @@ export default {
     }
   },
   methods: {
-    addPerson(name) {
-      this.$store.commit('ADD_PERSON', {
-        id: nanoid(),
-        name: name
-      })
+    addPerson() {
+      this.$store.dispatch('personOptions/addPersonFrank', this.name)
     }
   },
   computed: {
-    ...mapState(['personList','sum'])
+    ...mapState('personOptions', ['personList', 'sum']),
+    first_name() {
+      return this.$store.getters['personOptions/getPersonFirst']
+    }
   }
-
 }
 </script>
 
