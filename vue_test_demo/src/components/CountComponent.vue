@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>sum: {{ countOptions.sum }}</h1>
+    <h1>sum: {{ sum }}</h1>
     <h3>sum*10: {{ countSum }}</h3>
-    <h3>{{ countOptions.school }} -> {{ countOptions.subject }}</h3>
+    <h3>{{ school }} -> {{ subject }}</h3>
     <select name="" id="" v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -38,7 +38,7 @@ export default {
     // ...mapGetters({
     //   countSum: 'countSum'
     // })
-    ...mapGetters(['countSum'])
+    // ...mapGetters(['countSum'])
   },
   methods: {
     // increment() {
@@ -62,6 +62,7 @@ export default {
     })
   },
   mounted() {
+    console.log(this.$store)
   }
 }
 </script>

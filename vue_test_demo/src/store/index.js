@@ -4,6 +4,7 @@ import Vue from 'vue'
 Vue.use(vuex)
 
 const countOptions = {
+    namespaced: true,
     actions: {
         add(context, value) {
             context.commit('ADD', value)
@@ -45,6 +46,7 @@ const countOptions = {
     }
 }
 const personOptions = {
+    namespaced: true,
     actions: {},
     mutations: {
         ADD_PERSON(state, value) {
