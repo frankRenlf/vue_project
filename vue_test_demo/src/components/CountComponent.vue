@@ -13,6 +13,8 @@
     <button @click="decrement(n)">-</button>
     <button @click="incrementOdd({n,$event})">if is odd +</button>
     <button @click="incrementWait(n)">wait to +</button>
+
+    <h2>person number : {{personList.length}}</h2>
   </div>
 </template>
 
@@ -32,7 +34,7 @@ export default {
     //   school: 'school',
     //   subject: 'subject',
     // }),
-    ...mapState(['sum', 'school', 'subject',]),
+    ...mapState(['sum', 'school', 'subject','personList']),
     // ...mapGetters({
     //   countSum: 'countSum'
     // })
