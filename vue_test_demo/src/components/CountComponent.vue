@@ -17,8 +17,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
-import {mapGetters} from 'vuex'
+import {mapState, mapGetters, mapMutations} from 'vuex'
 
 export default {
   name: "CountComponent",
@@ -40,14 +39,15 @@ export default {
     ...mapGetters(['countSum'])
   },
   methods: {
-    increment() {
-      // this.sum = this.sum + this.n
-      this.$store.commit('ADD', this.n)
-    },
-    decrement() {
-      // this.sum = this.sum - this.n
-      this.$store.commit('DELETE', this.n)
-    },
+    // increment() {
+    //   // this.sum = this.sum + this.n
+    //   this.$store.commit('ADD', this.n)
+    // },
+    // decrement() {
+    //   // this.sum = this.sum - this.n
+    //   this.$store.commit('DELETE', this.n)
+    // },
+    ...mapMutations({increment: 'ADD', decrement: 'DELETE'}),
     incrementOdd() {
       this.$store.dispatch('addOdd', this.n)
     },
