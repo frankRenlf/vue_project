@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>sum: {{ $store.state.sum }}</h1>
+    <h1>sum: {{ sum }}</h1>
     <h3>sum*10: {{ $store.getters.countSum }}</h3>
     <h3>{{ $store.state.school }} -> {{ $store.state.subject }}</h3>
     <select name="" id="" v-model.number="n">
@@ -45,7 +45,9 @@ export default {
   },
   mounted() {
     const x = mapState({
-      sum: 'sum'
+      sum: 'sum',
+      school: 'school',
+      subject: 'subject',
     })
     console.log(x)
   }
