@@ -23,6 +23,7 @@ const actions = {
 }
 const mutations = {
     ADD(state, value) {
+        console.log('value', value)
         state.sum += value
     },
     DELETE(state, value) {
