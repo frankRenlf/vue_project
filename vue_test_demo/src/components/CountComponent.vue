@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>sum: {{ sum }}</h1>
-    <h3>sum*10: {{ $store.getters.countSum }}</h3>
+    <h3>sum*10: {{ countSum }}</h3>
     <h3>{{ school }} -> {{ subject }}</h3>
     <select name="" id="" v-model.number="n">
       <option value="1">1</option>
@@ -18,6 +18,7 @@
 
 <script>
 import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
   name: "CountComponent",
@@ -27,11 +28,16 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      sum: 'sum',
-      school: 'school',
-      subject: 'subject',
-    })
+    // ...mapState({
+    //   sum: 'sum',
+    //   school: 'school',
+    //   subject: 'subject',
+    // }),
+    ...mapState(['sum', 'school', 'subject',]),
+    // ...mapGetters({
+    //   countSum: 'countSum'
+    // })
+    ...mapGetters(['countSum'])
   },
   methods: {
     increment() {
