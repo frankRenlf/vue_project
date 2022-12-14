@@ -9,7 +9,14 @@ export default {
             }
         },
         addStudent(context, value) {
-            axios.get('',)
+            axios.get(`http://localhost:8082/student/${value}`).then(
+                response => {
+                    context.commit('ADD_PERSON', response.data.data)
+                },
+                error => {
+                    console.log('falied', error)
+                }
+            )
         }
     },
     mutations: {
@@ -19,7 +26,7 @@ export default {
     },
     state: {
         personList: [
-            {id: '1', name: 'lily'}
+            {id: '0', name: 'lily'}
         ],
     },
     getters: {

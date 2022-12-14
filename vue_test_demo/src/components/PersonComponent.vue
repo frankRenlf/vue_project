@@ -7,6 +7,10 @@
            @keydown.enter="addPerson(name)">
     <button @click="addPerson(name)">submit</button>
     <button @click="addFrank(name)">frank</button>
+    <input type="text" placeholder="enter name"
+           v-model.number="id"
+           @keydown.enter="student">
+    <button @click="student">student</button>
     <ul>
       <li v-for="p in personList" :key="p.id">
         {{ p.name }}
@@ -23,11 +27,15 @@ export default {
   name: "PersonComponent",
   data() {
     return {
-      name: ''
+      name: '',
+      id: 0,
     }
   },
   methods: {
-    ...mapActions('personOptions', ['addPersonFrank']),
+    ...mapActions('personOptions', ['addPersonFrank', 'addStudent']),
+    student() {
+      this.addStudent(this.id)
+    },
     addPerson() {
       this.$store.commit('personOptions/ADD_PERSON', {
         id: nanoid(),
