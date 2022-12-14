@@ -17,7 +17,7 @@
 
 <script>
 import {nanoid} from 'nanoid'
-import {mapMutations, mapState} from "vuex";
+import {mapState, mapGetters, mapMutations, mapActions} from "vuex";
 
 export default {
   name: "PersonComponent",
@@ -27,6 +27,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('personOptions', ['addPersonFrank']),
     addPerson() {
       this.$store.commit('personOptions/ADD_PERSON', {
         id: nanoid(),
@@ -34,7 +35,7 @@ export default {
       })
     },
     addFrank() {
-      this.$store.dispatch('personOptions/addPersonFrank', {
+      this.addPersonFrank({
         id: nanoid(),
         name: this.name
       })
