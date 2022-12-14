@@ -1,10 +1,12 @@
 <template>
   <div>
-    <input type="text" placeholder="enter name" v-model="name">
+    <input type="text" placeholder="enter name"
+           v-model="name"
+           @keydown.enter="addPerson(name)">
     <button @click="addPerson(name)">submit</button>
     <ul>
       <li v-for="p in personList" :key="p.id">
-        {{ p }}
+        {{ p.name }}
       </li>
     </ul>
   </div>
@@ -12,6 +14,7 @@
 
 <script>
 import {nanoid} from 'nanoid'
+import {mapState} from "vuex";
 
 export default {
   name: "PersonComponent",
@@ -22,16 +25,14 @@ export default {
   },
   methods: {
     addPerson(name) {
-      this.$store.commit('ADDPERSON', {
+      this.$store.commit('ADD_PERSON', {
         id: nanoid(),
         name: name
       })
     }
   },
   computed: {
-    personList() {
-      return this.$store.state.personList
-    }
+    ...mapState(['personList'])
   }
 
 }
