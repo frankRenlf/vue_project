@@ -49,7 +49,7 @@ const personOptions = {
     namespaced: true,
     actions: {
         addPersonFrank(context, value) {
-            if (value.split(' ')[0] === 'frank') {
+            if (value.name.split(' ')[0] === 'frank') {
                 context.commit('ADD_PERSON', value)
             }
         }
@@ -60,7 +60,9 @@ const personOptions = {
         }
     },
     state: {
-        personList: [],
+        personList: [
+            {id: '1', name: 'lily'}
+        ],
     },
     getters: {
         getPersonFirst(state) {

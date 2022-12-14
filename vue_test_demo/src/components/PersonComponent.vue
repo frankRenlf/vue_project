@@ -6,6 +6,7 @@
            v-model="name"
            @keydown.enter="addPerson(name)">
     <button @click="addPerson(name)">submit</button>
+    <button @click="addFrank(name)">frank</button>
     <ul>
       <li v-for="p in personList" :key="p.id">
         {{ p.name }}
@@ -27,13 +28,26 @@ export default {
   },
   methods: {
     addPerson() {
-      this.$store.dispatch('personOptions/addPersonFrank', this.name)
+      this.$store.commit('personOptions/ADD_PERSON', {
+        id: nanoid(),
+        name: this.name
+      })
+    },
+    addFrank() {
+      this.$store.dispatch('personOptions/addPersonFrank', {
+        id: nanoid(),
+        name: this.name
+      })
     }
+
   },
   computed: {
-    ...mapState('personOptions', ['personList', 'sum']),
+    ...mapState('personOptions', ['personList']),
     first_name() {
       return this.$store.getters['personOptions/getPersonFirst']
+    },
+    sum() {
+      return this.$store.state.countOptions.sum
     }
   }
 }
