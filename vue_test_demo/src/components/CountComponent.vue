@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>sum: {{ $store.getters.countSum }}</h1>
+    <h1>sum: {{ $store.state.sum }}</h1>
+    <h3>sum*10: {{ $store.getters.countSum }}</h3>
+    <h3>{{ $store.state.school }} -> {{ $store.state.subject }}</h3>
     <select name="" id="" v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
