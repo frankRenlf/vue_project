@@ -31,6 +31,9 @@ const mutations = {
     DELETE(state, value) {
         state.sum -= value
     },
+    ADDPERSON(state,value){
+        state.personList.push(value)
+    }
 }
 const state = {
     sum: 0,
