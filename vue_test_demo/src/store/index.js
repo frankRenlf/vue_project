@@ -24,7 +24,7 @@ const actions = {
 const mutations = {
     ADD(state, value) {
         console.log('value', value)
-        state.sum += value
+        state.sum += value.n
     },
     DELETE(state, value) {
         state.sum -= value
