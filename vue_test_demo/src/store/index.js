@@ -35,7 +35,8 @@ const mutations = {
 const state = {
     sum: 0,
     school: 'swjtu',
-    subject: 'math'
+    subject: 'math',
+    personList: [],
 }
 const getters = {
     countSum(state) {
