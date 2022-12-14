@@ -14,7 +14,7 @@
     <button @click="incrementOdd({n,$event})">if is odd +</button>
     <button @click="incrementWait(n)">wait to +</button>
 
-    <h2 style="color: skyblue">person number : {{ personList.length}}</h2>
+    <h2 style="color: skyblue">person number : {{ personList.length }}</h2>
   </div>
 </template>
 
@@ -34,12 +34,12 @@ export default {
     //   school: 'school',
     //   subject: 'subject',
     // }),
-    ...mapState('countOptions',['sum','school','subject']),
-    ...mapState('personOptions',['personList']),
+    ...mapState('countOptions', ['sum', 'school', 'subject']),
+    ...mapState('personOptions', ['personList']),
     // ...mapGetters({
     //   countSum: 'countSum'
     // })
-    // ...mapGetters(['countSum'])
+    ...mapGetters('countOptions', ['countSum'])
   },
   methods: {
     // increment() {
@@ -50,14 +50,14 @@ export default {
     //   // this.sum = this.sum - this.n
     //   this.$store.commit('DELETE', this.n)
     // },
-    ...mapMutations({increment: 'ADD', decrement: 'DELETE'}),
+    ...mapMutations('countOptions', {increment: 'ADD', decrement: 'DELETE'}),
     // incrementOdd() {
     //   this.$store.dispatch('addOdd', this.n)
     // },
     // incrementWait() {
     //   this.$store.dispatch('addWait', this.n)
     // }
-    ...mapActions({
+    ...mapActions('countOptions', {
       incrementOdd: 'addOdd',
       incrementWait: 'addWait'
     })
