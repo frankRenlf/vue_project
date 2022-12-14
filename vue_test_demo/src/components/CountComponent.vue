@@ -14,7 +14,7 @@
     <button @click="incrementOdd({n,$event})">if is odd +</button>
     <button @click="incrementWait(n)">wait to +</button>
 
-    <h2>person number : {{personList.length}}</h2>
+    <h2 style="color: skyblue">person number : {{personList.length}}</h2>
   </div>
 </template>
 

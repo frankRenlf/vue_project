@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2 style="color: blue">above sum is:{{ sum }}</h2>
     <input type="text" placeholder="enter name"
            v-model="name"
            @keydown.enter="addPerson(name)">
@@ -32,7 +33,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['personList'])
+    ...mapState(['personList','sum'])
   }
 
 }
