@@ -24,6 +24,9 @@ export default {
       n: 1,
     }
   },
+  computed: {
+    
+  },
   methods: {
     increment() {
       // this.sum = this.sum + this.n
