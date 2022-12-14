@@ -14,7 +14,7 @@
     <button @click="incrementOdd({n,$event})">if is odd +</button>
     <button @click="incrementWait(n)">wait to +</button>
 
-    <h2 style="color: skyblue">person number : {{ personOptions.personList.length}}</h2>
+    <h2 style="color: skyblue">person number : {{ personList.length}}</h2>
   </div>
 </template>
 
@@ -34,7 +34,8 @@ export default {
     //   school: 'school',
     //   subject: 'subject',
     // }),
-    ...mapState(['countOptions','personOptions']),
+    ...mapState('countOptions',['sum','school','subject']),
+    ...mapState('personOptions',['personList']),
     // ...mapGetters({
     //   countSum: 'countSum'
     // })
