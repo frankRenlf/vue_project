@@ -1,7 +1,14 @@
 <template>
   <ul>
     <li v-for="p in personList" :key="p.id">
-      <router-link to="/home/msg/detail">{{p.id}} </router-link>
+      <router-link :to="{
+        path:'/home/msg/detail',
+        query:{
+          p
+        }
+      }">
+        {{ p.id }}
+      </router-link>
     </li>
     <hr/>
     <router-view></router-view>
@@ -14,8 +21,11 @@ import {mapState} from "vuex";
 export default {
   name: "HomeMessage",
   components: {},
-  computed:{
-    ...mapState('personOptions',['personList'])
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapState('personOptions', ['personList'])
   }
 }
 </script>
