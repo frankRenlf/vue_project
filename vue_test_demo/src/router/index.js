@@ -26,12 +26,14 @@ export default new VueRouter({
                     component: HomeMessage,
                     children:[
                         {
+                            name:'detail_info',
                             path: 'detail',
                             component: HomeMessageDetail,
                         }
                     ]
                 },
                 {
+                    name:'news_info',
                     path: 'news',
                     component: HomeNews
                 }
