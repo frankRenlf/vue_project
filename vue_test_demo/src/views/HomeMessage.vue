@@ -2,9 +2,12 @@
   <ul>
     <li v-for="p in personList" :key="p.id">
       <router-link :to="{
-        // name:'detail_info',
-        path:`/home/msg/detail/${p.id}/${p.name}`,
-
+        name:'detail_info',
+        // path:`/home/msg/detail/${p.id}/${p.name}`,
+        params:{
+          name:p.name,
+          id:p.id,
+        }
       }">
         {{ p.id }}
       </router-link>
