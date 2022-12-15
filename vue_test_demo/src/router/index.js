@@ -20,7 +20,13 @@ export default new VueRouter({
             children: [
                 {
                     path: 'msg',
-                    component: HomeMessage
+                    component: HomeMessage,
+                    children:[
+                        {
+                            path: 'detail',
+                            component: HomeMessage,
+                        }
+                    ]
                 },
                 {
                     path: 'news',
