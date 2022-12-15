@@ -3,6 +3,7 @@
     <li v-for="p in personList" :key="p.id">
       <router-link to="/home/msg/detail" :data="p">{{p.id}} </router-link>
     </li>
+    <router-view></router-view>
   </ul>
 </template>
 
