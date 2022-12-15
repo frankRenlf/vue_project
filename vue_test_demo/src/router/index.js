@@ -27,7 +27,7 @@ export default new VueRouter({
                     children:[
                         {
                             name:'detail_info',
-                            path: 'detail',
+                            path: 'detail/:id/:name',
                             component: HomeMessageDetail,
                         }
                     ]

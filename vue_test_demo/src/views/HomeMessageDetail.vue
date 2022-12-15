@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>msg :{{$route.query}}</h4>
+    <h4>msg :{{$route.params.id}}---{{$route.params.name}}</h4>
   </div>
 </template>
 
