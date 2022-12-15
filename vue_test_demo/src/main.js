@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import App from "@/App.vue";
 import axios from "axios";
+import VueRouter from "vue-router";
 
 import store from "@/store";
+import router from '@/router';
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
-// Vue.use(vuex)
+
 new Vue({
     el: '#app',
     data() {
@@ -14,7 +16,8 @@ new Vue({
     },
     render: h => h(App),
     store: store,
+    router: 'hello',
     mounted() {
-        console.log('ori',this)
+        console.log('ori', this)
     }
 })

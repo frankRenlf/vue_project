@@ -17,6 +17,7 @@
       <div class="col-xs-6">
         <div class="panel">
           <div class="panel-body">
+            <h3>router - component</h3>
             <!--router-view确定视图的位置-->
 
           </div>
