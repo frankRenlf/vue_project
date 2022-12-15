@@ -26,7 +26,8 @@ export default {
     },
     state: {
         personList: [
-            {id: '0', name: 'lily'}
+            {id: '0', name: 'lily'},
+            {id: '1', name: 'jame'}
         ],
     },
     getters: {
