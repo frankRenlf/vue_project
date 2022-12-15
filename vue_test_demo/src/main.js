@@ -16,7 +16,7 @@ new Vue({
     },
     render: h => h(App),
     store: store,
-    router: 'hello',
+    router: router,
     mounted() {
         console.log('ori', this)
     }
