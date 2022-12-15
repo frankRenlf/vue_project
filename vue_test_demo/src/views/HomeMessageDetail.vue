@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h4>msg :{{ data }}</h4>
+    <h4>msg :</h4>
   </div>
 </template>
 
 <script>
 export default {
   name: "HomeMessageDetail",
-  props: ['data']
+  mounted() {
+
+  }
 }
 </script>
 
