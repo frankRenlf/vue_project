@@ -12,10 +12,12 @@ Vue.use(VueRouter)
 export default new VueRouter({
     routes: [
         {
+            name:'aboutinfo',
             path: '/about',
             component: AboutComponent
         },
         {
+            name:'homeinfo',
             path: '/home',
             component: HomeComponent,
             children: [

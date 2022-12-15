@@ -4,7 +4,8 @@
       <router-link :to="{
         path:'/home/msg/detail',
         query:{
-          p
+          id:p.id,
+          name:p.name
         }
       }">
         {{ p.id }}
