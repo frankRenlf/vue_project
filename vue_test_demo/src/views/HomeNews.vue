@@ -13,6 +13,9 @@ export default {
   name: "HomeNews",
   computed: {
     ...mapState('countOptions', ['sum', 'school', 'subject'])
+  },
+  beforeDestroy() {
+    console.log('news destroy')
   }
 }
 </script>

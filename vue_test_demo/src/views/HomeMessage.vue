@@ -65,6 +65,9 @@ export default {
         }
       })
     }
+  },
+  beforeDestroy() {
+    console.log('msg destroy')
   }
 }
 </script>

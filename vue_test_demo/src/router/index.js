@@ -22,6 +22,7 @@ export default new VueRouter({
             component: HomeComponent,
             children: [
                 {
+                    name:'msg',
                     path: 'msg',
                     component: HomeMessage,
                     children: [
@@ -40,7 +41,7 @@ export default new VueRouter({
                     ]
                 },
                 {
-                    name: 'news_info',
+                    name: 'news',
                     path: 'news',
                     component: HomeNews
                 }
