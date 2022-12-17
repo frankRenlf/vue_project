@@ -11,11 +11,12 @@
         query:{
           name:p.name,
           id:p.id,
-        },
-
+        }
       }">
         {{ p.id }}
       </router-link>
+      <button @click="pushInfo(p)">push</button>
+      <button @click="replaceInfo(p)">replace</button>
     </li>
     <hr/>
     <router-view></router-view>
@@ -33,6 +34,25 @@ export default {
   },
   computed: {
     ...mapState('personOptions', ['personList'])
+  },
+  methods: {
+    pushInfo(p) {
+      this.$router.push({
+        name: 'detail_info',
+        // path:`/home/msg/detail/${p.id}/${p.name}`,
+        params: {
+          name: p.name,
+          id: p.id,
+        },
+        query: {
+          name: p.name,
+          id: p.id,
+        }
+      })
+    },
+    replaceInfo() {
+
+    }
   }
 }
 </script>
