@@ -68,6 +68,12 @@ export default {
   },
   beforeDestroy() {
     console.log('msg destroy')
+  },
+  activated() {
+    console.log('msg activated')
+  },
+  deactivated() {
+    console.log('msg deactivated')
   }
 }
 </script>
