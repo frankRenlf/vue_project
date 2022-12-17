@@ -12,28 +12,29 @@ Vue.use(VueRouter)
 export default new VueRouter({
     routes: [
         {
-            name:'aboutinfo',
+            name: 'aboutinfo',
             path: '/about',
             component: AboutComponent
         },
         {
-            name:'homeinfo',
+            name: 'homeinfo',
             path: '/home',
             component: HomeComponent,
             children: [
                 {
                     path: 'msg',
                     component: HomeMessage,
-                    children:[
+                    children: [
                         {
-                            name:'detail_info',
+                            name: 'detail_info',
                             path: 'detail/:id/:name',
                             component: HomeMessageDetail,
+                            props: true
                         }
                     ]
                 },
                 {
-                    name:'news_info',
+                    name: 'news_info',
                     path: 'news',
                     component: HomeNews
                 }
