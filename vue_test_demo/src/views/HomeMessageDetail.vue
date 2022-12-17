@@ -10,7 +10,7 @@ export default {
   data() {
     return {}
   },
-  props:['id','name'],
+  props: ['id', 'name'],
   computed: {
     params() {
       return this.$route.params
