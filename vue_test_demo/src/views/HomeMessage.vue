@@ -17,6 +17,7 @@
       </router-link>
       <button @click="pushInfo(p)">push</button>
       <button @click="replaceInfo(p)">replace</button>
+      <input type="text">
     </li>
     <hr/>
     <router-view></router-view>
