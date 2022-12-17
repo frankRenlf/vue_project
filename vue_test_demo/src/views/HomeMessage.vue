@@ -12,7 +12,7 @@
           name:p.name,
           id:p.id,
         },
-        
+
       }">
         {{ p.id }}
       </router-link>
