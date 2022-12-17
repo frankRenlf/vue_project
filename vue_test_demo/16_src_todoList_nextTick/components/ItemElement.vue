@@ -51,11 +51,12 @@ export default {
       }
       // this.todoItem.isEdit = !this.todoItem.isEdit
       this.$root.$emit('updateTodo', id, !isEdit, e.target.value)
-
     }
   },
   mounted() {
     // console.log(this.todo)
+  },
+  nextTick(callback, context) {
   }
 }
 </script>
