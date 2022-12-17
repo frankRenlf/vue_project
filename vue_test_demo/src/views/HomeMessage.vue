@@ -50,8 +50,19 @@ export default {
         }
       })
     },
-    replaceInfo() {
-
+    replaceInfo(p) {
+      this.$router.replace({
+        name: 'detail_info',
+        // path:`/home/msg/detail/${p.id}/${p.name}`,
+        params: {
+          name: p.name,
+          id: p.id,
+        },
+        query: {
+          name: p.name,
+          id: p.id,
+        }
+      })
     }
   }
 }
