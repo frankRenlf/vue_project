@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>msg :{{ id }}---{{ name }}</h4>
+    <h4>msg :{{ id }}---{{ name }}---{{id2}}</h4>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   data() {
     return {}
   },
-  props: ['id', 'name'],
+  props: ['id', 'name','id2'],
   computed: {
     params() {
       return this.$route.params

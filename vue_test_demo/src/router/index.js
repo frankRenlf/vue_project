@@ -29,7 +29,13 @@ export default new VueRouter({
                             name: 'detail_info',
                             path: 'detail/:id/:name',
                             component: HomeMessageDetail,
-                            props: true
+                            props({params, query}) {
+                                return {
+                                    id: params.id,
+                                    name: params.name,
+                                    id2: query.id
+                                }
+                            }
                         }
                     ]
                 },
