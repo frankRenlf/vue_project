@@ -6,7 +6,20 @@
 
 <script>
 export default {
-  name: "AboutComponent"
+  name: "AboutComponent",
+  beforeRouteEnter(to,from,next){
+    if (to.meta.authorise) {
+      if (localStorage.getItem("name") === "james") {
+        next()
+      } else {
+        alert("Insufficient permissions")
+      }
+    } else {
+      next()
+    }
+  },
+  beforeRouteLeave(to,from,next){}
+
 }
 </script>
 
