@@ -14,7 +14,10 @@ const router = new VueRouter({
         {
             name: 'about',
             path: '/about',
-            component: AboutComponent
+            component: AboutComponent,
+            meta: {
+                title: 'about'
+            }
         },
         {
             name: 'home',
@@ -36,16 +39,29 @@ const router = new VueRouter({
                                     name: params.name,
                                     id2: query.id
                                 }
+                            },
+                            meta: {
+                                title: 'detail'
                             }
                         }
-                    ]
+                    ],
+                    meta: {
+                        title: 'msg'
+                    }
                 },
                 {
                     name: 'news',
                     path: 'news',
-                    component: HomeNews
+                    component: HomeNews,
+                    meta: {
+                        title: 'news'
+                    }
                 }
-            ]
+            ],
+            meta: {
+                authorise: true,
+                title: 'home'
+            }
         }
     ]
 })
@@ -53,7 +69,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     console.log('to', to)
     console.log('from', from)
-    if (to.name === 'detail') {
+    document.title = to.meta.title || 'default'
+    if (to.meta.authorise) {
         if (localStorage.getItem("name") === "james") {
             next()
         } else {
