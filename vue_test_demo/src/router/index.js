@@ -69,7 +69,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     console.log('to', to)
     console.log('from', from)
-    document.title = to.meta.title || 'default'
     if (to.meta.authorise) {
         if (localStorage.getItem("name") === "james") {
             next()
@@ -79,6 +78,10 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
+})
+
+router.afterEach((to, from) => {
+    document.title = to.meta.title || 'default'
 })
 
 
