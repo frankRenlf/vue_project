@@ -55,6 +55,13 @@ const router = new VueRouter({
                     component: HomeNews,
                     meta: {
                         title: 'news'
+                    },
+                    beforeEnter(to, from, next) {
+                        if (localStorage.getItem("name") === 'james') {
+                            next()
+                        } else {
+                            alert("no permission")
+                        }
                     }
                 }
             ],
@@ -66,19 +73,19 @@ const router = new VueRouter({
     ]
 })
 
-router.beforeEach((to, from, next) => {
-    console.log('to', to)
-    console.log('from', from)
-    if (to.meta.authorise) {
-        if (localStorage.getItem("name") === "james") {
-            next()
-        } else {
-            alert("Insufficient permissions")
-        }
-    } else {
-        next()
-    }
-})
+// router.beforeEach((to, from, next) => {
+//     console.log('to', to)
+//     console.log('from', from)
+//     if (to.meta.authorise) {
+//         if (localStorage.getItem("name") === "james") {
+//             next()
+//         } else {
+//             alert("Insufficient permissions")
+//         }
+//     } else {
+//         next()
+//     }
+// })
 
 router.afterEach((to, from) => {
     document.title = to.meta.title || 'default'
