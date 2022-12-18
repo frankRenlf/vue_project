@@ -18,8 +18,9 @@ export default {
       next()
     }
   },
-  beforeRouteLeave(to,from,next){}
-
+  beforeRouteLeave(to,from,next){
+    
+  }
 }
 </script>
 
