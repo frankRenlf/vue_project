@@ -39,7 +39,7 @@ export default {
   methods: {
     pushInfo(p) {
       this.$router.push({
-        name: 'detail_info',
+        name: 'detail',
         // path:`/home/msg/detail/${p.id}/${p.name}`,
         params: {
           name: p.name,
@@ -53,7 +53,7 @@ export default {
     },
     replaceInfo(p) {
       this.$router.replace({
-        name: 'detail_info',
+        name: 'detail',
         // path:`/home/msg/detail/${p.id}/${p.name}`,
         params: {
           name: p.name,
