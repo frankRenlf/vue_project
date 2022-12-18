@@ -53,7 +53,13 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     console.log('to', to)
     console.log('from', from)
-    if(localStorage.getItem("name")==="james"){
+    if (to.name === 'detail') {
+        if (localStorage.getItem("name") === "james") {
+            next()
+        } else {
+            alert("Insufficient permissions")
+        }
+    } else {
         next()
     }
 })
