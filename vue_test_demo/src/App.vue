@@ -12,7 +12,7 @@
           <router-link replace class="list-group-item" active-class="active" to="/home">Home</router-link>
           <router-link replace class="list-group-item"
                        active-class="active"
-                       :to="{name:'aboutinfo'}"
+                       :to="{name:'about'}"
           >
             About
           </router-link>
@@ -49,7 +49,7 @@ export default {
   },
   methods: {},
   mounted() {
-    console.log('app', this)
+    // console.log('app', this)
   }
 
 };

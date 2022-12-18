@@ -17,7 +17,7 @@ new Vue({
     store: store,
     router: router,
     mounted() {
-        console.log('$router', this.$router)
-        console.log('$route', this.$route)
+        // console.log('$router', this.$router)
+        // console.log('$route', this.$route)
     }
 })

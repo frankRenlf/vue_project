@@ -12,12 +12,12 @@ Vue.use(VueRouter)
 const router = new VueRouter({
     routes: [
         {
-            name: 'aboutinfo',
+            name: 'about',
             path: '/about',
             component: AboutComponent
         },
         {
-            name: 'homeinfo',
+            name: 'home',
             path: '/home',
             component: HomeComponent,
             children: [
@@ -27,7 +27,7 @@ const router = new VueRouter({
                     component: HomeMessage,
                     children: [
                         {
-                            name: 'detail_info',
+                            name: 'detail',
                             path: 'detail/:id/:name',
                             component: HomeMessageDetail,
                             props({params, query}) {
@@ -49,5 +49,11 @@ const router = new VueRouter({
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    console.log('to', to)
+    console.log('from', from)
+})
+
 
 export default router
