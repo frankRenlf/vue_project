@@ -9,7 +9,7 @@ import HomeMessageDetail from "@/views/HomeMessageDetail.vue";
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
     routes: [
         {
             name: 'aboutinfo',
@@ -22,7 +22,7 @@ export default new VueRouter({
             component: HomeComponent,
             children: [
                 {
-                    name:'msg',
+                    name: 'msg',
                     path: 'msg',
                     component: HomeMessage,
                     children: [
@@ -49,3 +49,5 @@ export default new VueRouter({
         }
     ]
 })
+
+export default router
