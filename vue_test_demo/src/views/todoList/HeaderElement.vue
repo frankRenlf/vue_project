@@ -8,7 +8,7 @@
 
 <script>
 import {nanoid} from 'nanoid'
-
+import {mapMutations} from "vuex";
 export default {
   name: "HeaderElement",
   // props: {
@@ -22,6 +22,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations('todoList',['addTodo']),
     add() {
       if (!this.content) return alert("null input")
       const todo = {
@@ -30,7 +31,8 @@ export default {
         isEdit: false,
         completed: false,
       }
-      this.$emit('addTodo', todo)
+      // this.$emit('addTodo', todo)
+      this.addTodo(todo)
       this.content = ''
     }
 
