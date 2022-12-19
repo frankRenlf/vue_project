@@ -37,7 +37,7 @@ export default {
         updateTodo(state, value) {
             state.todoList.forEach((todo) => {
                 if (todo.id === value.id) {
-                    todo.isEdit = value.isEdit === null ? todo.isEdit : value.isEdit
+                    todo.isEdit = value.isEdit === null ? todo.isEdit : !value.isEdit
                     todo.content = value.content === null ? todo.content : value.content
                 }
             })

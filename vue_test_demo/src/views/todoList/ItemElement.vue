@@ -43,7 +43,8 @@ export default {
     },
     handleEdit(id, isEdit) {
       // this.todoItem.isEdit = !this.todoItem.isEdit
-      this.$root.$emit('updateTodo', id, !isEdit, null)
+      console.log(this.todoItem)
+      this.$root.$emit('updateTodo', this.todoItem)
       this.$nextTick(() => {
         this.$refs.input.focus()
       })
@@ -53,7 +54,8 @@ export default {
         return alert('null input')
       }
       // this.todoItem.isEdit = !this.todoItem.isEdit
-      this.$root.$emit('updateTodo', id, !isEdit, e.target.value)
+      this.todoItem.content = e.target.value
+      this.$root.$emit('updateTodo', this.todoItem)
 
     }
   },
