@@ -7,7 +7,7 @@
       <ItemElement v-for="todo in todoList"
                    :key="todo.id"
                    :todo="todo">
-        {{ todo }}
+<!--        {{ todo }}-->
       </ItemElement>
     </transition-group>
   </ul>
@@ -16,18 +16,17 @@
 <script>
 import 'animate.css'
 import ItemElement from "@/views/todoList/ItemElement.vue";
+import {mapState} from "vuex";
 
 export default {
   name: "ListElement",
   components: {
     ItemElement,
   },
-  props: {
-    todoList: {
-      type: Array
-    },
-  },
-  methods: {}
+  methods: {},
+  computed:{
+    ...mapState('todoList',['todoList'])
+  }
 };
 </script>
 

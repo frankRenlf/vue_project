@@ -3,11 +3,9 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <HeaderElement></HeaderElement>
-        <ListElement :todoList="todoList">
+        <ListElement>
         </ListElement>
-        <footer-element :todoList="todoList"
-                        @checkAllTodo="checkAllTodo"
-                        @clearAllTodo="clearAllTodo">
+        <footer-element :todoList="todoList">
         </footer-element>
       </div>
     </div>
@@ -51,16 +49,16 @@ export default {
   computed: {
     ...mapState('todoList', {todoList: 'todoList'})
   },
-  mounted() {
-    this.$root.$on('checkTodo', this.checkTodo)
-    this.$root.$on('deleteTodo', this.deleteTodo)
-    this.$root.$on('updateTodo', this.updateTodo)
-  },
-  beforeDestroy() {
-    this.$root.$off('checkTodo')
-    this.$root.$off('deleteTodo')
-    this.$root.$off('updateTodo')
-  }
+  // mounted() {
+  //   this.$root.$on('checkTodo', this.checkTodo)
+  //   this.$root.$on('deleteTodo', this.deleteTodo)
+  //   this.$root.$on('updateTodo', this.updateTodo)
+  // },
+  // beforeDestroy() {
+  //   this.$root.$off('checkTodo')
+  //   this.$root.$off('deleteTodo')
+  //   this.$root.$off('updateTodo')
+  // }
 
 };
 </script>

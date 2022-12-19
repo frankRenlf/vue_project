@@ -3,7 +3,7 @@
     <label>
       <input type="checkbox"
              :checked="todoItem.completed"
-             @change="handleCheck(todoItem.id)">
+             @change="checkTodo(todoItem.id)">
       <span v-show="!todoItem.isEdit">{{ todoItem.content }} </span>
       <input type="text" v-show="todoItem.isEdit"
              :value="todoItem.content"
@@ -21,6 +21,8 @@
 <script>
 
 
+import {mapMutations} from "vuex";
+
 export default {
   name: "ItemElement",
   //声明接收todo
@@ -31,20 +33,21 @@ export default {
     }
   },
   methods: {
-    handleCheck(id) {
-      // this.checkTodo(id)
-      this.$root.$emit('checkTodo', id)
-    },
+    ...mapMutations('todoList', ['checkTodo', 'deleteTodo', 'updateTodo']),
+    // handleCheck(id) {
+    //   // this.checkTodo(id)
+    //   this.$root.$emit('checkTodo', id)
+    // },
     handleDelete(id) {
       if (confirm('Confirm Delete')) {
         // this.deleteTodo(id)
-        this.$root.$emit('deleteTodo', id)
+        this.deleteTodo(id)
       }
     },
     handleEdit(id, isEdit) {
       // this.todoItem.isEdit = !this.todoItem.isEdit
       console.log(this.todoItem)
-      this.$root.$emit('updateTodo', this.todoItem)
+      this.updateTodo(this.todoItem)
       this.$nextTick(() => {
         this.$refs.input.focus()
       })
@@ -55,8 +58,7 @@ export default {
       }
       // this.todoItem.isEdit = !this.todoItem.isEdit
       this.todoItem.content = e.target.value
-      this.$root.$emit('updateTodo', this.todoItem)
-
+      this.updateTodo(this.todoItem)
     }
   },
   mounted() {

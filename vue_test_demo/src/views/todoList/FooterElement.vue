@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "FooterElement",
   props: ['todoList'],
@@ -20,9 +22,10 @@ export default {
     // checkAll(e) {
     //   this.checkAllTodo(e.target.checked)
     // },
+    ...mapMutations('todoList', ['clearAllTodo', 'checkAllTodo']),
     clearAll() {
       // this.clearAllTodo()
-      this.$emit('clearAllTodo')
+      this.clearAllTodo()
     }
   },
   computed: {
@@ -40,7 +43,7 @@ export default {
       },
       set(val) {
         // this.checkAllTodo(val)
-        this.$emit('checkAllTodo', val)
+        this.checkAllTodo(val)
       }
     }
   }
