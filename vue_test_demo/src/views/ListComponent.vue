@@ -19,6 +19,9 @@ import HeaderElement from "@/views/todoList/HeaderElement.vue";
 import ListElement from "@/views/todoList/ListElement.vue";
 import FooterElement from "@/views/todoList/FooterElement.vue";
 
+import {nanoid} from 'nanoid'
+import {mapState, mapGetters, mapMutations, mapActions} from "vuex";
+
 export default {
   name: "ListComponent",
   components: {
@@ -29,41 +32,12 @@ export default {
   data() {
     return {
       msg: "welcome to todolist vue",
-      todoList: JSON.parse(localStorage.getItem('todoList')) || []
+      // todoList: JSON.parse(localStorage.getItem('todoList')) || []
     };
   },
   methods: {
-    addTodo(x) {
-      this.todoList.unshift(x)
-    },
-    checkTodo(id) {
-      this.todoList.forEach((todo) => {
-        if (todo.id === id) todo.completed = !todo.completed
-      })
-    },
-    deleteTodo(id) {
-      this.todoList = this.todoList.filter((todo) => {
-        return todo.id !== id
-      })
-    },
-    checkAllTodo(checked) {
-      this.todoList.forEach((todo) => {
-        todo.completed = checked
-      })
-    },
-    clearAllTodo() {
-      this.todoList = this.todoList.filter((todo) => {
-        return !todo.completed
-      })
-    },
-    updateTodo(id, isEdit, content) {
-      this.todoList.forEach((todo) => {
-        if (todo.id === id) {
-          todo.isEdit = isEdit === null ? todo.isEdit : isEdit
-          todo.content = content === null ? todo.content : content
-        }
-      })
-    }
+    ...mapMutations('todoList', ['addTodo', 'checkTodo', 'deleteTodo',
+      'checkAllTodo', 'clearAllTodo', 'updateTodo'])
   },
   watch: {
     todoList: {
@@ -73,6 +47,9 @@ export default {
       }
     }
 
+  },
+  computed: {
+    ...mapState('todoList', {todoList: 'todoList'})
   },
   mounted() {
     this.$root.$on('checkTodo', this.checkTodo)
