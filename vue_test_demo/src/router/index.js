@@ -10,6 +10,7 @@ import HomeMessageDetail from "@/views/HomeMessageDetail.vue";
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+    mode: 'history',
     routes: [
         {
             name: 'about',
