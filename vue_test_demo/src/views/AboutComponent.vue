@@ -1,6 +1,12 @@
 <template>
   <div>
     <h2>about</h2>
+    <router-link :to="{
+      name:'list'
+    }">
+      list
+    </router-link>
+    <router-view></router-view>
   </div>
 </template>
 

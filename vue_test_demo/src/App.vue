@@ -1,23 +1,33 @@
 <template>
   <div>
-    <div class="block">
-      <!--      <span class="demonstration">默认</span>-->
-      <el-date-picker
-          v-model="value1"
-          type="date"
-          placeholder="选择日期">
-      </el-date-picker>
-      <button @click="showInfo">showInfo</button>
+    <div class="row">
+      <BannerComponent></BannerComponent>
     </div>
-    <div class="block">
-      <!--      <span class="demonstration">带快捷选项</span>-->
-      <el-date-picker
-          v-model="value2"
-          align="right"
-          type="date"
-          placeholder="选择日期"
-          :picker-options="pickerOptions">
-      </el-date-picker>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <!--          原始使用a标签跳转多个页面,多页面应用-->
+          <!--          <a class="list-group-item active" href="./about.html">About</a>-->
+          <!--          <a class="list-group-item" href="./home.html">Home</a>-->
+          <router-link replace class="list-group-item" active-class="active" to="/home">Home</router-link>
+          <router-link replace class="list-group-item"
+                       active-class="active"
+                       :to="{name:'about'}"
+          >
+            About
+          </router-link>
+
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>router - component</h3>
+            <!--router-view确定视图的位置-->
+            <router-view></router-view>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,46 +35,23 @@
 
 <script>
 
+import BannerComponent from "@/components/BannerComponent.vue";
+
 
 export default {
   name: "App",
-  components: {},
-  data() {
-    return {
-      pickerOptions: {
-        disabledDate(time) {
-          return time.getTime() > Date.now();
-        },
-        shortcuts: [{
-          text: '今天',
-          onClick(picker) {
-            picker.$emit('pick', new Date());
-          }
-        }, {
-          text: '昨天',
-          onClick(picker) {
-            const date = new Date();
-            date.setTime(date.getTime() - 3600 * 1000 * 24);
-            picker.$emit('pick', date);
-          }
-        }, {
-          text: '一周前',
-          onClick(picker) {
-            const date = new Date();
-            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-            picker.$emit('pick', date);
-          }
-        }]
-      },
-      value1: '',
-      value2: '',
-    };
+  components: {
+
+    BannerComponent
   },
-  methods: {
-    showInfo() {
-      console.log(this.value1)
-    }
+  data() {
+    return {}
+  },
+  methods: {},
+  mounted() {
+    // console.log('app', this)
   }
+
 };
 </script>
 

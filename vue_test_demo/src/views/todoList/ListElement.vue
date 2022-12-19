@@ -1,16 +1,21 @@
 <template>
   <ul class="todo-main">
-    <ItemElement v-for="todo in todoList"
-                 :key="todo.id"
-                 :todo="todo"
-                 :checkTodo="checkTodo">
-      {{ todo }}
-    </ItemElement>
+    <transition-group :appear="true"
+                      name="animate__animated animate__bounce"
+                      enter-active-class="animate__fadeInDown"
+                      leave-active-class="animate__fadeOutUp">
+      <ItemElement v-for="todo in todoList"
+                   :key="todo.id"
+                   :todo="todo">
+        {{ todo }}
+      </ItemElement>
+    </transition-group>
   </ul>
 </template>
 
 <script>
-import ItemElement from "@/components/ItemElement.vue";
+import 'animate.css'
+import ItemElement from "@/views/todoList/ItemElement.vue";
 
 export default {
   name: "ListElement",
@@ -21,9 +26,6 @@ export default {
     todoList: {
       type: Array
     },
-    checkTodo: {
-      type: Function
-    }
   },
   methods: {}
 };

@@ -5,6 +5,7 @@ import HomeComponent from "@/views/HomeComponent.vue";
 import HomeMessage from "@/views/HomeMessage.vue";
 import HomeNews from "@/views/HomeNews.vue";
 import HomeMessageDetail from "@/views/HomeMessageDetail.vue";
+import ListComponent from "@/views/ListComponent.vue";
 
 
 Vue.use(VueRouter)
@@ -16,6 +17,13 @@ const router = new VueRouter({
             name: 'about',
             path: '/about',
             component: AboutComponent,
+            children:[
+                {
+                    name: 'list',
+                    path: '/list',
+                    component: ListComponent,
+                }
+            ],
             meta: {
                 authorise: true,
                 title: 'about'
