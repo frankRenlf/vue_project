@@ -5,15 +5,14 @@ import axios from "axios";
 import store from "@/store";
 import router from '@/router';
 
-// import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-chalk/index.css';
-import {DatePicker} from "element-ui";
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 
-// Vue.use(ElementUI)
-Vue.use(DatePicker)
+Vue.use(ElementUI)
+
 new Vue({
     el: '#app',
     data() {
