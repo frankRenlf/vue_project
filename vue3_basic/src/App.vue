@@ -1,12 +1,29 @@
 <template>
   <h3>app component</h3>
+  <h4>{{name}}</h4>
+  <h4>{{age}}</h4>
+  <button @click="add">add</button>
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  components: {
+  components: {},
+  setup() {
+    let name = 'frank'
+    let age = 22
+
+    function add() {
+      age=age+1
+      alert("add")
+    }
+
+    return {
+      name,
+      age,
+      add
+    }
   }
 }
 </script>
