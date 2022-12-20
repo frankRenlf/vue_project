@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {h} from 'vue'
+// import {h} from 'vue'
 
 export default {
   name: 'App',
