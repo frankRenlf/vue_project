@@ -7,16 +7,17 @@
 
 <script>
 // import {h} from 'vue'
+import {ref} from "vue";
 
 export default {
   name: 'App',
   components: {},
   setup() {
-    let name = 'frank'
-    let age = 22
+    let name = ref('frank')
+    let age = ref(22)
 
     function add() {
-      age = age + 1
+      age++
       alert("add")
     }
 
