@@ -5,6 +5,7 @@
   <button @click="add">add</button>
   <h3>{{ job.type }}</h3>
   <h3>{{ job.salary }}</h3>
+  <h3>{{ arr }}</h3>
   <button @click="modify">modify</button>
 </template>
 
@@ -22,11 +23,12 @@ export default {
       type: 'backend',
       salary: 30
     })
-
+    let arr = reactive(['he','ha'])
     function modify() {
       console.log(job)
       job.type = 'frontend'
       job.salary = 50
+      arr[1]='hei'
     }
 
     function add() {
@@ -36,6 +38,7 @@ export default {
     }
 
     return {
+      arr,
       name,
       age,
       add,
