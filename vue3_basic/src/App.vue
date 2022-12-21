@@ -10,7 +10,7 @@
 
 <script>
 // import {h} from 'vue'
-import {ref} from "vue";
+import {ref, reactive} from "vue";
 
 export default {
   name: 'App',
@@ -18,14 +18,15 @@ export default {
   setup() {
     let name = ref('frank')
     let age = ref(22)
-    let job = ref({
+    let job = reactive({
       type: 'backend',
       salary: 30
     })
 
     function modify() {
-      job.value.type = 'frontend'
-      job.value.salary = 50
+      console.log(job)
+      job.type = 'frontend'
+      job.salary = 50
     }
 
     function add() {
