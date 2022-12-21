@@ -5,8 +5,10 @@
   <button @click="add">add</button>
   <h3>{{ person.job.type }}</h3>
   <h3>{{ person.job.salary }}</h3>
+  <h3 v-show="person.address">{{ person.address }}</h3>
   <h3>{{ arr }}</h3>
   <button @click="modify">modify</button>
+  <button @click="addAttribute">addAttribute</button>
 </template>
 
 <script>
@@ -40,11 +42,17 @@ export default {
       // alert("add")
     }
 
+    function addAttribute() {
+      person.address = 'hz'
+      // alert("add")
+    }
+
     return {
       arr,
       add,
       person,
-      modify
+      modify,
+      addAttribute
     }
 
     // return () => h('h1', 'null')
