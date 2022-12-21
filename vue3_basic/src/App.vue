@@ -17,8 +17,8 @@ export default {
     let age = ref(22)
 
     function add() {
+      age.value++
       console.log(name, age)
-      // age++
       // alert("add")
     }
 
