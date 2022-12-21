@@ -1,10 +1,10 @@
 <template>
   <h3>app component</h3>
-  <h4>{{ name }}</h4>
-  <h4>{{ age }}</h4>
+  <h4>{{ person.name }}</h4>
+  <h4>{{ person.age }}</h4>
   <button @click="add">add</button>
-  <h3>{{ job.type }}</h3>
-  <h3>{{ job.salary }}</h3>
+  <h3>{{ person.job.type }}</h3>
+  <h3>{{ person.job.salary }}</h3>
   <h3>{{ arr }}</h3>
   <button @click="modify">modify</button>
 </template>
@@ -17,32 +17,33 @@ export default {
   name: 'App',
   components: {},
   setup() {
-    let name = ref('frank')
-    let age = ref(22)
-    let job = reactive({
-      type: 'backend',
-      salary: 30
+    let person = reactive({
+      name: 'frank',
+      age: 22,
+      job: {
+        type: 'backend',
+        salary: 30
+      }
     })
-    let arr = reactive(['he','ha'])
+    let arr = reactive(['he', 'ha'])
+
     function modify() {
-      console.log(job)
-      job.type = 'frontend'
-      job.salary = 50
-      arr[1]='hei'
+      console.log(person.job)
+      person.job.type = 'frontend'
+      person.job.salary = 50
+      arr[1] = 'hei'
     }
 
     function add() {
-      age.value++
-      console.log(name, age)
+      person.age++
+      console.log(name, person.age)
       // alert("add")
     }
 
     return {
       arr,
-      name,
-      age,
       add,
-      job,
+      person,
       modify
     }
 
