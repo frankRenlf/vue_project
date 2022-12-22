@@ -7,24 +7,24 @@
 <body>
 <script>
     //#region
-    // let person = {
-    //     name: 'frank',
-    //     age: 22,
-    // }
-    // const p = new Proxy(person, {
-    //     get(target, p) {
-    //         console.log('read person')
-    //         return target[p]
-    //     },
-    //     set(target, p, value) {
-    //         console.log(`write person, ${target},${p},${value}`)
-    //         target[p] = value
-    //     },
-    //     deleteProperty(target, p) {
-    //         console.log(`delete ${target},${p}`)
-    //         return delete target[p]
-    //     }
-    // })
+    let person = {
+        name: 'frank',
+        age: 22,
+    }
+    const p = new Proxy(person, {
+        get(target, p) {
+            console.log('read person')
+            return Reflect.get(target, p)
+        },
+        set(target, p, value) {
+            console.log(`write person, ${target},${p},${value}`)
+            Reflect.set(target, p, value)
+        },
+        deleteProperty(target, p) {
+            console.log(`delete ${target},${p}`)
+            return Reflect.deleteProperty(target, p)
+        }
+    })
     //#endregion
 
 </script>
