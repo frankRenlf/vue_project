@@ -34,8 +34,10 @@ export default {
       get() {
         return person.lastname + '_' + person.firstname
       },
-      set() {
-        person.firstname=person.fullname.substring()
+      set(value) {
+        let arr = value.split('_')
+        person.lastname = arr[0]
+        person.firstname = arr[1]
       }
     })
 
