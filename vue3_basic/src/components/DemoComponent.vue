@@ -1,5 +1,8 @@
 <template>
-  <h4>{{ person.name }}</h4>
+  <h4>{{ person.firstname }}</h4>
+  <input type="text" v-model="person.firstname">
+  <h4>{{ person.lastname }}</h4>
+  <input type="text" v-model="person.lastname">
   <h4>{{ person.age }}</h4>
   <h5>{{ msg }}</h5>
   <slot name="d1"></slot>
@@ -17,7 +20,8 @@ export default {
     // console.log()
     console.log(props.msg, context.slots)
     let person = reactive({
-      name: 'frank',
+      firstname: 'frank',
+      lastname: 'ren',
       age: 22,
       job: {
         type: 'backend',
