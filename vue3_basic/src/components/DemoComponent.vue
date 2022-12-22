@@ -3,6 +3,7 @@
   <h4>{{ person.age }}</h4>
   <h5>{{ msg }}</h5>
   <slot name="d1"></slot>
+  <button @click="test">show</button>
 </template>
 
 <script>
@@ -10,9 +11,11 @@ import {reactive} from "vue";
 
 export default {
   name: "DemoComponent",
-  props: ['msg'],
+  props: ['msg', 'msg2'],
+  emits: ['test'],
   setup(props, context) {
-    console.log(props, context)
+    // console.log()
+    console.log(props.msg, context.slots)
     let person = reactive({
       name: 'frank',
       age: 22,
@@ -22,8 +25,13 @@ export default {
       }
     })
 
+    function test() {
+      context.emit('test', 22)
+    }
+
     return {
       person,
+      test
     }
 
     // return () => h('h1', 'null')
