@@ -15,8 +15,8 @@
             console.log('read person')
             return target[property]
         },
-        set() {
-            console.log('write person')
+        set(target, property, value) {
+            console.log(`write person, ${target},${property},${value}`)
         }
     })
 </script>
