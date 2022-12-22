@@ -17,6 +17,7 @@
         },
         set(target, p, value) {
             console.log(`write person, ${target},${p},${value}`)
+            target[p] = value
         },
         deleteProperty(target, p) {
             console.log(`delete ${target},${p}`)
