@@ -6,24 +6,27 @@
 </head>
 <body>
 <script>
-    let person = {
-        name: 'frank',
-        age: 22,
-    }
-    const p = new Proxy(person, {
-        get(target, p) {
-            console.log('read person')
-            return target[p]
-        },
-        set(target, p, value) {
-            console.log(`write person, ${target},${p},${value}`)
-            target[p] = value
-        },
-        deleteProperty(target, p) {
-            console.log(`delete ${target},${p}`)
-            return delete target[p]
-        }
-    })
+    //#region
+    // let person = {
+    //     name: 'frank',
+    //     age: 22,
+    // }
+    // const p = new Proxy(person, {
+    //     get(target, p) {
+    //         console.log('read person')
+    //         return target[p]
+    //     },
+    //     set(target, p, value) {
+    //         console.log(`write person, ${target},${p},${value}`)
+    //         target[p] = value
+    //     },
+    //     deleteProperty(target, p) {
+    //         console.log(`delete ${target},${p}`)
+    //         return delete target[p]
+    //     }
+    // })
+    //#endregion
+
 </script>
 </body>
 </html>
