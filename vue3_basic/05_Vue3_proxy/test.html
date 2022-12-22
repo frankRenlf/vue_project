@@ -11,12 +11,16 @@
         age: 22,
     }
     const p = new Proxy(person, {
-        get(target, property) {
+        get(target, p) {
             console.log('read person')
-            return target[property]
+            return target[p]
         },
-        set(target, property, value) {
-            console.log(`write person, ${target},${property},${value}`)
+        set(target, p, value) {
+            console.log(`write person, ${target},${p},${value}`)
+        },
+        deleteProperty(target, p) {
+            console.log(`delete ${target},${p}`)
+            delete target[p]
         }
     })
 </script>
