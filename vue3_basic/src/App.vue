@@ -1,7 +1,11 @@
 <template>
   <h3>app component</h3>
 
-  <DemoComponent msg="farnk"></DemoComponent>
+  <DemoComponent msg="farnk">
+    <template v-slot:d1>
+      <input type="text" placeholder="enter">
+    </template>
+  </DemoComponent>
 </template>
 
 <script>
