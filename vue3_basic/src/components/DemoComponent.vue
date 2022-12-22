@@ -1,5 +1,5 @@
 <template>
-  <input type="text" v-model="fullname">
+  <input type="text" v-model="person.fullname">
   <h4>{{ person.firstname }}</h4>
   <input type="text" v-model="person.firstname">
   <h4>{{ person.lastname }}</h4>
@@ -11,22 +11,12 @@
 </template>
 
 <script>
-import {reactive} from "vue";
+import {reactive, computed} from "vue";
 
 export default {
   name: "DemoComponent",
   props: ['msg', 'msg2'],
   emits: ['test'],
-  computed: {
-    fullname: {
-      get() {
-        return this.person.firstname + this.person.lastname
-      },
-      set() {
-      }
-
-    }
-  },
   setup(props, context) {
     // console.log()
     console.log(props.msg, context.slots)
@@ -37,6 +27,15 @@ export default {
       job: {
         type: 'backend',
         salary: 30
+      }
+    })
+
+    person.fullname = computed({
+      get() {
+        return person.lastname + '_' + person.firstname
+      },
+      set() {
+        person.firstname=person.fullname.substring()
       }
     })
 
