@@ -11,7 +11,13 @@
         age: 22,
     }
     const p = new Proxy(person, {
-
+        get(a, b) {
+            console.log('read person')
+            return a + " " + b
+        },
+        set() {
+            console.log('write person')
+        }
     })
 </script>
 </body>
