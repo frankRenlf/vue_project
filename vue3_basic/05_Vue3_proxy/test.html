@@ -20,7 +20,7 @@
         },
         deleteProperty(target, p) {
             console.log(`delete ${target},${p}`)
-            delete target[p]
+            return delete target[p]
         }
     })
 </script>
