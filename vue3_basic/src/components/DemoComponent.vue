@@ -1,4 +1,5 @@
 <template>
+  <input type="text" v-model="fullname">
   <h4>{{ person.firstname }}</h4>
   <input type="text" v-model="person.firstname">
   <h4>{{ person.lastname }}</h4>
@@ -16,6 +17,16 @@ export default {
   name: "DemoComponent",
   props: ['msg', 'msg2'],
   emits: ['test'],
+  computed: {
+    fullname: {
+      get() {
+        return this.person.firstname + this.person.lastname
+      },
+      set() {
+      }
+
+    }
+  },
   setup(props, context) {
     // console.log()
     console.log(props.msg, context.slots)
