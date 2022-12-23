@@ -10,18 +10,16 @@ import {reactive, computed, ref, watch} from "vue";
 
 export default {
   name: "DemoComponent",
-  props: ['msg', 'msg2'],
-  emits: ['test'],
   setup(props, context) {
     let sum = ref(0)
     let msg = ref('hello')
-    watch('sum', {
-      immediate: true,
-      deep: true,
-      handler(newVal, oldVal) {
-        console.log("sum is change", newVal, oldVal)
-      }
-    })
+    watch('sum', (newVal, oldVal) => {
+          console.log("sum is change", newVal, oldVal)
+        }, {
+          immediate: true,
+          deep: true,
+        }
+    )
     return {
       sum,
       msg

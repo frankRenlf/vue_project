@@ -1,7 +1,7 @@
 <template>
   <h3>app component</h3>
 
-  <DemoComponent msg="farnk" msg2="123" @test="show">
+  <DemoComponent>
     <template v-slot:d1>
       <input type="text" placeholder="enter">
     </template>
