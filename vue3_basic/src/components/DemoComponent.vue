@@ -8,6 +8,9 @@
   <h3>{{ person.name }}</h3>
   <h3>{{ person.age }}</h3>
   <button @click="person.age++"> change</button>
+  <hr>
+  <h3>{{ person.job.salary }}</h3>
+  <button @click="person.job.salary++"> change</button>
 </template>
 
 <script>
