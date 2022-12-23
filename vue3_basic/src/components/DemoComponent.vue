@@ -1,8 +1,13 @@
 <template>
   <h3>{{ sum }}</h3>
   <button @click="sum++">show</button>
+  <hr>
   <h3>{{ msg }}</h3>
   <button @click="msg+='!'">add</button>
+  <hr>
+  <h3>{{ person.name }}</h3>
+  <h3>{{ person.age }}</h3>
+  <button @click="person.age++"> change</button>
 </template>
 
 <script>
@@ -29,6 +34,12 @@ export default {
           deep: true,
         }
     )
+    watch(person, (newVal, oldVal) => {
+      console.log("person is change", newVal, oldVal)
+    }, {
+      immediate: true,
+      deep: true,
+    })
     return {
       person,
       sum,
