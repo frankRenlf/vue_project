@@ -13,7 +13,16 @@ export default {
   setup(props, context) {
     let sum = ref(0)
     let msg = ref('hello')
-    watch('sum', (newVal, oldVal) => {
+    let person = reactive({
+      name: 'frank',
+      age: 22,
+      job: {
+        name: 'programmer',
+        salary: 30,
+      }
+    })
+
+    watch(sum, (newVal, oldVal) => {
           console.log("sum is change", newVal, oldVal)
         }, {
           immediate: true,
@@ -21,6 +30,7 @@ export default {
         }
     )
     return {
+      person,
       sum,
       msg
     }
