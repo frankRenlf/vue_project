@@ -43,7 +43,7 @@ export default {
     //   immediate: true,
     //   deep: true,
     // })
-    watch(() => person.job, (newVal, oldVal) => {
+    watch(person, (newVal, oldVal) => {
       console.log("person is change", newVal, oldVal)
     }, {
       immediate: true,
