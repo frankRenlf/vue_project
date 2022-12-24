@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {reactive, computed, ref, watch} from "vue";
+import {reactive, computed, ref, watch, watchEffect} from "vue";
 
 export default {
   name: "DemoComponent",
@@ -30,24 +30,28 @@ export default {
       }
     })
 
-    watch(sum, (newVal, oldVal) => {
-          console.log("sum is change", newVal, oldVal)
-        }, {
-          immediate: true,
-          deep: true,
-        }
-    )
+    // watch(sum, (newVal, oldVal) => {
+    //       console.log("sum is change", newVal, oldVal)
+    //     }, {
+    //       immediate: true,
+    //       deep: true,
+    //     }
+    // )
     // watch(person, (newVal, oldVal) => {
     //   console.log("person is change", newVal, oldVal)
     // }, {
     //   immediate: true,
     //   deep: true,
     // })
-    watch(person, (newVal, oldVal) => {
-      console.log("person is change", newVal, oldVal)
-    }, {
-      immediate: true,
-      deep: true,
+    // watch(person, (newVal, oldVal) => {
+    //   console.log("person is change", newVal, oldVal)
+    // }, {
+    //   immediate: true,
+    //   deep: true,
+    // })
+    watchEffect(() => {
+      let x = person.job.salary
+      console.log(x)
     })
     return {
       person,
