@@ -1,7 +1,6 @@
 import {onBeforeUnmount, onMounted, reactive} from "vue";
 
-function savePoint() {
-
+export default function () {
     let point = reactive({
         x: 0,
         y: 0
@@ -16,10 +15,11 @@ function savePoint() {
         console.log('onMounted')
         window.addEventListener('click', locate)
     })
-
     onBeforeUnmount(() => {
         console.log('onBeforeUnmount')
         window.removeEventListener('click', locate)
     })
-
+    return {
+        point
+    }
 }
