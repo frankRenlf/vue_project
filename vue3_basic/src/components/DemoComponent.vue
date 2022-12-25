@@ -1,11 +1,12 @@
 <template>
   <h3>{{ sum }}</h3>
   <button @click="sum++">add</button>
-
+  <hr>
+  <h2>mouse location: {{ point.x }}---{{ point.y }}</h2>
 </template>
 
 <script>
-import {onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref} from "vue";
+import {onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, reactive, ref} from "vue";
 
 export default {
   name: "DemoComponent",
@@ -16,6 +17,10 @@ export default {
     })
     onMounted(() => {
       console.log('onMounted')
+      window.addEventListener('click', (event) => {
+        point.x = event.pageX
+        point.y = event.pageY
+      })
     })
     onBeforeUpdate(() => {
       console.log('onBeforeUpdate')
@@ -29,37 +34,17 @@ export default {
     onUnmounted(() => {
       console.log('onUnmounted')
     })
+    let point = reactive({
+      x: 0,
+      y: 0
+    })
     let sum = ref(0)
     return {
+      point,
       sum,
     }
   },
-  /*
-  beforeCreate() {
-    console.log('beforeCreate')
-  },
-  created() {
-    console.log('created')
-  },
-  beforeMount() {
-    console.log('beforeMount')
-  },
-  mounted() {
-    console.log('mounted')
-  },
-  beforeUpdate() {
-    console.log('beforeUpdate')
-  },
-  updated() {
-    console.log('updated')
-  },
-  beforeUnmount() {
-    console.log('beforeUnmount')
-  },
-  unmounted() {
-    console.log('unmounted')
-  }
-   */
+
 }
 </script>
 
