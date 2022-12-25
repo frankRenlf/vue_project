@@ -15,12 +15,15 @@ export default {
     onBeforeMount(() => {
       console.log('onBeforeMount')
     })
+
+    function locate(event) {
+      point.x = event.pageX
+      point.y = event.pageY
+    }
+
     onMounted(() => {
       console.log('onMounted')
-      window.addEventListener('click', (event) => {
-        point.x = event.pageX
-        point.y = event.pageY
-      })
+      window.addEventListener('click', locate)
     })
     onBeforeUpdate(() => {
       console.log('onBeforeUpdate')
@@ -30,6 +33,7 @@ export default {
     })
     onBeforeUnmount(() => {
       console.log('onBeforeUnmount')
+      window.removeEventListener('click', locate)
     })
     onUnmounted(() => {
       console.log('onUnmounted')
