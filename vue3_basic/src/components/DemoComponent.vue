@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {reactive, ref, readonly} from "vue";
+import {reactive, ref, readonly, markRaw} from "vue";
 
 export default {
   name: "DemoComponent",
@@ -37,6 +37,7 @@ export default {
         name: 'bwm',
         price: 40,
       }
+      console.log(person.car)
     }
 
     function modifyCar() {
