@@ -23,13 +23,6 @@ export default {
       }
     })
 
-    watch(sum, (newVal, oldVal) => {
-          console.log("sum is change", newVal, oldVal)
-        }, {
-          immediate: true,
-          deep: true,
-        }
-    )
 
     watch(() => person.job, (newVal, oldVal) => {
       console.log("person is change", newVal, oldVal)
@@ -39,8 +32,6 @@ export default {
     })
     return {
       person,
-      sum,
-      msg
     }
 
     // return () => h('h1', 'null')
