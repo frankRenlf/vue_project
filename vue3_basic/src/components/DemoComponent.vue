@@ -1,4 +1,7 @@
 <template>
+  <h3>{{ sum }}</h3>
+  <button @click="sum++"> change</button>
+  <hr>
   <h3>{{ person.name }}</h3>
   <button @click="person.name+='?'"> change</button>
   <hr>
@@ -10,13 +13,13 @@
 </template>
 
 <script>
-import {reactive, watch, toRefs, shallowRef, shallowReactive} from "vue";
+import {reactive, ref, readonly} from "vue";
 
 export default {
   name: "DemoComponent",
   setup(props, context) {
-
-    let person = shallowReactive({
+    let sum = ref(0)
+    let person = readonly({
       name: 'frank',
       age: 22,
       job: {
@@ -27,6 +30,7 @@ export default {
 
     return {
       person,
+      sum,
     }
   }
 }
