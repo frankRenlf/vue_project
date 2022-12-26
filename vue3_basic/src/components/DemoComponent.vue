@@ -14,13 +14,13 @@ export default {
         return {
           get() {
             console.log('get')
-            track()
+            track() // track value
             return value
           },
           set(newValue) {
             console.log('set')
             value = newValue
-            trigger()
+            trigger() // Require vue to reparse the template
           }
         }
       })
