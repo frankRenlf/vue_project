@@ -1,5 +1,5 @@
 <template>
-  <input type="text">
+  <input type="text" placeholder="enter" v-model="keyWork">
   <h3>{{ keyWork }}</h3>
 </template>
 
