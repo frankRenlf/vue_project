@@ -9,7 +9,8 @@ import {reactive, ref, readonly, markRaw, customRef} from "vue";
 export default {
   name: "DemoComponent",
   setup(props, context) {
-    function myRef(value) {
+    function myRef(value, delay) {
+      let timer
       return customRef((track, trigger) => {
         return {
           get() {
@@ -19,14 +20,17 @@ export default {
           },
           set(newValue) {
             console.log('set')
-            value = newValue
-            trigger() // Require vue to reparse the template
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+              value = newValue
+              trigger() // Require vue to reparse the template
+            }, delay)
           }
         }
       })
     }
 
-    let keyWork = myRef('hello')
+    let keyWork = myRef('hello', 500)
     return {
       keyWork
     }
