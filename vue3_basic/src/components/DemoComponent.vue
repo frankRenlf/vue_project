@@ -1,26 +1,50 @@
 <template>
-  <h3>{{ sum }}</h3>
-  <button @click="sum++">add</button>
+  <h3>{{ person.name }}</h3>
+  <h3>{{ person.age }}</h3>
+  <button @click="person.age++"> change</button>
   <hr>
-  <h2>mouse location: {{ ret.point.x }}---{{ ret.point.y }}</h2>
+  <h3>{{ person.job.salary }}</h3>
+  <button @click="person.job.salary++"> change</button>
 </template>
 
 <script>
-import {ref} from "vue";
-import usePoint from '../hooks/usePoint'
+import {reactive, computed, ref, watch} from "vue";
 
 export default {
   name: "DemoComponent",
   setup(props, context) {
-    console.log('setup')
-    let ret = usePoint()
-    let sum = ref(0)
-    return {
-      sum,
-      ret
-    }
-  },
 
+    let person = reactive({
+      name: 'frank',
+      age: 22,
+      job: {
+        name: 'programmer',
+        salary: 30,
+      }
+    })
+
+    watch(sum, (newVal, oldVal) => {
+          console.log("sum is change", newVal, oldVal)
+        }, {
+          immediate: true,
+          deep: true,
+        }
+    )
+
+    watch(() => person.job, (newVal, oldVal) => {
+      console.log("person is change", newVal, oldVal)
+    }, {
+      immediate: true,
+      deep: true,
+    })
+    return {
+      person,
+      sum,
+      msg
+    }
+
+    // return () => h('h1', 'null')
+  }
 }
 </script>
 
