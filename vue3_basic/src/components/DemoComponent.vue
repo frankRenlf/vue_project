@@ -28,8 +28,6 @@ export default {
     return {
       person,
     }
-
-    // return () => h('h1', 'null')
   }
 }
 </script>
