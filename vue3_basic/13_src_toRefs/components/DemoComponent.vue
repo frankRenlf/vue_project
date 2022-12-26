@@ -2,21 +2,21 @@
   <h3>{{ person.name }}</h3>
   <button @click="person.name+='?'"> change</button>
   <hr>
-  <h3>{{ person.age }}</h3>
-  <button @click="person.age++"> change</button>
+  <h3>{{ age }}</h3>
+  <button @click="age++"> change</button>
   <hr>
-  <h3>{{ person.job.salary }}</h3>
-  <button @click="person.job.salary++"> change</button>
+  <h3>{{ job.salary }}</h3>
+  <button @click="job.salary++"> change</button>
 </template>
 
 <script>
-import {reactive, watch, toRefs, shallowRef, shallowReactive} from "vue";
+import {reactive, watch,toRefs} from "vue";
 
 export default {
   name: "DemoComponent",
   setup(props, context) {
 
-    let person = shallowReactive({
+    let person = reactive({
       name: 'frank',
       age: 22,
       job: {
@@ -27,6 +27,7 @@ export default {
 
     return {
       person,
+      ...toRefs(person)
     }
 
     // return () => h('h1', 'null')
