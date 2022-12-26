@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import {reactive, computed, ref, watch} from "vue";
+import {reactive, watch} from "vue";
 
 export default {
   name: "DemoComponent",
@@ -22,14 +22,7 @@ export default {
         salary: 30,
       }
     })
-
-
-    watch(() => person.job, (newVal, oldVal) => {
-      console.log("person is change", newVal, oldVal)
-    }, {
-      immediate: true,
-      deep: true,
-    })
+    
     return {
       person,
     }
