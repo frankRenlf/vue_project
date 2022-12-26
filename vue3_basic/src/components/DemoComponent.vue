@@ -22,7 +22,7 @@ export default {
         salary: 30,
       }
     })
-    
+
     return {
       person,
     }
