@@ -4,17 +4,22 @@
 </template>
 
 <script>
-import {reactive, ref, readonly, markRaw} from "vue";
+import {reactive, ref, readonly, markRaw, customRef} from "vue";
 
 export default {
   name: "DemoComponent",
   setup(props, context) {
     function myRef(value) {
-      let ret
-      setTimeout(() => {
-        ret = ref(value)
-      }, 1000)
-      return ret
+      return customRef(() => {
+        return {
+          get() {
+
+          },
+          set() {
+            
+          }
+        }
+      })
     }
 
     let keyWork = myRef('hello')
