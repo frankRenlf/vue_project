@@ -1,6 +1,7 @@
 <template>
   <h3>app component</h3>
   <button @click="show=!show">switch</button>
+  <hr>
   <DemoComponent v-if="show">
   </DemoComponent>
 

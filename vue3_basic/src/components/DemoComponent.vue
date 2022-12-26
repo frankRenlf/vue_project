@@ -10,20 +10,22 @@ export default {
   name: "DemoComponent",
   setup(props, context) {
     function myRef(value) {
-      return customRef(() => {
+      return customRef((track, trigger) => {
         return {
           get() {
+            console.log('get')
             return value
           },
           set(newValue) {
-            keyWork = newValue
+            console.log('set')
+            value = newValue
+            trigger()
           }
         }
       })
     }
 
     let keyWork = myRef('hello')
-
     return {
       keyWork
     }
