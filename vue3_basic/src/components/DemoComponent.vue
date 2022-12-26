@@ -14,6 +14,7 @@ export default {
         return {
           get() {
             console.log('get')
+            track()
             return value
           },
           set(newValue) {
