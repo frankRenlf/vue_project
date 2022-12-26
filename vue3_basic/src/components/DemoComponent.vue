@@ -13,10 +13,9 @@ export default {
       return customRef(() => {
         return {
           get() {
-
+            return value
           },
           set() {
-            
           }
         }
       })
