@@ -10,6 +10,10 @@
   <hr>
   <h3>{{ person.job.salary }}</h3>
   <button @click="person.job.salary++"> change</button>
+  <hr>
+  <h3>{{ person.car }}</h3>
+  <button @click="addCar"> add car</button>
+  <button @click="modifyCar"> modify car</button>
 </template>
 
 <script>
@@ -19,7 +23,7 @@ export default {
   name: "DemoComponent",
   setup(props, context) {
     let sum = ref(0)
-    let person = readonly({
+    let person = reactive({
       name: 'frank',
       age: 22,
       job: {
@@ -28,9 +32,22 @@ export default {
       }
     })
 
+    function addCar() {
+      person.car = {
+        name: 'bwm',
+        price: 40,
+      }
+    }
+
+    function modifyCar() {
+      person.car.name = 'bc'
+      person.car.price = 50
+    }
+
     return {
       person,
       sum,
+      addCar, modifyCar
     }
   }
 }
