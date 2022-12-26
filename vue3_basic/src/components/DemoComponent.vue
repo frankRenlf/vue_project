@@ -1,5 +1,5 @@
 <template>
-  <input type="text" placeholder="enter" v-model="keyWork">
+  <input type="text" v-model="keyWork">
   <h3>{{ keyWork }}</h3>
 </template>
 
@@ -15,7 +15,8 @@ export default {
           get() {
             return value
           },
-          set() {
+          set(newValue) {
+            keyWork = newValue
           }
         }
       })
