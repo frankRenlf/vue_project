@@ -21,7 +21,6 @@ export default {
     },
     state() {
         return {
-
             list: JSON.parse(localStorage.getItem('todoList')) || [],
             // list:[
             //     {id: '0', name: 'lily'},
