@@ -1,43 +1,44 @@
 <template>
-  <input type="text" v-model="keyWork">
-  <h3>{{ keyWork }}</h3>
+  <div class="demo">
+    <h3>demo</h3>
+    <ul>
+      <li v-for="e in $store.state.list" :key="e.id">
+        {{e}}
+      </li>
+    </ul>
+    <child-component></child-component>
+  </div>
+
 </template>
 
 <script>
-import {customRef} from "vue";
+import {computed, reactive} from "vue";
+import {mapState} from "vuex";
+import ChildComponent from "@/components/ChildComponent.vue";
 
 export default {
   name: "DemoComponent",
+  components: {
+    ChildComponent
+  },
   setup() {
-    function myRef(value, delay) {
-      let timer
-      return customRef((track, trigger) => {
-        return {
-          get() {
-            console.log('get')
-            track() // track value
-            return value
-          },
-          set(newValue) {
-            console.log('set')
-            clearTimeout(timer)
-            timer = setTimeout(() => {
-              value = newValue
-              trigger() // Require vue to reparse the template
-            }, delay)
-          }
-        }
-      })
-    }
-
-    let keyWork = myRef('hello', 500)
+    let list = computed({
+      get() {
+        return mapState('list', ['list'])
+      },
+      set(value) {
+      }
+    })
     return {
-      keyWork
+
     }
   }
 }
 </script>
 
 <style scoped>
-
+.demo {
+  background-color: gray;
+  padding: 10px;
+}
 </style>
