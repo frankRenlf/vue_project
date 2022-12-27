@@ -1,8 +1,8 @@
 import {createStore} from "vuex";
-import list from './modules/list'
+import listAbout from './modules/listAbout'
 
 export default createStore({
     modules: {
-        list
+        listAbout
     }
 })

@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 .child {
-  background-color: blue;
+  background-color: skyblue;
   padding: 10px;
 }
 </style>
