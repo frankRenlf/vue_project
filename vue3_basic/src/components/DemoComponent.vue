@@ -28,8 +28,9 @@ export default {
     // console.log(...mapActions('listAbout', ['add']))
     function add(value) {
       store.dispatch('listAbout/add', value)
+      content = ''
     }
-
+console.log(store._actions)
     return {
       // ...mapActions('listAbout', ['add']),
       content, add

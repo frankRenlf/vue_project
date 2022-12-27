@@ -1,18 +1,16 @@
 import {nanoid} from "nanoid";
 
 export default {
-    namespace: true,
+    namespaced: true,
     actions: {
         add(context, value) {
-            value.id = nanoid()
             if (!value) return alert("null input")
             const todo = {
                 id: nanoid(),
-                content: this.content.trim(),
+                content: value.trim(),
                 isEdit: false,
                 completed: false,
             }
-            this.content = ''
             context.commit('ADD', todo)
         }
     },
