@@ -3,28 +3,25 @@
     <h3>app component</h3>
     <button @click="show=!show">switch</button>
     <hr>
-    <DemoComponent v-if="show">
-    </DemoComponent>
+    <ChildComponent v-if="show"></ChildComponent>
   </div>
-
-
 </template>
 
 <script>
 // import {h} from 'vue'
 import {ref, provide, reactive} from "vue";
-import DemoComponent from "@/components/DemoComponent.vue";
+import ChildComponent from "@/components/ChildComponent.vue";
 
 export default {
   name: 'App',
-  components: {DemoComponent},
+  components: {ChildComponent},
   setup() {
     let show = ref(true)
     let car = reactive({
       name: 'bc',
       price: 40
     })
-    provide('car',car)
+    provide('car', car)
     return {
       show
     }
