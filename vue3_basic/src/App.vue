@@ -16,9 +16,9 @@
 
 <script>
 // import {h} from 'vue'
-import {ref, provide, reactive} from "vue";
-import ChildComponent from "@/components/ChildComponent.vue";
-
+import {ref, provide, reactive, defineAsyncComponent} from "vue";
+// import ChildComponent from "@/components/ChildComponent.vue";
+const ChildComponent = defineAsyncComponent(() => import('./components/ChildComponent.vue'))
 export default {
   name: 'App',
   components: {ChildComponent},
