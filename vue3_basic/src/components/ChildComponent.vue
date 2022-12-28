@@ -12,8 +12,12 @@ export default {
   components:{
   },
   setup() {
-    const car = inject('car')
-    return {car}
+    let car = inject('car')
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve({car})
+      },1000)
+    })
   }
 }
 </script>
