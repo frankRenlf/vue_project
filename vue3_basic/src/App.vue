@@ -3,7 +3,14 @@
     <h3>app component</h3>
     <button @click="show=!show">switch</button>
     <hr>
-    <ChildComponent v-if="show"></ChildComponent>
+    <suspense>
+      <template v-slot:default>
+        <ChildComponent v-if="show"></ChildComponent>
+      </template>
+      <template v-slot:fallback>
+        <h3>processing</h3>
+      </template>
+    </suspense>
   </div>
 </template>
 
